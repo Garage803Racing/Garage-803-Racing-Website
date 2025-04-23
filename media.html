@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Garage 803 Racing</title>
+ <link rel="icon" type="image/x-icon" href="logo black outline.png">
+ <style>
+       
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-y: auto;
+            height: 150vw;
+            background: rgba(0, 0, 0, 0);
+            overflow-x: hidden;
+            min-height: 0vh;
+            
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgb(48, 47, 47);
+            padding: 1vw 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: top 0.5s;
+            transition-delay: 0.4s;
+            z-index: 1;
+        }
+       
+        .navbar.hidden {
+            top: -6vw;
+        }
+        .navbar-logo {
+            width: 3.5vw; /* Set desired width */
+        height: 4vw; 
+        position: relative;
+        
+            
+       
+            display: flex;
+            align-items: center;
+            right:-1vw;
+            color: yellow;
+            font-weight: bold;
+        }
+        h2,a{
+                              
+            font-family: proxima-nova, sans-serif;
+            font-style: normal;
+            font-weight: 100;
+            font-size: 1.5vw;
+          
+        
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20vh;
+            font-size: 2vw;
+
+           
+            font-weight: bold;
+        }
+        .navbar-menu {
+            margin-right: 1vw;
+        }
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1vw;
+            font-weight: bold;
+            font-size: 1vw;
+        }
+        main {
+            padding-top: 10vw;
+            min-height: -4vw;
+            height:4vw;
+        }
+        .about{
+            font-weight: bold;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position:relative;
+           left:-37.2vw;
+           top:-4vw;
+           
+            
+       
+          
+           
+            font-size:5vw
+
+        }
+       
+       
+
+        .test {
+    position: fixed;
+
+  right:66vw;
+    font-size: 2vw;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+   
+    font-weight: bold;
+    letter-spacing: 0.4vw;
+    white-space: nowrap;
+
+
+   
+   
+   
+
+  
+  
+}
+
+.line {
+    position: relative;
+    width:14vw;
+    height: 0.3vw;
+    border-radius: 20vw;
+    background-color: black; 
+    border: none; 
+    right:38vw;
+    top:-8vw;
+}
+
+.Bar2 {
+    position:relative;
+   width:100vw;
+   height:30vw;
+    z-index: -1;
+    top:-22vw;
+    
+}
+.titleBackground{
+    position: relative;
+  
+
+  width: 40vw;
+  height: 20vw;
+  background:white;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+
+  z-index: -1;
+  top:-46.5vw;
+  border-radius: 20px;
+  right:-2vw;
+  
+  
+  
+}
+.mediaDescription{
+    position: relative;
+    top:-58vw;
+    right:-5vw;
+    font-size: 1.2vw;;
+
+}
+.Image1{
+    position:relative;
+    top:-42vw;
+    width:30vw;
+   margin: left;
+    right:-2vw;
+    border-radius: 25px;
+    display: flex;
+
+
+}
+.Image2{
+    position:relative;
+    align-items: center;
+    transform: translate(-50%, -50%); /* Adjusts the image to be perfectly centered */
+    left:49.75%;
+
+
+
+
+    top:-61.8vw;
+    width:30vw;
+   
+    
+    border-radius: 25px;
+
+
+}
+.Image3{
+    position:relative;
+    margin: center;
+
+    top:-64.5vw;
+    width:30vw;
+    right:-37.5vw;
+    
+    border-radius: 25px;
+
+
+}
+.Image4{
+    position:relative;
+    top:-63vw;
+    width:30vw;
+   margin: left;
+    right:-2vw;
+    border-radius: 25px;
+    display: flex;
+
+
+}
+
+.ContactTitle{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    top:-7vw;
+    font-weight: bold;
+
+   
+    font-size: 5vw;;
+}
+.Bar {
+    position: relative;
+    width:100vw;
+   height:1.8vw;
+    z-index: -1;
+}
+Address{
+    position: absolute;
+
+    top: 13%; /* Moves the element up */
+    left: 55%;
+    font-weight: bold;
+    font-size: 2vw;
+    display: grid;
+
+}
+.verticalLine{
+    position: absolute;
+
+    width: 15vw;
+    height: 0.1%;
+    border-radius: 20vw;
+    background-color: black; 
+    right:53vw;
+    bottom:46%;    
+   
+   transform: rotate(90deg);
+
+
+
+}
+.AdressText{
+    position: absolute;
+
+  
+    font-size: 1vw;
+    top:30%;
+    right:33.9vw;
+
+
+
+}
+.AddressLine{
+    position: absolute;
+
+width: 10vw;
+height: 0.1%;
+border-radius: 20vw;
+background-color: black; 
+right:40.5vw;
+bottom:56.5%;
+
+
+transform: rotate(90deg);
+
+
+}
+ 
+.NonProfitStat{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    bottom:-2%;
+    font-size: 1vw;
+    
+   
+    color:rgb(100,100,100)
+
+   
+}
+.buttomPageLogo{
+    width:18vw;
+    height:5vw;
+    left:-38vw;
+    bottom: -1vw;
+    position: relative;
+
+  
+   
+
+}
+.buttomPage {
+    position: relative;
+  
+
+    width: 100vw;
+    height: 25vw;
+    background: rgba(225, 222, 222, 1);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+
+    z-index: 0;
+    top:20vw;
+    
+}
+.BottomLinks {
+    position: absolute;
+      bottom:15%;
+      left:40vw;
+     
+     
+
+ 
+  text-decoration: none; /* Removes underline */
+
+
+
+   
+}
+.BottomLinks a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherit the color from the parent element */
+    display: inline; /* Keeps the elements in line but removes link styling */
+    text-align: left;
+    font-size: 1vw;
+    display: block;
+    margin-bottom: 25%; /* Adds space below each link */
+
+}
+.buttomText {
+    left:-38vw;
+    bottom:-2vw;
+  
+   font-size: 1vw;
+   position: relative;
+
+}
+.QuickMenu{
+    position: absolute;
+    left:40%;
+
+    top: 13%; /* Moves the element up */
+    
+    font-weight: bold;
+    font-size: 2vw;
+
+   
+}
+.Address{
+    position: absolute;
+
+    top: 13%; /* Moves the element up */
+    left: 55%;
+    font-weight: bold;
+    font-size: 2vw;
+    display: grid;
+
+}
+.buttomLine{
+    right: 38.8vw;
+    bottom:-2vw;
+    position: relative;
+    width: 14vw;
+    height: 0.1vw;
+    border-radius: 20vw;
+    background-color: black; 
+
+}
+.buttomLine{
+    right: 38.8vw;
+    bottom:-2vw;
+    position: relative;
+    width: 14vw;
+    height: 0.1vw;
+    border-radius: 20vw;
+    background-color: black; 
+
+}
+.Youtube_bottom{
+    position: relative;
+    width:3.5vw;
+    height:2vw;
+    right:-31vw;
+    top:-10vw;
+    cursor: pointer;
+    display: inline-block;
+    background: none;
+
+   
+    border:none;
+   
+
+}
+.Youtube_bottom img{
+    position: relative;
+    width:4vw;
+    height:4vw;
+    right:0.65vw;
+    top:-1vw;
+
+}
+.Linkedin_bottom{
+    position: relative;
+    width:3vw;
+    height:2vw;
+    right:-25vw;
+    top:-8vw;
+    cursor: pointer;
+    display: inline-block;
+    background: none;
+
+   
+    border:none;
+    
+    
+   
+
+}
+.Linkedin_bottom img{
+    position: relative;
+    width:3.5vw;
+    height:3.5vw;
+    right:0.63vw;
+    top:-1vw;
+
+}
+
+.Instagram_bottom{
+    position: relative;
+    width:3vw;
+    height:2vw;
+    right:-37vw;
+    top:-12vw;
+    cursor: pointer;
+    display: inline-block;
+    background: none;
+
+   
+    border:none;
+    
+    
+   
+
+}
+.Instagram_bottom img{
+    position: relative;
+    width:3.5vw;
+    height:3.5vw;
+    right:0.63vw;
+    top:-1vw;
+
+}
+
+.Facebook_bottom{
+    position: relative;
+    width:2vw;
+    height:2vw;
+    right:-43vw;
+    top:-13.8vw;
+    cursor: pointer;
+    display: inline-block;
+    background: none;
+   
+    border:none;
+   
+
+}
+.Facebook_bottom img{
+    position: relative;
+    width:5.5vw;
+    height:3vw;
+    right:2.5vw;
+    top:-1vw;
+
+}
+
+    </style>
+
+</head>
+<body>
+   
+
+    
+    
+
+  
+
+    
+  
+    
+    
+    
+  
+    <div class="navbar" id="navbar">
+        
+        <img class="navbar-logo"src = "imageLogo1.png" alt = "" >
+         
+           
+  
+        <a class = "test"> GARAGE 803 RACING </a>
+       
+        <div class="navbar-menu">
+            
+            <a href="index.html">Home</a>
+            
+            <a href="team.html">Team</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="media.html">Media</a>
+            <a href="donate.html">Donate</a>
+            <a href="contact.html">Contact</a>
+           
+        </div>
+    </div>
+    <main>
+    <h2 class="about" >MEDIA</h2>
+
+   
+
+            
+    <hr class = "line" >
+    <img class="Bar2" src="bar.jpg" alt="">
+    <div class="titleBackground">
+    </div>
+    <h2 class = "mediaDescription">Team photos</h2>
+    <img class="Image1" src="AboutUsPic.jpg" alt="">
+    <img class="Image2" src="competetion.jpg" alt="">
+    <img class="Image3" src="Cubmeeting.JPEG" alt="">
+    <img class="Image4" src="ClubMeeing2.JPEG" alt="">
+    <div class="buttomPage">
+        <img class="Bar" src="bar.jpg" alt="">
+        <img class="buttomPageLogo" src="logo3.png" alt="">
+        <hr class = "buttomLine" >
+        <h2 class = "buttomText">Garage 803 Racing is the solar car<br> racing team for high school students<br> in the MVLA school district<br><br>Est. 2024
+        </h2>
+        <h2 class = "QuickMenu">Menu</h2>
+        <hr class = "verticalLine">
+        
+        <div class="BottomLinks">
+              
+            <a href="index.html">Home</a>
+           
+            <a href="team.html">Team<br>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="media.html">Media</a>
+            <a href="donate.html">Donate</a>
+            <a href="contact.html">Contact</a>
+          
+        </div>
+        <h2 class = "Address">Address</h2>
+        <h2 class = "AdressText">3535 Truman Avenue<br>Mountain View, California<br>94040 </h2>
+        <hr class = "AddressLine" >
+        <h2 class = "NonProfitStat">501(c)(3) Non-Profit Organization</h2>
+        <button class="Linkedin_bottom" onclick="window.open('https://www.linkedin.com/company/garage-803-racing/about/', '_blank')">
+            <img src="LinkedIn-Logo1-removebg-preview.png" alt="Youtube" class="Linkedin">
+        </button>
+        <button class="Youtube_bottom" onclick="window.open('https://www.youtube.com/@Garage.803.Racing/', '_blank')">
+            <img src="youtube-logo-removebg-preview.png" alt="Youtube" class="Youtube">
+        </button>
+        <button class="Instagram_bottom" onclick="window.open('https://www.instagram.com/garage803racing/', '_blank')">
+            <img src="instahram-removebg-preview.png" alt="Youtube" class="Instagram">
+        </button>
+        <button class="Facebook_bottom" onclick="window.open('https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr', '_blank')">
+            <img src="Facebook-Logo.png" alt="Youtube" class="Facebook">
+        </button>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+         
+         
+      
+       
+    
+    
+         
+    </div>
+
+
+
+
+
+
+
+   
+
+
+    
+  
+   
+      
+      
+      
+      
+       
+      
+    </main>
+   
+    <script>
+       
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.classList.add("hidden");
+               
+            } else {
+                navbar.classList.remove("hidden");
+            }
+            lastScrollTop = scrollTop;
+        });
+        
+    </script>
+   
+   
+</body>
+</html>
