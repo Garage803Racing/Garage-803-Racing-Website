@@ -1,0 +1,259 @@
+.navbar{
+	display: flex;
+	width: 100%;
+	background-color: rgb(48, 47, 47);
+	align-items: center;
+}
+.navigation{
+	list-style: none;
+	justify-content: right;
+	align-content: center;
+	display: flex;
+	gap: 10%;
+	padding-right: 30px;
+}
+.logoandname{
+	display: flex;
+	width: 75%;
+	align-items: center;
+}
+.gallery{
+	clear: both;
+	display: inline-block;
+	width: 100%;
+	margin-top: 5px;
+}
+.teamMember{
+	float: left;
+	width: 25%;
+	margin:4.166666667%;
+}
+.bioPhoto{
+	width: 100%;
+	border: 4px solid black;
+	border-radius: 20px;
+	max-height: 2000px;
+	max-width: 1500px;
+}
+.clubName{
+	color: white;
+	font-family:sans-serif;
+	letter-spacing: 7px;
+	font-size: 2vw;
+	
+}
+.navbarlink{
+	color: white;
+	font-family: sans-serif;
+	font-size: 1.05vw; /*Original: 11pt*/
+	font-weight: bold;
+	text-decoration: none;
+}
+.logo{
+	padding: 15px;
+	width: 3.5vw;
+	height: auto;
+	/*Original: 52x60*/
+}
+.teamBox{
+	background-color: white;
+	margin-left: 2%;
+	margin-top: 2%;
+	width: 40%;
+	border-radius: 20px;
+	position: absolute;
+	top: 2vh;
+}
+.team{
+	margin-left: 20px;
+	margin-top: 30px;
+	font-size: 7vw; /*60pt*/
+	margin-bottom: 0px;
+	font-family: sans-serif
+}
+.teamDescription{
+	margin-left: 25px;
+	margin-right: 40px;
+	font-size: 1.2vw;
+	margin-bottom: 50px;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+.line{
+	border: none !important;
+	background-color: black;
+	width: 19vw;
+	height: 5px;
+	margin-left: 30px;
+	box-shadow: none;
+}
+.verticalLine{
+	width: 20%;
+	transform: rotate(90deg);
+}
+.bottomline{
+	border: none;
+	background-color: black;
+	height: 2px;
+	width: 70%;
+	margin-left: 0px;
+	box-shadow: none;
+}
+.background{
+	width: 100%;
+	height: 375px;
+	display: block;
+}
+.teamBanner{
+	position: relative;
+	align-items: center;
+}
+.teamBanner background{
+	display: block;
+	width: 100%;
+}
+.name{
+	font-family: sans-serif;
+	font-weight: normal;
+	text-align: center;
+	font-size: 15pt;
+}
+.bio{
+	font-family: sans-serif;
+	font-weight: lighter;
+	text-align: center;
+	font-size: 12pt;
+}
+body{
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+}
+.QuickMenu{
+	font-family: sans-serif;
+	margin-left: 5%;
+}
+.Youtube{
+	width: 4vw;
+	margin:0.5vw;
+
+}
+.Facebook{
+	width: 4vw;
+	margin:0.5vw;
+
+}
+.Linkedin{
+	width: 4vw;
+	margin:0.5vw;
+
+}
+.Instagram{
+	width: 4vw;
+	margin-left:0.5vw;
+}
+.bottombar{
+	height: 4vw;
+	width: 100%;
+}
+.bottom{
+	background: rgba(225, 222, 222, 1);
+	margin-top: -6px;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 20px;
+}
+.NonProfitStat{
+	background: rgba(225, 222, 222, 1);
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: lighter;
+	font-size: 12pt;
+	color: rgb(100,100,100);
+}
+.bottompagelogo{
+	width: 70%;
+}
+.bottomtext{
+	font-size: 12pt;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+.bottomcol1{
+	width: 25%;
+	margin: 40px;
+}
+.bottomcol2{
+	width: 15%;
+	margin-top: 20px;
+	margin-left: 40px;
+	border-left: 1px solid black;
+}
+.bottomcol3{
+	width: 20%;
+	margin-top: 20px;
+	margin-left: 20px;
+	border-left: 1px solid black;
+
+
+}
+.bottomcol4{
+	width: 20%;
+	margin-left: 0px;
+	margin-right: 20px;
+	display: flex;
+	align-items: center;
+}
+.bottomlink{
+	text-decoration: none;
+	font-size: 12pt;
+	font-family: sans-serif;
+	font-weight: lighter;
+	color: black;
+	margin-left: 5%;
+
+}
+.bottomMenu{
+	list-style: none;
+	padding-left: 0;
+}
+.AddressInfo{
+	font-size: 12pt;
+	font-family: sans-serif;
+	font-weight: lighter;
+	margin-left: 5%;
+
+}
+.Address{
+	font-family: sans-serif;
+	margin-left: 5%;
+
+}
+.Youtube_bottom{
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.Linkedin_bottom{
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.Instagram_bottom{
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.Facebook_bottom{
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+
+
+
+
