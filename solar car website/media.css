@@ -8,6 +8,16 @@
 		transform: translateX(0px);
 	}
 }
+@keyframes title{
+	from{
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
 .navbar{
 	display: flex;
 	width: 100%;
@@ -55,13 +65,16 @@
 	border-radius: 20px;
 	position: absolute;
 	top: 25px;
+	animation: title 1.5s forwards;
 }
 .media{
 	margin-left: 20px;
+	white-space: nowrap;
 	margin-top: 30px;
 	font-size: 7vw; /*60pt*/
 	margin-bottom: 0px;
 	font-family: sans-serif
+	
 }
 .mediaDescription{
 	margin-left: 25px;
@@ -74,7 +87,7 @@
 .line{
 	border: none !important;
 	background-color: black;
-	width: 19vw;
+	width: 22vw;
 	height: 5px;
 	margin-left: 30px;
 	box-shadow: none;
