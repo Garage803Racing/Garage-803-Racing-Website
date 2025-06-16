@@ -7,7 +7,9 @@
 	<title>Garage 803 Racing</title>
  	<link rel="icon" type="image/x-icon" href="images/logo-black-outline.png">
 	<link rel = "stylesheet" href = "team.css">
-	<div class= "navbar">
+</head>
+<body>
+	<div class= "navbar" id="navbar">
 		<div class = "logoandname">
 		<img src="images/logo-black-outline.png" class = "logo" alt = "">
 		<h1 class="clubName">GARAGE 803 RACING</h1>
@@ -25,9 +27,9 @@
 		</nav>
 		</div>
 	</div>
-</head>
+    <div class="navbar-placeholder"></div>
+
 <main>
-<body>
 	<div class = "teamBanner">
 		<img class = "background" src = "images/bar.jpg" alt = "">
 		<div class = "teamBox">
@@ -168,6 +170,39 @@ Mountain View, California<br>
 		
 	</div>
 	<h2 class="NonProfitStat">501(c)(3) Non-Profit Organization</h2>
-	</body>
 </main>
+<script>
+    const navbar = document.getElementById("navbar");
+    const placeholder = document.querySelector(".navbar-placeholder");
+    let lastScrollTop = 0;
+
+    function setPlaceholderHeight() {
+        if (navbar && placeholder) {
+            const navbarHeight = navbar.offsetHeight;
+            placeholder.style.height = navbarHeight + "px";
+        }
+    }
+
+    window.addEventListener('load', setPlaceholderHeight);
+    window.addEventListener('resize', setPlaceholderHeight);
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const atBottom = window.innerHeight + scrollTop >= document.body.offsetHeight - 2;
+
+        if (scrollTop <= 0) {
+            navbar.classList.remove("hidden");
+        }
+        else if (atBottom) {
+            navbar.classList.add("hidden");
+        }
+        else if (scrollTop > lastScrollTop) {
+            navbar.classList.add("hidden");
+        } else {
+            navbar.classList.remove("hidden");
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, false);
+</script>
+</body>
 </html>

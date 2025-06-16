@@ -8,6 +8,24 @@
     <link rel="icon" type="image/x-icon" href="images/logo-black-outline.png">
 
     <style>
+        /* === Navbar Animation Styles START === */
+        .navbar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(0);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-120%);
+        }
+
+        .navbar-placeholder {
+            transition: height 0.3s ease-in-out;
+        }
+        /* === Navbar Animation Styles END === */
        
         body {
             margin: 0;
@@ -18,7 +36,6 @@
             overflow-x: hidden;
         }
         .navbar {
-            position: fixed;
             top: 0;
             width: 100%;
             background: rgb(48, 47, 47);
@@ -26,21 +43,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: top 0.5s;
-            transition-delay: 0.4s;
             z-index: 1;
         }
-       
-        .navbar.hidden {
-            top: -6vw;
-        }
         .navbar-logo {
-            width: 3.5vw; /* Set desired width */
-        height: 4vw; 
-        position: relative;
-        
-            
-       
+            width: 3.5vw;
+            height: 4vw; 
+            position: relative;
             display: flex;
             align-items: center;
             right:-1vw;
@@ -48,13 +56,10 @@
             font-weight: bold;
         }
         h2,a{
-                              
             font-family: proxima-nova, sans-serif;
             font-style: normal;
             font-weight: 100;
             font-size: 1.5vw;
-          
-        
         }
         h1 {
             display: flex;
@@ -62,8 +67,6 @@
             justify-content: center;
             height: 20vh;
             font-size: 2vw;
-
-           
             font-weight: bold;
         }
         .navbar-menu {
@@ -77,7 +80,7 @@
             font-size: 1vw;
         }
         main {
-            padding-top: 10vw;
+            /* padding-top: 10vw; */ /* Placeholder handles this now */
             min-height: -4vw;
             height:4vw;
         }
@@ -89,665 +92,436 @@
             justify-content: center;
             position:relative;
             right:-20vw;
-            
-       
-          
-           
             font-size:2vw
-
         }
         .text{
-              
             color: black;
             display: flex;
             align-items: center;
             justify-content: center;
             position:relative;
             right:-25vw;
-          
             font-size:1.5vw
-            
-            
-
         }
         .section{
             font-weight: bold;
-
             color: black;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             top:-42vw;
-           
-        
-        
             font-size:2vw
-
-
         }
         .textA{
             position: relative;
-
             color: black;
             display: flex;
-           
-          
-           text-align: center;
-           
-           top:-40vw;
-           right:-8vw;
-
-           
-       
-            
-
-
+            text-align: center;
+            top:-40vw;
+            right:-8vw;
         }
         .textB{
             position: relative;
-
             color: black;
             display: flex;
-           
-        
-           text-align: center;
+            text-align: center;
              top:-40vw;
              left:-8vw;
-           
-
-           
-         
-            
-
-
         }
         .buttomPage {
-    position: relative;
-  
-
-    width: 100vw;
-    height: 25vw;
-    background: rgba(225, 222, 222, 0.889);
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-    justify-content: flex-start; /* Align content to the top */
-
-    z-index: 0;
-    top:-25vw;
-    
-}
-
-
-
-       
-       
-      
-
-
+            position: relative;
+            width: 100vw;
+            height: 25vw;
+            background: rgba(225, 222, 222, 0.889);
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: flex-start; 
+            z-index: 0;
+            top:-25vw;
+        }
        
         #myVideo{
-            width: 100vw; /* Set desired width */
-        height: 80vw; /* Set desired height */
-        object-fit: cover; /* Ensures the video fills the area */
-        z-index: -2;
+            width: 100vw; 
+            height: 80vw; 
+            object-fit: cover; 
+            z-index: -2;
         }
         .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 80vw;
-    
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1));  /* Allows interaction with video */
-    z-index: 0;
-}
-
-    .overlay-text {
-    position: absolute;
-    top:10vw;
-    right:30vw;
-   
-  
-   
-    width: 40vw; /* Set desired width */
-    height: 15vw; /*
-    
-    transform: translate(-50%, -50%);
-  /* color: yellow;*/
-   /* font-size: 80px;
-    font-weight: bold;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Adds contrast */ 
-    z-index: 0;
-    }
-    .Aboutchallange{
-        position: relative;
-
-        font-weight: bold;
-
-        color: black;
-        display: flex;
-        align-items: left;
-        justify-content: left;
-       top:-29vw;
-       right:-10vw;
-    
-          
-           
-        font-size:2vw
-
-
-    }
-    .textchallange{
-        position: relative;
-        margin: auto;
-        color: black;
-        display: flex;
-       
-        justify-content: left;
-        right:-7vw;
-        top:-29vw;
-       
-        text-align: left;
-          
-      
-      
-        font-size:1.5vw
-
-
-
-    }
-   
-
-
-    .text-container {
-    display: flex; /* Use flexbox to align the elements on the same line */
-    justify-content: space-between; /* Space the elements apart */
-    align-items: center; /* Vertically align the elements */
-    width: 100vw; /* Ensure the container spans the full width of its parent */
-
-   
-   
-}
-
-       
-       
-
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 80vw;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1));  
+            z-index: 0;
+        }
+        .overlay-text {
+            position: absolute;
+            top:10vw;
+            right:30vw;
+            width: 40vw; 
+            height: 15vw; 
+            z-index: 0;
+        }
+        .Aboutchallange{
+            position: relative;
+            font-weight: bold;
+            color: black;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            top:-29vw;
+            right:-10vw;
+            font-size:2vw
+        }
+        .textchallange{
+            position: relative;
+            margin: auto;
+            color: black;
+            display: flex;
+            justify-content: left;
+            right:-7vw;
+            top:-29vw;
+            text-align: left;
+            font-size:1.5vw
+        }
+        .text-container {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            width: 100vw; 
+        }
        .test {
-   position: fixed;
-
- right:66vw;
-   font-size: 2vw;
-   color: white;
-   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  
-   font-weight: bold;
-   letter-spacing: 0.4vw;
-   white-space: nowrap;
-
-
-  
-  
-  
-
- 
- 
-}
-.buttomPageLogo{
-    width:18vw;
-    height:5vw;
-    left:-38vw;
-    bottom: -1vw;
-    position: relative;
-
-  
-   
-
-}
-.Bar {
-   width:100vw;
-   height:1.8vw;
-    z-index: 1;
-}
-.buttomText {
-    left:-38vw;
-    bottom:-2vw;
-  
-   font-size: 1vw;
-   position: relative;
-
-}
-.buttomLine{
-    right: 38.8vw;
-    bottom:-2vw;
-    position: relative;
-    width: 14vw;
-    height: 0.1vw;
-    border-radius: 20vw;
-    background-color: black; 
-
-}
-.QuickMenu{
-    position: absolute;
-    left:40%;
-
-    top: 13%; /* Moves the element up */
-    
-    font-weight: bold;
-    font-size: 2vw;
-
-   
-}
-
-.BottomLinks {
-    position: absolute;
-      bottom: 15%;
-      left:40vw;
-     
-     
-
- 
-  text-decoration: none; /* Removes underline */
-
-
-
-   
-}
-.BottomLinks a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherit the color from the parent element */
-    display: inline; /* Keeps the elements in line but removes link styling */
-    text-align: left;
-    font-size: 1vw;
-   
-    display: block;
-    margin-bottom: 25%; /* Adds space below each link */
-
-
-}
-.Address{
-    position: absolute;
-
-    top: 13%; /* Moves the element up */
-    left: 55%;
-    font-weight: bold;
-    font-size: 2vw;
-    display: grid;
-
-}
-.verticalLine{
-    position: absolute;
-
-    width: 15vw;
-    height: 0.1%;
-    border-radius: 20vw;
-    background-color: black; 
-    right:53vw;
-    bottom:46%;
-    
-   
-   transform: rotate(90deg);
-
-
-
-}
-.AdressText{
-    position: absolute;
-
-  
-    font-size: 1vw;
-    top:30%;
-    right:33.9vw;
-
-
-
-}
-.AddressLine{
-    position: absolute;
-
-width: 10vw;
-height: 0.1%;
-border-radius: 20vw;
-background-color: black; 
-right:40.5vw;
-bottom:56.5%;
-
-
-transform: rotate(90deg);
-
-
-}
- 
-.NonProfitStat{
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    bottom:-2%;
-    font-size: 1vw;
-    
-   
-    color:rgb(100,100,100)
-
-   
-}
-.ReadMore{
-    border-radius: 25vw;
-    top:-57vw;
-
-    position: relative;
-    right:-8vw;
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherit the color from the parent element */
-    display: inline; 
-    border: 0.1vw solid black;
-    padding: 1vw;   /* Adds space inside the border */
-
-   
-
-}
-.AboutUsPic{
-    position: relative;
-    width:45vw;
-    height:35vw;
-    top:-30vw;
-    right: -4%;
-
-    border-radius: 40px;
-
-
-
-
-}
-.line {
-    position: relative;
-    width: 60vw;
-    height: 0.5vw;
-    border-radius: 20vw;
-    background-color: black; 
-    border: none; 
-    top: -48vw; 
-}
-
-.AboutSolarCar{
-    position: relative;
-    width:48vw;
-    height:30vw;
-  top:-58vw;
-  right:-50vw;
-
-    border-radius: 40px;
-
-
-
-}
-.Youtube_bottom{
-    position: relative;
-    width:3.5vw;
-    height:2vw;
-    right:-31vw;
-    top:-10vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-
-   
-    border:none;
-   
-
-}
-.Youtube_bottom img{
-    position: relative;
-    width:4vw;
-    height:4vw;
-    right:0.65vw;
-    top:-1vw;
-
-}
-.Linkedin_bottom{
-    position: relative;
-    width:3vw;
-    height:2vw;
-    right:-25vw;
-    top:-8vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-
-   
-    border:none;
-    
-    
-   
-
-}
-.Linkedin_bottom img{
-    position: relative;
-    width:3.5vw;
-    height:3.5vw;
-    right:0.63vw;
-    top:-1vw;
-
-}
-
-.Instagram_bottom{
-    position: relative;
-    width:3vw;
-    height:2vw;
-    right:-37vw;
-    top:-12vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-
-   
-    border:none;
-    
-    
-   
-
-}
-.Instagram_bottom img{
-    position: relative;
-    width:3.5vw;
-    height:3.5vw;
-    right:0.63vw;
-    top:-1vw;
-
-}
-
-.Facebook_bottom{
-    position: relative;
-    width:2vw;
-    height:2vw;
-    right:-43vw;
-    top:-13.8vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-   
-    border:none;
-   
-
-}
-.Facebook_bottom img{
-    position: relative;
-    width:5.5vw;
-    height:3vw;
-    right:2.5vw;
-    top:-1vw;
-
-}
-
+           position: fixed;
+           right:66vw;
+           font-size: 2vw;
+           color: white;
+           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+           font-weight: bold;
+           letter-spacing: 0.4vw;
+           white-space: nowrap;
+        }
+        .buttomPageLogo{
+            width:18vw;
+            height:5vw;
+            left:-38vw;
+            bottom: -1vw;
+            position: relative;
+        }
+        .Bar {
+           width:100vw;
+           height:1.8vw;
+            z-index: 1;
+        }
+        .buttomText {
+            left:-38vw;
+            bottom:-2vw;
+           font-size: 1vw;
+           position: relative;
+        }
+        .buttomLine{
+            right: 38.8vw;
+            bottom:-2vw;
+            position: relative;
+            width: 14vw;
+            height: 0.1vw;
+            border-radius: 20vw;
+            background-color: black; 
+        }
+        .QuickMenu{
+            position: absolute;
+            left:40%;
+            top: 13%; 
+            font-weight: bold;
+            font-size: 2vw;
+        }
+        .BottomLinks {
+            position: absolute;
+              bottom: 15%;
+              left:40vw;
+          text-decoration: none; 
+        }
+        .BottomLinks a {
+            text-decoration: none; 
+            color: inherit; 
+            display: inline; 
+            text-align: left;
+            font-size: 1vw;
+            display: block;
+            margin-bottom: 25%;
+        }
+        .Address{
+            position: absolute;
+            top: 13%; 
+            left: 55%;
+            font-weight: bold;
+            font-size: 2vw;
+            display: grid;
+        }
+        .verticalLine{
+            position: absolute;
+            width: 15vw;
+            height: 0.1%;
+            border-radius: 20vw;
+            background-color: black; 
+            right:53vw;
+            bottom:46%;
+           transform: rotate(90deg);
+        }
+        .AdressText{
+            position: absolute;
+            font-size: 1vw;
+            top:30%;
+            right:33.9vw;
+        }
+        .AddressLine{
+            position: absolute;
+            width: 10vw;
+            height: 0.1%;
+            border-radius: 20vw;
+            background-color: black; 
+            right:40.5vw;
+            bottom:56.5%;
+            transform: rotate(90deg);
+        }
+        .NonProfitStat{
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            bottom:-2%;
+            font-size: 1vw;
+            color:rgb(100,100,100)
+        }
+        .ReadMore{
+            border-radius: 25vw;
+            top:-57vw;
+            position: relative;
+            right:-8vw;
+            text-decoration: none; 
+            color: inherit; 
+            display: inline; 
+            border: 0.1vw solid black;
+            padding: 1vw;
+        }
+        .AboutUsPic{
+            position: relative;
+            width:45vw;
+            height:35vw;
+            top:-30vw;
+            right: -4%;
+            border-radius: 40px;
+        }
+        .line {
+            position: relative;
+            width: 60vw;
+            height: 0.5vw;
+            border-radius: 20vw;
+            background-color: black; 
+            border: none; 
+            top: -48vw; 
+        }
+        .AboutSolarCar{
+            position: relative;
+            width:48vw;
+            height:30vw;
+            top:-58vw;
+            right:-50vw;
+            border-radius: 40px;
+        }
+        .Youtube_bottom{
+            position: relative;
+            width:3.5vw;
+            height:2vw;
+            right:-31vw;
+            top:-10vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Youtube_bottom img{
+            position: relative;
+            width:4vw;
+            height:4vw;
+            right:0.65vw;
+            top:-1vw;
+        }
+        .Linkedin_bottom{
+            position: relative;
+            width:3vw;
+            height:2vw;
+            right:-25vw;
+            top:-8vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Linkedin_bottom img{
+            position: relative;
+            width:3.5vw;
+            height:3.5vw;
+            right:0.63vw;
+            top:-1vw;
+        }
+        .Instagram_bottom{
+            position: relative;
+            width:3vw;
+            height:2vw;
+            right:-37vw;
+            top:-12vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Instagram_bottom img{
+            position: relative;
+            width:3.5vw;
+            height:3.5vw;
+            right:0.63vw;
+            top:-1vw;
+        }
+        .Facebook_bottom{
+            position: relative;
+            width:2vw;
+            height:2vw;
+            right:-43vw;
+            top:-13.8vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Facebook_bottom img{
+            position: relative;
+            width:5.5vw;
+            height:3vw;
+            right:2.5vw;
+            top:-1vw;
+        }
     </style>
-
 </head>
 <body>
-  <img id ="myVideo" src="images/ImageTitle.png">
-    
-   
-
-   <div class="video-overlay"></div>
-    
-
+    <img id ="myVideo" src="images/ImageTitle.png">
+    <div class="video-overlay"></div>
     <img class="overlay-text" src = "images/Logo2.png" alt = "" >
-
-    
-  
-    
-    
-    
   
     <div class="navbar" id="navbar">
-        
-            <img class="navbar-logo"src = "images/imageLogo1.png" alt = "" >
-         
-           
-  
+        <img class="navbar-logo"src = "images/imageLogo1.png" alt = "" >
         <a class = "test"> GARAGE 803 RACING </a>
-       
         <div class="navbar-menu">
-            
             <a href="index.html">Home</a>
-            
             <a href="team.html">Team</a>
             <a href="sponsors.html">Sponsors</a>
             <a href="media.html">Media</a>
             <a href="donate.html">Donate</a>
             <a href="contact.html">Contact</a>
-           
         </div>
     </div>
-    <main>
-    <h2 class="about" >About Us</h2>
-    <h2 class = "text"> Garage 803 Racing is a high school team that competes<br> in the Solar Car Challenge. We are based in the MVLA<br> School District in Mountain View / Los Altos, California.<br> As a 501(c)(3) non profit organization, we are dedicated<br> to designing, constructing, and competing with solar-powered<br> vehicles while motivating hands-on STEM education and<br> sustainability. We are a group of passionate students that<br> collaborate to develop engineering solutions, gain real-world<br> problem-solving abilities, and improve our skills through<br> competition. Through commitment and perseverance, we<br> strive to push our boundaries and motivate the future<br> generation of innovators.</h2>
-    <img class = "AboutUsPic" src = "images/AboutUsPic.jpg" alt = "" >
-
-    <br><br><br><br><br>
     
-    <h2 class="Aboutchallange" >About The Solar Car Challenge</h2>
-    <h2 class = "textchallange">The Solar Car Challenge is a national competition for <br>
-        teams from across the U.S. that invites high school <br>
-        students to design, build, and compete with fully<br> 
-        solar-powered vehicles. The event happens every <br>
-        July, and sees around 40 teams across 5 divisions compete<br>
-         in Texas. The competition promotes STEM education, <br>
-        teamwork, and innovation while helping to advance the <br>
-        knowledge of renewable energy. Students apply real-world <br>
-        engineering and problem-solving techniques as they <br>
-        construct their vehicles, testing efficiency, speed, and <br>
-        endurance in a competitive environment. The Solar Car <br>
-        Challenge is greater than a competition, for it fosters<br>
-         leadership, sustainability, and a passion for cutting-edge<br>
-         technology, defining the future of engineers and innovators.
-         
+    <div class="navbar-placeholder"></div>
+
+    <main>
+        <h2 class="about" >About Us</h2>
+        <h2 class = "text"> Garage 803 Racing is a high school team that competes<br> in the Solar Car Challenge. We are based in the MVLA<br> School District in Mountain View / Los Altos, California.<br> As a 501(c)(3) non profit organization, we are dedicated<br> to designing, constructing, and competing with solar-powered<br> vehicles while motivating hands-on STEM education and<br> sustainability. We are a group of passionate students that<br> collaborate to develop engineering solutions, gain real-world<br> problem-solving abilities, and improve our skills through<br> competition. Through commitment and perseverance, we<br> strive to push our boundaries and motivate the future<br> generation of innovators.</h2>
+        <img class = "AboutUsPic" src = "images/AboutUsPic.jpg" alt = "" >
+        <br><br><br><br><br>
+        <h2 class="Aboutchallange" >About The Solar Car Challenge</h2>
+        <h2 class = "textchallange">The Solar Car Challenge is a national competition for <br>
+            teams from across the U.S. that invites high school <br>
+            students to design, build, and compete with fully<br> 
+            solar-powered vehicles. The event happens every <br>
+            July, and sees around 40 teams across 5 divisions compete<br>
+             in Texas. The competition promotes STEM education, <br>
+            teamwork, and innovation while helping to advance the <br>
+            knowledge of renewable energy. Students apply real-world <br>
+            engineering and problem-solving techniques as they <br>
+            construct their vehicles, testing efficiency, speed, and <br>
+            endurance in a competitive environment. The Solar Car <br>
+            Challenge is greater than a competition, for it fosters<br>
+             leadership, sustainability, and a passion for cutting-edge<br>
+             technology, defining the future of engineers and innovators.
         </h2>
         <img class = "AboutSolarCar"src="images/competetion.jpg" alt="" >
         <br><br><br>
-
-
-            
-    <a class = "ReadMore"href="https://www.solarcarchallenge.org/challenge/" target="_blank">Read More →</a>
-    <hr class = "line" >
-    <h2 class ="section">Our Aim                                                                  Our goal</h2>
-    <div class = "text-container">
-        <h2 class="textA">We aim to provide an environment which allows for students<br> to explore one of the aspects of an engineering<br> pathway, work with peers, and serve the community.  </h2>
-        <h2 class="textB">Our goal is to foster the development of soft skills such<br> as teamwork, communication, and problem solving, as<br> well as hard skills in CAD, design, manufacturing, etc. </h2>
-    </div>
-<div class="buttomPage">
-    <img class="Bar" src="images/bar.jpg" alt="">
-    <img class="buttomPageLogo" src="images/logo3.png" alt="">
-    <hr class = "buttomLine" >
-    <h2 class = "buttomText">Garage 803 Racing is the solar car<br> racing team for high school students<br> in the MVLA school district<br><br>Est. 2024
-    </h2>
-    <h2 class = "QuickMenu">Menu</h2>
-    <hr class = "verticalLine">
-    
-    <div class="BottomLinks">
-          
-        <a href="index.html">Home</a>
-       
-        <a href="team.html">Team<br>
-        <a href="sponsors.html">Sponsors</a>
-        <a href="media.html">Media</a>
-        <a href="donate.html">Donate</a>
-        <a href="contact.html">Contact</a>
-      
-    </div>
-    <h2 class = "Address">Address</h2>
-    <h2 class = "AdressText">3535 Truman Avenue<br>Mountain View, California<br>94040 </h2>
-    
-    <hr class = "AddressLine" >
-    <h2 class = "NonProfitStat">501(c)(3) Non-Profit Organization</h2>
-    <button class="Linkedin_bottom" onclick="window.open('https://www.linkedin.com/company/garage-803-racing/about/', '_blank')">
-        <img src="images/LinkedIn-Logo1-removebg-preview.png" alt="Youtube" class="Linkedin">
-    </button>
-    <button class="Youtube_bottom" onclick="window.open('https://www.youtube.com/@Garage.803.Racing/', '_blank')">
-        <img src="images/youtube-logo-removebg-preview.png" alt="Youtube" class="Youtube">
-    </button>
-    <button class="Instagram_bottom" onclick="window.open('https://www.instagram.com/garage803racing/', '_blank')">
-        <img src="images/instahram-removebg-preview.png" alt="Youtube" class="Instagram">
-    </button>
-    <button class="Facebook_bottom" onclick="window.open('https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr', '_blank')">
-        <img src="images/Facebook-Logo.png" alt="Youtube" class="Facebook">
-    </button>
-   
-   
-
-
-
-
-
-
-
-
-
-
-  
-  
-     
-     
-  
-   
-
-
-     
-</div>
-
-
- 
-    
-
-
-    
-  
-   
-      
-      
-      
-      
-       
-      
+        <a class = "ReadMore"href="https://www.solarcarchallenge.org/challenge/" target="_blank">Read More →</a>
+        <hr class = "line" >
+        <h2 class ="section">Our Aim                                                                  Our goal</h2>
+        <div class = "text-container">
+            <h2 class="textA">We aim to provide an environment which allows for students<br> to explore one of the aspects of an engineering<br> pathway, work with peers, and serve the community.  </h2>
+            <h2 class="textB">Our goal is to foster the development of soft skills such<br> as teamwork, communication, and problem solving, as<br> well as hard skills in CAD, design, manufacturing, etc. </h2>
+        </div>
+        <div class="buttomPage">
+            <img class="Bar" src="images/bar.jpg" alt="">
+            <img class="buttomPageLogo" src="images/logo3.png" alt="">
+            <hr class = "buttomLine" >
+            <h2 class = "buttomText">Garage 803 Racing is the solar car<br> racing team for high school students<br> in the MVLA school district<br><br>Est. 2024
+            </h2>
+            <h2 class = "QuickMenu">Menu</h2>
+            <hr class = "verticalLine">
+            <div class="BottomLinks">
+                <a href="index.html">Home</a>
+                <a href="team.html">Team<br>
+                <a href="sponsors.html">Sponsors</a>
+                <a href="media.html">Media</a>
+                <a href="donate.html">Donate</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <h2 class = "Address">Address</h2>
+            <h2 class = "AdressText">3535 Truman Avenue<br>Mountain View, California<br>94040 </h2>
+            <hr class = "AddressLine" >
+            <h2 class = "NonProfitStat">501(c)(3) Non-Profit Organization</h2>
+            <button class="Linkedin_bottom" onclick="window.open('https://www.linkedin.com/company/garage-803-racing/about/', '_blank')">
+                <img src="images/LinkedIn-Logo1-removebg-preview.png" alt="Youtube" class="Linkedin">
+            </button>
+            <button class="Youtube_bottom" onclick="window.open('https://www.youtube.com/@Garage.803.Racing/', '_blank')">
+                <img src="images/youtube-logo-removebg-preview.png" alt="Youtube" class="Youtube">
+            </button>
+            <button class="Instagram_bottom" onclick="window.open('https://www.instagram.com/garage803racing/', '_blank')">
+                <img src="images/instahram-removebg-preview.png" alt="Youtube" class="Instagram">
+            </button>
+            <button class="Facebook_bottom" onclick="window.open('https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr', '_blank')">
+                <img src="images/Facebook-Logo.png" alt="Youtube" class="Facebook">
+            </button>
+        </div>
     </main>
    
     <script>
-       
-        let lastScrollTop = 0;
         const navbar = document.getElementById("navbar");
+        const placeholder = document.querySelector(".navbar-placeholder");
+        let lastScrollTop = 0;
+
+        function setPlaceholderHeight() {
+            if (navbar && placeholder) {
+                const navbarHeight = navbar.offsetHeight;
+                placeholder.style.height = navbarHeight + "px";
+            }
+        }
+
+        window.addEventListener('load', setPlaceholderHeight);
+        window.addEventListener('resize', setPlaceholderHeight);
+
         window.addEventListener("scroll", function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
+            const atBottom = window.innerHeight + scrollTop >= document.body.offsetHeight - 2;
+
+            if (scrollTop <= 0) {
+                navbar.classList.remove("hidden");
+            }
+            else if (atBottom) {
                 navbar.classList.add("hidden");
-               
+            }
+            else if (scrollTop > lastScrollTop) {
+                navbar.classList.add("hidden");
             } else {
                 navbar.classList.remove("hidden");
             }
-            lastScrollTop = scrollTop;
-        });
-        
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
     </script>
-   
-   
 </body>
 </html>
