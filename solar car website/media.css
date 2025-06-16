@@ -260,8 +260,21 @@ body{
 	border: none;
 	cursor: pointer;
 }
-
-
-
-
-
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+}
+.navbar.hidden {
+    transform: translateY(-120%);
+}
+.navbar-placeholder {
+    transition: height 0.3s ease-in-out;
+}
+.navbar.hidden + .navbar-placeholder {
+    height: 0;
+}

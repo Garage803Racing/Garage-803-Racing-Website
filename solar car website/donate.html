@@ -7,6 +7,24 @@
     <title>Garage 803 Racing</title>
     <link rel="icon" type="image/x-icon" href="images/logo-black-outline.png">
     <style>
+        /* === Navbar Animation Styles START === */
+        .navbar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(0);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-120%);
+        }
+
+        .navbar-placeholder {
+            transition: height 0.3s ease-in-out;
+        }
+        /* === Navbar Animation Styles END === */
        
         body {
             margin: 0;
@@ -16,10 +34,9 @@
             background: rgba(0, 0, 0, 0);
             overflow-x: hidden;
             min-height: 0vh;
-            
         }
         .navbar {
-            position: fixed;
+            /* position: fixed; */
             top: 0;
             width: 100%;
             background: rgb(48, 47, 47);
@@ -27,21 +44,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: top 0.5s;
-            transition-delay: 0.4s;
+            /* transition: top 0.5s; */
             z-index: 1;
         }
        
-        .navbar.hidden {
+        /* .navbar.hidden {
             top: -6vw;
-        }
+        } */
         .navbar-logo {
-            width: 3.5vw; /* Set desired width */
-        height: 4vw; 
-        position: relative;
-        
-            
-       
+            width: 3.5vw; 
+            height: 4vw; 
+            position: relative;
             display: flex;
             align-items: center;
             right:-1vw;
@@ -49,13 +62,10 @@
             font-weight: bold;
         }
         h2,a{
-                              
             font-family: proxima-nova, sans-serif;
             font-style: normal;
             font-weight: 100;
             font-size: 1.5vw;
-          
-        
         }
         h1 {
             display: flex;
@@ -63,8 +73,6 @@
             justify-content: center;
             height: 20vh;
             font-size: 2vw;
-
-           
             font-weight: bold;
         }
         .navbar-menu {
@@ -78,7 +86,7 @@
             font-size: 1vw;
         }
         main {
-            padding-top: 10vw;
+            /* padding-top: 10vw; */
             min-height: -4vw;
             height:4vw;
         }
@@ -91,478 +99,329 @@
             position:relative;
            left:-35vw;
            top:-4vw;
-           
-            
-       
-          
-           
             font-size:5vw
-
         }
-       
-       
-
-   
         .test {
-    position: fixed;
-
-  right:66vw;
-    font-size: 2vw;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-   
-    font-weight: bold;
-    letter-spacing: 0.4vw;
-    white-space: nowrap;
-
-
-   
-   
-   
-
-  
-  
-}
-
-
-.line {
-    position: relative;
-    width:14vw;
-    height: 0.3vw;
-    border-radius: 20vw;
-    background-color: black; 
-    border: none; 
-    right:38vw;
-    top:-8vw;
-}
-
-.Bar2 {
-    position:relative;
-   width:100vw;
-   height:30vw;
-    z-index: -1;
-    top:-22vw;
-    
-}
-.titleBackground{
-    position: relative;
-  width: 40vw;
-  height: 20vw;
-  background:white;
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center;
-  justify-content: flex-start; /* Align content to the top */
-
-  z-index: -1;
-  top:-46.5vw;
-  border-radius: 20px;
-  right:-2vw;
-}
-.donoteDescription{
-    position: relative;
-    top:-58vw;
-    right:-5vw;
-    font-size: 1.2vw;;
-}
-.ContactTitle{
-    position: relative;
-    align-items: center;
-    text-align: center;
-    top:-7vw;
-    font-weight: bold;
-    font-size: 5vw;
-}
-.Bar {
-    position: relative;
-    width:100vw;
-   height:1.8vw;
-    z-index: -1;
-}
-Address{
-    position: absolute;
-
-    top: 13%; /* Moves the element up */
-    left: 55%;
-    font-weight: bold;
-    font-size: 2vw;
-    display: grid;
-
-}
-.verticalLine{
-    position: absolute;
-
-    width: 15vw;
-    height: 0.1%;
-    border-radius: 20vw;
-    background-color: black; 
-    right:53vw;
-    bottom:46%;    
-   
-   transform: rotate(90deg);
-
-
-
-}
-.AdressText{
-    position: absolute;
-
-  
-    font-size: 1vw;
-    top:30%;
-    right:33.9vw;
-
-
-
-}
-.AddressLine{
-    position: absolute;
-
-width: 10vw;
-height: 0.1%;
-border-radius: 20vw;
-background-color: black; 
-right:40.5vw;
-bottom:56.5%;
-
-
-transform: rotate(90deg);
-
-
-}
- 
-.NonProfitStat{
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    bottom:-2%;
-    font-size: 1vw;
-    color:rgb(100,100,100)
-}
-.buttomPageLogo{
-    width:18vw;
-    height:5vw;
-    left:-38vw;
-    bottom: -1vw;
-    position: relative;
-}
-.buttomPage {
-    position: relative;
-  
-
-    width: 100vw;
-    height: 25vw;
-    background: rgba(225, 222, 222, 1);
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-    justify-content: flex-start; /* Align content to the top */
-
-    z-index: 0;
-    top:-30vw;
-    
-}
-.BottomLinks {
-    position: absolute;
-      bottom:15%;
-      left:40vw;
-  text-decoration: none; /* Removes underline */  
-}
-.BottomLinks a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherit the color from the parent element */
-    display: inline; /* Keeps the elements in line but removes link styling */
-    text-align: left;
-    font-size: 1vw;
-    display: block;
-    margin-bottom: 25%; /* Adds space below each link */
-
-}
-.buttomText {
-    left:-38vw;
-    bottom:-2vw;
-  
-   font-size: 1vw;
-   position: relative;
-
-}
-.QuickMenu{
-    position: absolute;
-    left:40%;
-
-    top: 13%; /* Moves the element up */
-    
-    font-weight: bold;
-    font-size: 2vw;
-
-   
-}
-.Address{
-    position: absolute;
-
-    top: 13%; /* Moves the element up */
-    left: 55%;
-    font-weight: bold;
-    font-size: 2vw;
-    display: grid;
-
-}
-.buttomLine{
-    right: 38.8vw;
-    bottom:-2vw;
-    position: relative;
-    width: 14vw;
-    height: 0.1vw;
-    border-radius: 20vw;
-    background-color: black; 
-
-}
-.buttomLine{
-    right: 38.8vw;
-    bottom:-2vw;
-    position: relative;
-    width: 14vw;
-    height: 0.1vw;
-    border-radius: 20vw;
-    background-color: black; 
-
-}
-.Youtube_bottom{
-    position: relative;
-    width:3.5vw;
-    height:2vw;
-    right:-31vw;
-    top:-10vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-
-   
-    border:none;
-   
-
-}
-.Youtube_bottom img{
-    position: relative;
-    width:4vw;
-    height:4vw;
-    right:0.65vw;
-    top:-1vw;
-
-}
-.Linkedin_bottom{
-    position: relative;
-    width:3vw;
-    height:2vw;
-    right:-25vw;
-    top:-8vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-
-   
-    border:none;
-    
-    
-   
-
-}
-.Linkedin_bottom img{
-    position: relative;
-    width:3.5vw;
-    height:3.5vw;
-    right:0.63vw;
-    top:-1vw;
-
-}
-
-.Instagram_bottom{
-    position: relative;
-    width:3vw;
-    height:2vw;
-    right:-37vw;
-    top:-12vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-
-   
-    border:none;
-    
-    
-   
-
-}
-.Instagram_bottom img{
-    position: relative;
-    width:3.5vw;
-    height:3.5vw;
-    right:0.63vw;
-    top:-1vw;
-
-}
-
-.Facebook_bottom{
-    position: relative;
-    width:2vw;
-    height:2vw;
-    right:-43vw;
-    top:-13.8vw;
-    cursor: pointer;
-    display: inline-block;
-    background: none;
-   
-    border:none;
-   
-
-}
-.Facebook_bottom img{
-    position: relative;
-    width:5.5vw;
-    height:3vw;
-    right:2.5vw;
-    top:-1vw;
-
-}
-.DonateNow{
-    align-items: center;
-    
-    border-radius: 25vw; /* Less rounding */
-    top:-48vw;
-    position: relative;
-    right:-22vw;
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherit the color from the parent element */
-    display: inline-block; /* Ensures width/height apply */
-    padding: 3vw;   /* Adds space inside the border */
-    background:rgb(37,170,225); ;
-    font-weight: bold;
-    font-size: 6vw;
-    width:50vw;
-    text-align: center;
-    color: rgb(58,58,60);
-
-}
-
-.Section1{
-    
-    position: relative;
-   
-    top:-47vw;
-    font-weight: bold;
-    font-size: 3vw;
-    right:-5vw;
-  
- 
-    
-}
-.text1{
-    
-    position: relative;
-   
-    top:-47vw;
-    font-size: 1.5vw;
-    right:-5vw;
-  
- 
-    
-}
-.section1Line{
-     
-    position: relative;
-   
-    top:-48vw;
-    font-size: 1.5vw;
-    right:35.5vw;
-    width:18vw;
-    height:0.2vw;
-    background: black;
-    border-radius: 25vw;
-
-}
-
-.Section2{
-    
-    position: relative;
-   
-    top:-42vw;
-    font-weight: bold;
-    font-size: 3vw;
-    right:-5vw;
-  
- 
-    
-}
-.text2{
-    
-    position: relative;
-   
-    top:-42vw;
-    font-size: 1.5vw;
-    right:-5vw;
-  
- 
-    
-}
-.section2Line{
-     
-    position: relative;
-   
-    top:-43vw;
-    font-size: 1.5vw;
-    right:35.5vw;
-    width:18vw;
-    height:0.2vw;
-    background: black;
-    border-radius: 25vw;
-
-}
-
-
+            position: fixed;
+            right:66vw;
+            font-size: 2vw;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+            font-weight: bold;
+            letter-spacing: 0.4vw;
+            white-space: nowrap;
+        }
+        .line {
+            position: relative;
+            width:14vw;
+            height: 0.3vw;
+            border-radius: 20vw;
+            background-color: black; 
+            border: none; 
+            right:38vw;
+            top:-8vw;
+        }
+        .Bar2 {
+            position:relative;
+            width:100vw;
+            height:30vw;
+            z-index: -1;
+            top:-22vw;
+        }
+        .titleBackground{
+            position: relative;
+            width: 40vw;
+            height: 20vw;
+            background:white;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: flex-start; 
+            z-index: -1;
+            top:-46.5vw;
+            border-radius: 20px;
+            right:-2vw;
+        }
+        .donoteDescription{
+            position: relative;
+            top:-58vw;
+            right:-5vw;
+            font-size: 1.2vw;;
+        }
+        .ContactTitle{
+            position: relative;
+            align-items: center;
+            text-align: center;
+            top:-7vw;
+            font-weight: bold;
+            font-size: 5vw;
+        }
+        .Bar {
+            position: relative;
+            width:100vw;
+            height:1.8vw;
+            z-index: -1;
+        }
+        Address{
+            position: absolute;
+            top: 13%; 
+            left: 55%;
+            font-weight: bold;
+            font-size: 2vw;
+            display: grid;
+        }
+        .verticalLine{
+            position: absolute;
+            width: 15vw;
+            height: 0.1%;
+            border-radius: 20vw;
+            background-color: black; 
+            right:53vw;
+            bottom:46%;    
+            transform: rotate(90deg);
+        }
+        .AdressText{
+            position: absolute;
+            font-size: 1vw;
+            top:30%;
+            right:33.9vw;
+        }
+        .AddressLine{
+            position: absolute;
+            width: 10vw;
+            height: 0.1%;
+            border-radius: 20vw;
+            background-color: black; 
+            right:40.5vw;
+            bottom:56.5%;
+            transform: rotate(90deg);
+        }
+        .NonProfitStat{
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            bottom:-2%;
+            font-size: 1vw;
+            color:rgb(100,100,100)
+        }
+        .buttomPageLogo{
+            width:18vw;
+            height:5vw;
+            left:-38vw;
+            bottom: -1vw;
+            position: relative;
+        }
+        .buttomPage {
+            position: relative;
+            width: 100vw;
+            height: 25vw;
+            background: rgba(225, 222, 222, 1);
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: flex-start; 
+            z-index: 0;
+            top:-30vw;
+        }
+        .BottomLinks {
+            position: absolute;
+            bottom:15%;
+            left:40vw;
+            text-decoration: none; 
+        }
+        .BottomLinks a {
+            text-decoration: none; 
+            color: inherit; 
+            display: inline; 
+            text-align: left;
+            font-size: 1vw;
+            display: block;
+            margin-bottom: 25%; 
+        }
+        .buttomText {
+            left:-38vw;
+            bottom:-2vw;
+            font-size: 1vw;
+            position: relative;
+        }
+        .QuickMenu{
+            position: absolute;
+            left:40%;
+            top: 13%; 
+            font-weight: bold;
+            font-size: 2vw;
+        }
+        .Address{
+            position: absolute;
+            top: 13%; 
+            left: 55%;
+            font-weight: bold;
+            font-size: 2vw;
+            display: grid;
+        }
+        .buttomLine{
+            right: 38.8vw;
+            bottom:-2vw;
+            position: relative;
+            width: 14vw;
+            height: 0.1vw;
+            border-radius: 20vw;
+            background-color: black; 
+        }
+        .Youtube_bottom{
+            position: relative;
+            width:3.5vw;
+            height:2vw;
+            right:-31vw;
+            top:-10vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Youtube_bottom img{
+            position: relative;
+            width:4vw;
+            height:4vw;
+            right:0.65vw;
+            top:-1vw;
+        }
+        .Linkedin_bottom{
+            position: relative;
+            width:3vw;
+            height:2vw;
+            right:-25vw;
+            top:-8vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Linkedin_bottom img{
+            position: relative;
+            width:3.5vw;
+            height:3.5vw;
+            right:0.63vw;
+            top:-1vw;
+        }
+        .Instagram_bottom{
+            position: relative;
+            width:3vw;
+            height:2vw;
+            right:-37vw;
+            top:-12vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Instagram_bottom img{
+            position: relative;
+            width:3.5vw;
+            height:3.5vw;
+            right:0.63vw;
+            top:-1vw;
+        }
+        .Facebook_bottom{
+            position: relative;
+            width:2vw;
+            height:2vw;
+            right:-43vw;
+            top:-13.8vw;
+            cursor: pointer;
+            display: inline-block;
+            background: none;
+            border:none;
+        }
+        .Facebook_bottom img{
+            position: relative;
+            width:5.5vw;
+            height:3vw;
+            right:2.5vw;
+            top:-1vw;
+        }
+        .DonateNow{
+            align-items: center;
+            border-radius: 25vw; 
+            top:-48vw;
+            position: relative;
+            right:-22vw;
+            text-decoration: none; 
+            color: inherit; 
+            display: inline-block; 
+            padding: 3vw;   
+            background:rgb(37,170,225); ;
+            font-weight: bold;
+            font-size: 6vw;
+            width:50vw;
+            text-align: center;
+            color: rgb(58,58,60);
+        }
+        .Section1{
+            position: relative;
+            top:-47vw;
+            font-weight: bold;
+            font-size: 3vw;
+            right:-5vw;
+        }
+        .text1{
+            position: relative;
+            top:-47vw;
+            font-size: 1.5vw;
+            right:-5vw;
+        }
+        .section1Line{
+            position: relative;
+            top:-48vw;
+            font-size: 1.5vw;
+            right:35.5vw;
+            width:18vw;
+            height:0.2vw;
+            background: black;
+            border-radius: 25vw;
+        }
+        .Section2{
+            position: relative;
+            top:-42vw;
+            font-weight: bold;
+            font-size: 3vw;
+            right:-5vw;
+        }
+        .text2{
+            position: relative;
+            top:-42vw;
+            font-size: 1.5vw;
+            right:-5vw;
+        }
+        .section2Line{
+            position: relative;
+            top:-43vw;
+            font-size: 1.5vw;
+            right:35.5vw;
+            width:18vw;
+            height:0.2vw;
+            background: black;
+            border-radius: 25vw;
+        }
     </style>
-
 </head>
 <body>
-   
-
-    
-    
-
-  
-
-    
-  
-    
-    
-    
-  
     <div class="navbar" id="navbar">
-        
         <img class="navbar-logo"src = "images/imageLogo1.png" alt = "" >
-         
-           
-  
         <a class = "test"> GARAGE 803 RACING </a>
-       
         <div class="navbar-menu">
-            
             <a href="index.html">Home</a>
-            
             <a href="team.html">Team</a>
             <a href="sponsors.html">Sponsors</a>
             <a href="media.html">Media</a>
             <a href="donate.html">Donate</a>
             <a href="contact.html">Contact</a>
-           
         </div>
     </div>
-    <main>
+    <div class="navbar-placeholder"></div>
+<main>
     <h2 class="about" >DONATE</h2>
-
-   
-
-            
     <hr class = "line" >
     <img class="Bar2" src="images/bar.jpg" alt="">
     <div class="titleBackground">
@@ -575,9 +434,7 @@ transform: rotate(90deg);
     <h2 class = "text1">We will design and build a one-seater solar car that's fully dependent on solar energy. This car will be designed to race on<br> the Texas Motor Speedway over the course of 4 days during the summer (2025 event). Throughout the season, we will<br> research, design, and manufacture a race-capable solar car for the event in Dallas.</h2>
     <h2 class = "Section2">WHY WE NEED YOUR HELP</h2>
     <hr class = "section2Line">
-
     <h2 class = "text2">We need YOUR help to support us financially as we compete in the High School Solar Car Challenge in Texas! Building<br> and racing a solar-powered car requires funding for materials, tools, travel, and competition fees. Your donation will enable<br> us to bring this project to life, allowing students to gain hands-on STEM experience while advancing sustainable technology<br> and awareness. Together, we can drive innovation and inspire future problem-solvers!</h2>
-
 
     <div class="buttomPage">
         <img class="Bar" src="images/bar.jpg" alt="">
@@ -589,15 +446,12 @@ transform: rotate(90deg);
         <hr class = "verticalLine">
         
         <div class="BottomLinks">
-              
             <a href="index.html">Home</a>
-           
             <a href="team.html">Team<br>
             <a href="sponsors.html">Sponsors</a>
             <a href="media.html">Media</a>
             <a href="donate.html">Donate</a>
             <a href="contact.html">Contact</a>
-          
         </div>
         <h2 class = "Address">Address</h2>
         <h2 class = "AdressText">3535 Truman Avenue<br>Mountain View, California<br>94040 </h2>
@@ -615,53 +469,41 @@ transform: rotate(90deg);
         <button class="Facebook_bottom" onclick="window.open('https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr', '_blank')">
             <img src="images/Facebook-Logo.png" alt="Youtube" class="Facebook">
         </button>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
-      
-         
-         
-      
-       
-    
-    
-         
     </div>
-
-
-
+</main>
    
+<script>
+    const navbar = document.getElementById("navbar");
+    const placeholder = document.querySelector(".navbar-placeholder");
+    let lastScrollTop = 0;
 
+    function setPlaceholderHeight() {
+        if (navbar && placeholder) {
+            const navbarHeight = navbar.offsetHeight;
+            placeholder.style.height = navbarHeight + "px";
+        }
+    }
 
- 
+    window.addEventListener('load', setPlaceholderHeight);
+    window.addEventListener('resize', setPlaceholderHeight);
 
-      
-    </main>
-   
-    <script>
-       
-        let lastScrollTop = 0;
-        const navbar = document.getElementById("navbar");
-        window.addEventListener("scroll", function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                navbar.classList.add("hidden");
-               
-            } else {
-                navbar.classList.remove("hidden");
-            }
-            lastScrollTop = scrollTop;
-        });
-        
-    </script>
-   
-   
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const atBottom = window.innerHeight + scrollTop >= document.body.offsetHeight - 2;
+
+        if (scrollTop <= 0) {
+            navbar.classList.remove("hidden");
+        }
+        else if (atBottom) {
+            navbar.classList.add("hidden");
+        }
+        else if (scrollTop > lastScrollTop) {
+            navbar.classList.add("hidden");
+        } else {
+            navbar.classList.remove("hidden");
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, false);
+</script>
 </body>
 </html>
