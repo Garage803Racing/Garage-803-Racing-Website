@@ -60,17 +60,17 @@
 .mediaBox{
 	background-color: white;
 	margin-left: 2%;
-	margin-top: 2%;
+	margin-top: 3%;
+	margin-bottom: 3%;
 	width: 40%;
 	border-radius: 20px;
-	position: absolute;
-	top: 25px;
 	animation: title 1.5s forwards;
+	align-content: center;
 }
 .media{
 	margin-left: 20px;
 	white-space: nowrap;
-	margin-top: 30px;
+	margin-top: 20px;
 	font-size: 7vw; /*60pt*/
 	margin-bottom: 0px;
 	font-family: sans-serif
@@ -80,7 +80,7 @@
 	margin-left: 25px;
 	margin-right: 40px;
 	font-size: 1.2vw;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	font-family: sans-serif;
 	font-weight: lighter;
 }
@@ -100,18 +100,11 @@
 	margin-left: 0px;
 	box-shadow: none;
 }
-.background{
-	width: 100%;
-	height: 375px;
-	display: block;
-}
 .mediaBanner{
-	position: relative;
-	align-items: center;
-}
-.mediaBanner background{
-	display: block;
-	width: 100%;
+	background-image: url("images/bar.jpg");
+	background-size: 100% 100%;
+	margin-top: 0%;
+	align-content: center;
 }
 .gallery {
   column-count: 4;
