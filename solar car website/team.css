@@ -8,6 +8,27 @@
 		transform: translateY(0px);
 	}
 }
+@media(max-width: 1300px){
+	.teamMember{
+		width: 60% !important;
+		margin: 10% 20% 10% 20% !important;
+	}
+	.name{
+		font-size: 22pt !important;
+	}
+	.bio{
+		font-size: 18pt !important;
+	}
+	.teamDescription{
+		font-size: 12pt !important;
+	}
+	.bottomcol4{
+		display: flex;
+		flex-direction: column !important;
+		justify-content: center !important;
+	}
+
+}
 .navbar{
 	display: flex;
 	width: 100%;
@@ -48,7 +69,7 @@
 .clubName{
 	color: white;
 	font-family:sans-serif;
-	letter-spacing: 7px;
+	letter-spacing: 3px;
 	font-size: 2vw;
 	
 }
@@ -117,6 +138,7 @@
 }
 .teamBanner{
 	background-image: url("images/bar.jpg");
+	aspect-ratio: 4/1;
 	background-size: 100% 100%;
 	margin-top: 0%;
 	align-content: center;
@@ -206,6 +228,9 @@ body{
 	margin-top: 20px;
 	margin-left: 20px;
 	border-left: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 110px;
 
 
 }
