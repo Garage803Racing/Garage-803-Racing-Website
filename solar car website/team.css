@@ -20,12 +20,19 @@
 		font-size: 18pt !important;
 	}
 	.teamDescription{
-		font-size: 12pt !important;
+		font-size: 9pt !important;
+		margin-bottom: 10px !important;
+	}
+	.team{
+		margin-top: 10px !important;
 	}
 	.bottomcol4{
 		display: flex;
 		flex-direction: column !important;
 		justify-content: center !important;
+	}
+	.teamBox{
+		width: 60% !important;
 	}
 
 }
