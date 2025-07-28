@@ -1,509 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
     <title>Garage 803 Racing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
-    <style>
-        /* === Navbar Animation Styles START === */
-        .navbar {
-            position: fixed;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            transition: transform 0.3s ease-in-out;
-            transform: translateY(0);
-        }
-
-        .navbar.hidden {
-            transform: translateY(-120%);
-        }
-
-        .navbar-placeholder {
-            transition: height 0.3s ease-in-out;
-        }
-        /* === Navbar Animation Styles END === */
-       
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow-y: auto;
-            height: 30vw;
-            background: rgba(0, 0, 0, 0);
-            overflow-x: hidden;
-            min-height: 0vh;
-        }
-        .navbar {
-            /* position: fixed; */
-            top: 0;
-            width: 100%;
-            background: rgb(48, 47, 47);
-            padding: 1vw 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* transition: top 0.5s; */
-            z-index: 1;
-        }
-       
-        /* .navbar.hidden {
-            top: -6vw;
-        } */
-        .navbar-logo {
-            width: 3.5vw; 
-            height: 4vw; 
-            position: relative;
-            display: flex;
-            align-items: center;
-            right:-1vw;
-            color: yellow;
-            font-weight: bold;
-        }
-        h2,a{
-            font-family: proxima-nova, sans-serif;
-            font-style: normal;
-            font-weight: 100;
-            font-size: 1.5vw;
-        }
-        h1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 20vh;
-            font-size: 2vw;
-            font-weight: bold;
-        }
-        .navbar-menu {
-            margin-right: 1vw;
-        }
-        .navbar-menu a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1vw;
-            font-weight: bold;
-            font-size: 1vw;
-        }
-        main {
-            /* padding-top: 10vw; */
-            min-height: -4vw;
-            height:4vw;
-        }
-        .about{
-            font-weight: bold;
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position:relative;
-           left:-35vw;
-           top:-4vw;
-            font-size:5vw
-        }
-        .test {
-            position: fixed;
-            right:66vw;
-            font-size: 2vw;
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-            font-weight: bold;
-            letter-spacing: 0.4vw;
-            white-space: nowrap;
-        }
-        .line {
-            position: relative;
-            width:14vw;
-            height: 0.3vw;
-            border-radius: 20vw;
-            background-color: black; 
-            border: none; 
-            right:38vw;
-            top:-8vw;
-        }
-        .Bar2 {
-            position:relative;
-            width:100vw;
-            height:30vw;
-            z-index: -1;
-            top:-22vw;
-        }
-        .titleBackground{
-            position: relative;
-            width: 40vw;
-            height: 20vw;
-            background:white;
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            justify-content: flex-start; 
-            z-index: -1;
-            top:-46.5vw;
-            border-radius: 20px;
-            right:-2vw;
-        }
-        .donoteDescription{
-            position: relative;
-            top:-58vw;
-            right:-5vw;
-            font-size: 1.2vw;;
-        }
-        .ContactTitle{
-            position: relative;
-            align-items: center;
-            text-align: center;
-            top:-7vw;
-            font-weight: bold;
-            font-size: 5vw;
-        }
-        .Bar {
-            position: relative;
-            width:100vw;
-            height:1.8vw;
-            z-index: -1;
-        }
-        Address{
-            position: absolute;
-            top: 13%; 
-            left: 55%;
-            font-weight: bold;
-            font-size: 2vw;
-            display: grid;
-        }
-        .verticalLine{
-            position: absolute;
-            width: 15vw;
-            height: 0.1%;
-            border-radius: 20vw;
-            background-color: black; 
-            right:53vw;
-            bottom:46%;    
-            transform: rotate(90deg);
-        }
-        .AdressText{
-            position: absolute;
-            font-size: 1vw;
-            top:30%;
-            right:33.9vw;
-        }
-        .AddressLine{
-            position: absolute;
-            width: 10vw;
-            height: 0.1%;
-            border-radius: 20vw;
-            background-color: black; 
-            right:40.5vw;
-            bottom:56.5%;
-            transform: rotate(90deg);
-        }
-        .NonProfitStat{
-            position: absolute;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            bottom:-2%;
-            font-size: 1vw;
-            color:rgb(100,100,100)
-        }
-        .buttomPageLogo{
-            width:18vw;
-            height:5vw;
-            left:-38vw;
-            bottom: -1vw;
-            position: relative;
-        }
-        .buttomPage {
-            position: relative;
-            width: 100vw;
-            height: 25vw;
-            background: rgba(225, 222, 222, 1);
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            justify-content: flex-start; 
-            z-index: 0;
-            top:-30vw;
-        }
-        .BottomLinks {
-            position: absolute;
-            bottom:15%;
-            left:40vw;
-            text-decoration: none; 
-        }
-        .BottomLinks a {
-            text-decoration: none; 
-            color: inherit; 
-            display: inline; 
-            text-align: left;
-            font-size: 1vw;
-            display: block;
-            margin-bottom: 25%; 
-        }
-        .buttomText {
-            left:-38vw;
-            bottom:-2vw;
-            font-size: 1vw;
-            position: relative;
-        }
-        .QuickMenu{
-            position: absolute;
-            left:40%;
-            top: 13%; 
-            font-weight: bold;
-            font-size: 2vw;
-        }
-        .Address{
-            position: absolute;
-            top: 13%; 
-            left: 55%;
-            font-weight: bold;
-            font-size: 2vw;
-            display: grid;
-        }
-        .buttomLine{
-            right: 38.8vw;
-            bottom:-2vw;
-            position: relative;
-            width: 14vw;
-            height: 0.1vw;
-            border-radius: 20vw;
-            background-color: black; 
-        }
-        .Youtube_bottom{
-            position: relative;
-            width:3.5vw;
-            height:2vw;
-            right:-31vw;
-            top:-10vw;
-            cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
-        }
-        .Youtube_bottom img{
-            position: relative;
-            width:4vw;
-            height:4vw;
-            right:0.65vw;
-            top:-1vw;
-        }
-        .Linkedin_bottom{
-            position: relative;
-            width:3vw;
-            height:2vw;
-            right:-25vw;
-            top:-8vw;
-            cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
-        }
-        .Linkedin_bottom img{
-            position: relative;
-            width:3.5vw;
-            height:3.5vw;
-            right:0.63vw;
-            top:-1vw;
-        }
-        .Instagram_bottom{
-            position: relative;
-            width:3vw;
-            height:2vw;
-            right:-37vw;
-            top:-12vw;
-            cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
-        }
-        .Instagram_bottom img{
-            position: relative;
-            width:3.5vw;
-            height:3.5vw;
-            right:0.63vw;
-            top:-1vw;
-        }
-        .Facebook_bottom{
-            position: relative;
-            width:2vw;
-            height:2vw;
-            right:-43vw;
-            top:-13.8vw;
-            cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
-        }
-        .Facebook_bottom img{
-            position: relative;
-            width:5.5vw;
-            height:3vw;
-            right:2.5vw;
-            top:-1vw;
-        }
-        .DonateNow{
-            align-items: center;
-            border-radius: 25vw; 
-            top:-48vw;
-            position: relative;
-            right:-22vw;
-            text-decoration: none; 
-            color: inherit; 
-            display: inline-block; 
-            padding: 3vw;   
-            background:rgb(37,170,225); ;
-            font-weight: bold;
-            font-size: 6vw;
-            width:50vw;
-            text-align: center;
-            color: rgb(58,58,60);
-        }
-        .Section1{
-            position: relative;
-            top:-47vw;
-            font-weight: bold;
-            font-size: 3vw;
-            right:-5vw;
-        }
-        .text1{
-            position: relative;
-            top:-47vw;
-            font-size: 1.5vw;
-            right:-5vw;
-        }
-        .section1Line{
-            position: relative;
-            top:-48vw;
-            font-size: 1.5vw;
-            right:35.5vw;
-            width:18vw;
-            height:0.2vw;
-            background: black;
-            border-radius: 25vw;
-        }
-        .Section2{
-            position: relative;
-            top:-42vw;
-            font-weight: bold;
-            font-size: 3vw;
-            right:-5vw;
-        }
-        .text2{
-            position: relative;
-            top:-42vw;
-            font-size: 1.5vw;
-            right:-5vw;
-        }
-        .section2Line{
-            position: relative;
-            top:-43vw;
-            font-size: 1.5vw;
-            right:35.5vw;
-            width:18vw;
-            height:0.2vw;
-            background: black;
-            border-radius: 25vw;
-        }
-    </style>
 </head>
-<body>
-    <div class="navbar" id="navbar">
-        <img class="navbar-logo"src = "images/imageLogo1.png" alt = "" >
-        <a class = "test"> GARAGE 803 RACING </a>
-        <div class="navbar-menu">
-            <a href="index.html">Home</a>
-            <a href="team.html">Team</a>
-            <a href="sponsors.html">Sponsors</a>
-            <a href="media.html">Media</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
-    <div class="navbar-placeholder"></div>
-<main>
-    <h2 class="about" >DONATE</h2>
-    <hr class = "line" >
-    <img class="Bar2" src="images/bar.jpg" alt="">
-    <div class="titleBackground">
-    </div>
-    <h2 class = "donoteDescription">Garage 803 Racing relies on the generosity of sponsors<br> and donors. Their support gives students the opportunity to<br> apply their engineering skills in a real world project while<br> learning about sustainability in engineering. Help support<br> the next generation of engineers in bringing our solar car to life.
-    </h2>
-    <a class = "DonateNow"href="https://www.gofundme.com/f/help-high-school-students-compete-in-the-solar-car-challenge" target="_blank">DONATE NOW</a>
-    <h2 class = "Section1">WHAT WE DO</h2>
-    <hr class = "section1Line">
-    <h2 class = "text1">We will design and build a one-seater solar car that's fully dependent on solar energy. This car will be designed to race on<br> the Texas Motor Speedway over the course of 4 days during the summer (2025 event). Throughout the season, we will<br> research, design, and manufacture a race-capable solar car for the event in Dallas.</h2>
-    <h2 class = "Section2">WHY WE NEED YOUR HELP</h2>
-    <hr class = "section2Line">
-    <h2 class = "text2">We need YOUR help to support us financially as we compete in the High School Solar Car Challenge in Texas! Building<br> and racing a solar-powered car requires funding for materials, tools, travel, and competition fees. Your donation will enable<br> us to bring this project to life, allowing students to gain hands-on STEM experience while advancing sustainable technology<br> and awareness. Together, we can drive innovation and inspire future problem-solvers!</h2>
-
-    <div class="buttomPage">
-        <img class="Bar" src="images/bar.jpg" alt="">
-        <img class="buttomPageLogo" src="images/logo3.png" alt="">
-        <hr class = "buttomLine" >
-        <h2 class = "buttomText">Garage 803 Racing is the solar car<br> racing team for high school students<br> in the MVLA school district<br><br>Est. 2024
-        </h2>
-        <h2 class = "QuickMenu">Menu</h2>
-        <hr class = "verticalLine">
-        
-        <div class="BottomLinks">
-            <a href="index.html">Home</a>
-            <a href="team.html">Team<br>
-            <a href="sponsors.html">Sponsors</a>
-            <a href="media.html">Media</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <h2 class = "Address">Address</h2>
-        <h2 class = "AdressText">3535 Truman Avenue<br>Mountain View, California<br>94040 </h2>
-        <hr class = "AddressLine" >
-        <h2 class = "NonProfitStat">501(c)(3) Non-Profit Organization</h2>
-        <button class="Linkedin_bottom" onclick="window.open('https://www.linkedin.com/company/garage-803-racing/about/', '_blank')">
-            <img src="images/LinkedIn-Logo1-removebg-preview.png" alt="Youtube" class="Linkedin">
-        </button>
-        <button class="Youtube_bottom" onclick="window.open('https://www.youtube.com/@Garage.803.Racing/', '_blank')">
-            <img src="images/youtube-logo-removebg-preview.png" alt="Youtube" class="Youtube">
-        </button>
-        <button class="Instagram_bottom" onclick="window.open('https://www.instagram.com/garage803racing/', '_blank')">
-            <img src="images/instahram-removebg-preview.png" alt="Youtube" class="Instagram">
-        </button>
-        <button class="Facebook_bottom" onclick="window.open('https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr', '_blank')">
-            <img src="images/Facebook-Logo.png" alt="Youtube" class="Facebook">
-        </button>
-    </div>
-</main>
-   
-<script>
-    const navbar = document.getElementById("navbar");
-    const placeholder = document.querySelector(".navbar-placeholder");
-    let lastScrollTop = 0;
-
-    function setPlaceholderHeight() {
-        if (navbar && placeholder) {
-            const navbarHeight = navbar.offsetHeight;
-            placeholder.style.height = navbarHeight + "px";
+<style>
+    @keyframes fadeInUp{
+        from{
+            transform: translateY(1vw);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0vw);
+            opacity:1;
         }
     }
-
-    window.addEventListener('load', setPlaceholderHeight);
-    window.addEventListener('resize', setPlaceholderHeight);
-
-    window.addEventListener("scroll", function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const atBottom = window.innerHeight + scrollTop >= document.body.offsetHeight - 2;
-
-        if (scrollTop <= 0) {
-            navbar.classList.remove("hidden");
+    button a{
+        text-decoration: none;
+        color: rgb(48, 48, 48);
+    }
+    button:hover{
+        transform: translateY(-1vw);
+        cursor: pointer;
+    }
+    body{
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .logoandname{
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        color: white;
+    }
+    .links ul li{
+        text-decoration: none;
+        list-style-type: none;
+        display: inline-block;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .links a{
+        color: white;
+        text-decoration: none;
+    }
+    .links ul li:hover{
+        text-decoration: underline;
+        transform: translateY(-0.25vw);
+    }
+    .navigation{
+        position: fixed;
+        width: 100%;
+        z-index: 900;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(48, 48, 48);
+        transition: transform 1s ease;
+    }
+    .navigation.hidden{
+        transform: translateY(-6vw);
+    }
+    .heroBanner{
+        display: flex;
+        background-image: url("images/bar.jpg");
+        background-size: 100% 100%;
+        align-items: center;
+    }
+    .siteTopic{
+        background-color: white;
+        animation: fadeInUp 1s forwards;
+    }
+    .siteTopic p{
+        font-weight: lighter;
+    }
+    .mainContent{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .mainContent button{
+        background-color: rgb(37,170,225);
+        border: none;
+    }
+    .mainContent h1{
+        font-size: 6vw;
+        text-decoration: underline;
+        text-underline-offset: 2vw;
+    }
+    .mainContent p{
+        font-size: 4vw;
+        font-weight: lighter;
+    }
+    .bottomBar{
+        width: 100vw;
+        aspect-ratio: 60/1;
+    }
+    .bottomSection{
+        background-color: rgb(224, 224, 224)
+    }
+    .bottomSection p{
+        font-weight: lighter;
+    }
+    li{
+        list-style-type: none;
+    }
+    .column2 a{
+        text-decoration: none;
+        color: black;
+    }
+    .column2 a:hover{
+        text-decoration: underline;
+    }
+    .nonProfitStat{
+        text-align: center;
+        background-color: rgb(224, 224, 224);
+        margin: 0;
+        font-weight: lighter;
+        padding-bottom: 1vw;
+        color: rgb(60,60,60);
+    }
+    /* Phone */
+    @media(max-width: 770px){
+        body.no-scroll{
+        overflow:hidden;
         }
-        else if (atBottom) {
-            navbar.classList.add("hidden");
+        .hamburger{
+            background: none;
+            border: none;
+            color: white;
+            font-size: 10vw;
+            display: flex;
         }
-        else if (scrollTop > lastScrollTop) {
-            navbar.classList.add("hidden");
-        } else {
-            navbar.classList.remove("hidden");
+        .navigation{
+            height: 12vw;
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }, false);
-</script>
+        .navigation.hidden{
+            transform: translateY(-12vw) !important;
+        }
+        .logoandname img{
+            width: 7.5vw;
+        }
+        .logoandname h1{
+            font-size: 4vw;
+            margin: 0px 0px 0px 2vw;
+            letter-spacing: 0.7vw;
+        }
+        .links ul{
+            display: flex;
+            flex-direction: column;
+            font-size: 4vw;
+            gap: 1.5vw;
+        }
+        .links{
+            flex-direction: column;
+            background-color: rgb(60,60,60);
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 40%;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            padding: 2rem 1rem;
+            gap: 1.5rem;
+            text-align: right;
+            z-index: 998;
+        }
+        .links.show{
+            transform: translateX(0);
+        }
+
+        .siteTopic{
+            border-radius: 2vw;
+            width: 75%;
+        }
+        .siteTopic h1{
+            font-size: 16vw;
+            margin: 0;
+            padding-top: 3vw;
+            padding-left: 3vw;
+            padding-right: 3vw;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-thickness: 1vw;
+            text-underline-offset: 2vw;
+        }
+        .siteTopic p{
+            font-size: 2.5vw;
+            padding-bottom: 3vw;
+            padding-left: 3vw;
+            padding-right: 3vw;
+            text-align: center;
+            margin: 2vw;
+        }
+        .heroBanner{
+            aspect-ratio: 2/1;
+            justify-content: center;
+            margin-top: 12vw;
+        }
+        .mainContent{
+            align-items: center;
+            text-align: center;
+            margin: 5vw;
+        }
+        .mainContent button{
+            font-size: 10vw;
+            padding: 5vw;
+            border-radius: 5vw;
+            font-weight: bold;
+        }
+        .column1 img{
+            width: 40vw;
+            margin-top: 3vw;
+        }
+        .column1 hr{
+            width: 38vw;
+            border: none;
+            background-color: black;
+            height: 2px;
+        }
+        .column1{
+            text-align: center;
+        }
+        .column2{
+            text-align: center;
+            border-top: 1px solid black;
+            width: 40%;
+            padding: 2vw;
+        }
+        .column3{
+            text-align: center;
+            border-top: 1px solid black;
+            width: 40%;
+            padding: 2vw;
+        }
+        .column4 img{
+            width: 8vw;
+            margin: 2vw;
+        }
+        .bottomSection{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bottomSection h1{
+            font-size: 5vw;
+        }
+        .bottomSection p{
+            font-size: 3vw;
+        }
+        .nonProfitStat{
+            font-size: 2vw;
+        }
+        
+    }
+    /* Computer */
+    @media(min-width: 771px){
+        .hamburger{
+            display: none;
+        }
+        .close{
+            display: none;
+        }
+        .navigation{
+            height: 6vw;
+        }
+        .logoandname img{
+            width: 3vw;
+        }
+        .logoandname h1{
+            font-size: 2vw;
+            margin: 0px 0px 0px 1vw;
+            letter-spacing: 0.35vw;
+        }
+        .links ul li{
+            margin: 1vw;
+            font-size: 1vw;
+        }
+        .siteTopic{
+            margin-left: 2vw;
+            border-radius: 1vw;
+            width: 40%;
+        }
+        .siteTopic h1{
+            font-size: 8vw;
+            margin: 0;
+            padding-top: 1.5vw;
+            padding-left: 1.5vw;
+            padding-right: 1.5vw;
+            text-decoration: underline;
+            text-decoration-thickness: 0.5vw;
+            text-underline-offset: 1vw;
+        }
+        .siteTopic p{
+            font-size: 1.25vw;
+            padding-bottom: 1.5vw;
+            padding-left: 1.5vw;
+            padding-right: 1.5vw;
+            margin: 1vw;
+        }
+        .heroBanner{
+            aspect-ratio: 4/1;
+            margin-top: 6vw;
+        }
+        .mainContent{
+            margin: 5vw;
+        }
+        .mainContent button{
+            font-size: 5vw;
+            padding: 5vw;
+            margin: 2vw;
+            width: 50vw;
+            border-radius: 5vw;
+            font-weight: bold;
+        }
+        .mainContent a{
+            align-self: center;
+        }
+        .mainContent h1{
+            font-size: 4vw;
+            text-decoration: underline;
+            text-underline-offset: 1vw;
+        }
+        .mainContent p{
+            font-size: 2vw;
+            font-weight: lighter;
+        }
+        .bottomSection{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .bottomSection h1{
+            font-size: 2vw;
+        }
+        .bottomSection p{
+            font-size: 1vw;
+        }
+        .column1 img{
+            width: 20vw;
+            margin-top: 1.5vw;
+        }
+        .column1 hr{
+            width: 18.5vw;
+            border: none;
+            background-color: black;
+            height: 2px;
+            margin-left: 0;
+        }
+        .column2{
+            border-left: 1px solid black;
+            padding-left: 1vw;
+            margin-top: 1vw;
+        }
+        .column3{
+            margin-top: 1vw;
+            padding-left: 1vw;
+            border-left: 1px solid black;
+            margin-bottom: 8vw;
+        }
+        .column4{
+            align-content: center;
+        }
+        .column4 img{
+            width: 4vw;
+            margin: 1vw;
+        }
+        .column4 img:hover{
+            transform: translateY(-0.5vw);
+            cursor: pointer;
+        }
+        .nonProfitStat{
+            font-size: 1vw;
+        }
+    }
+</style>
+<body>
+    <div class = "navigation" id = "navbar">
+        <div class = "logoandname">
+            <img src = "images/logo-black-outline.png">
+            <h1><a href = "index.html" style = "text-decoration: none; color: white">GARAGE 803 RACING</a></h1>
+        </div>
+        <button class = "hamburger" id = "hamburger">&#9776</button>
+        <div class = "links" id = "links">
+            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "navLinks.classList.toggle('show'); document.body.classList.toggle('no-scroll')">&times</button>
+            <ul>
+                <li><a href = "index.html">Home</a></li>
+                <li><a href = "team.html">Team</a></li>
+                <li><a href = "sponsors.html">Sponsors</a></li>
+                <li><a href = "media.html">Media</a></li>
+                <li><a href = "donate.html">Donate</a></li>
+                <li><a href = "contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class = "heroBanner">
+        <div class = "siteTopic">
+            <h1>DONATE</h1>
+            <p>Garage 803 Racing relies on the generosity of sponsors
+            and donors. Their support gives students the opportunity to
+            apply their engineering skills in a real world project while
+            learning about sustainability in engineering. Help support
+            the next generation of engineers in bringing our solar car to life.</p>
+        </div>
+    </div>
+    <div class = "mainContent">
+        <a href = "https://www.gofundme.com/f/help-high-school-students-compete-in-the-solar-car-challenge" target = "_blank"><button>DONATE NOW</button></a>
+        <h1>WHAT WE DO</h1>
+        <p>We will design and build a one-seater solar car that's fully dependent on solar energy. This car will be designed to race on
+        the Texas Motor Speedway over the course of 4 days during the summer (2025 event). Throughout the season, we will
+        research, design, and manufacture a race-capable solar car for the event in Dallas.<br><br></p>
+        <h1>WHY WE NEED YOUR HELP</h1>
+        <p>We need YOUR help to support us financially as we compete in the High School Solar Car Challenge in Texas! Building
+        and racing a solar-powered car requires funding for materials, tools, travel, and competition fees. Your donation will enable
+        us to bring this project to life, allowing students to gain hands-on STEM experience while advancing sustainable technology
+        and awareness. Together, we can drive innovation and inspire future problem-solvers!</p>
+    </div>
+    <img class = "bottomBar" src = "images/bar.jpg">
+    <div class = "bottomSection">
+        <div class = "column1">
+            <img src = "images/logo3.png">
+            <hr>
+            <p>Garage 803 Racing is the solar car<br>
+            racing team for high school students<br>
+            in the MVLA school district
+            <br><br>
+            Est. 2024</p>
+        </div>
+        <div class = "column2">
+            <h1 style = "margin-top: 0">Menu</h1>
+            <p><a href = "index.html">Home</a></p>
+            <p><a href = "team.html">Team</a></p>
+            <p><a href = "sponsors.html">Sponsors</a></p>
+            <p><a href = "media.html">Media</a></p>
+            <p><a href = "donate.html">Donate</a></p>
+            <p><a href = "contact.html">Contact</a></p>
+        </div>
+        <div class = "column3">
+            <h1 style = "margin-top: 0">Address</h1>
+                <p>3535 Truman Avenue
+                <br>Mountain View, California
+                <br>94040
+                </p>
+        </div>
+        <div class = "column4">
+            <a href = "https://www.linkedin.com/company/garage-803-racing/about/', '_blank" target = "_blank"><img src = "images/LinkedIn-Logo1-removebg-preview.png"></a>
+            <a href = "https://www.youtube.com/@Garage.803.Racing" target = "_blank"><img src = "images/youtube-logo-removebg-preview.png"></a>
+            <a href = "https://www.instagram.com/garage803racing/" target = "_blank"><img src = "images/instahram-removebg-preview.png"></a>
+            <a href = "https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr" target = "_blank"><img src = "images/Facebook-Logo.png"></a>
+        </div>
+    </div>
+    <p class = "nonProfitStat">501(c)(3) Non-Profit Organization</p>
 </body>
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      document.body.classList.toggle("no-scroll");
+    });
+
+</script>
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById('navbar');
+  const scrollThreshold = window.innerWidth * 0.12;
+
+  window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+      // Scrolling down
+      navbar.classList.add('hidden');
+    } else {
+      // Scrolling up
+      navbar.classList.remove('hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
+  });
+</script>
+
 </html>
