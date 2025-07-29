@@ -74,6 +74,7 @@
     }
     .mainContent{
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
         flex: 1;
     }
@@ -196,6 +197,26 @@
             justify-content: center;
             margin-top: 12vw;
         }
+		.mainContent h1{
+			font-weight: lighter;
+			margin: 6vw;
+			font-size: 5vw;
+		}
+		.news{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.news img{
+			width: 80vw;
+			border-radius: 1vw;
+		}
+		.youtube-video{
+			width: 80vw;
+			aspect-ratio: 16/9;
+			border-radius: 1vw;
+			margin-bottom: 5vw;
+		}
 		.gallery{
 		width: 95%;
 		column-count: 2 !important;
@@ -302,6 +323,24 @@
             aspect-ratio: 4/1;
             margin-top: 6vw;
         }
+		.mainContent h1{
+			font-weight: lighter;
+			margin: 3vw;
+			font-size: 2.5vw;
+		}
+		.news{
+			display: flex;
+			justify-content: space-evenly;
+		}
+		.news img{
+			height: 20vw;
+			border-radius: 0.5vw;
+		}
+		.youtube-video{
+			height: 20vw;
+			aspect-ratio: 16/9;
+			border-radius: 0.5vw;
+		}
         .bottomSection{
             display: flex;
             flex-direction: row;
@@ -373,10 +412,16 @@
     <div class = "heroBanner">
         <div class = "siteTopic">
             <h1>MEDIA</h1>
-            <p>Here are some photos of our team working dilligently to construct our solar car, as well as photos from the 2025 Competition!</p>
+            <p>Here are some media of our team working dilligently to construct our solar car, as well as photos from the 2025 Competition!</p>
         </div>
     </div>
     <div class = "mainContent">
+		<h1 style = "text-align: center">News - We are proud to be featured in our local media outlets!</h1>
+		<div class = "news">
+			<iframe class = "youtube-video" src="https://www.youtube.com/embed/hcIBrMhQyHw?si=wFDSWiZWj1QqsWXN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe class = "youtube-video" src="https://www.youtube.com/embed/hH7rWo_6X-8?si=J0n-d6KiQ1hFsg2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<a href = "https://www.losaltosonline.com/schools/mvhs-students-steer-club-competing-in-solar-car-challenge/article_13a3417e-3cd9-46a6-b805-d376e54e5aaa.html" target = "_blank"><img src = "images/la-town-crier-image.png"></a>
+		</div>
 		<div class = "gallery">
 			<img src = "images/media-1.jpg">
 			<img src = "images/media-2.jpg">
@@ -402,6 +447,7 @@
 			<img src = "images/media-22.jpg">
 			<img src = "images/media-23.jpg">
 			<img src = "images/media-24.jpg">
+			<img src = "images/media-25.jpeg">
 		</div>
     </div>
     <img class = "bottomBar" src = "images/bar.jpg">
