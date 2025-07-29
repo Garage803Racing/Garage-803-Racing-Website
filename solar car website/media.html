@@ -7,6 +7,14 @@
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
 </head>
 <style>
+	@keyframes photo{
+		from{
+			transform: translateY(4vw);
+		}
+		to{
+			transform: translateY(0vw);
+		}
+	}
     @keyframes fadeInUp{
         from{
             transform: translateY(1vw);
@@ -88,6 +96,9 @@
 		
 	}
 	.gallery img{
+		animation: photo linear;
+		animation-timeline: view();
+		animation-range: entry 0% cover 20%;
 		width: 100%;
 		margin-top: 1vw;
 		border-radius: 1vw;
