@@ -1,527 +1,532 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
     <title>Garage 803 Racing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
-
-    <style>
-        /* === Navbar Animation Styles START === */
-        .navbar {
-            position: fixed;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            transition: transform 0.3s ease-in-out;
-            transform: translateY(0);
+</head>
+<style>
+    @keyframes fadeInUp{
+        from{
+            transform: translateY(1vw);
+            opacity: 0;
         }
-
-        .navbar.hidden {
-            transform: translateY(-120%);
+        to{
+            transform: translateY(0vw);
+            opacity:1;
         }
-
-        .navbar-placeholder {
-            transition: height 0.3s ease-in-out;
+    }
+    body{
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .logoandname{
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        color: white;
+    }
+    .links ul li{
+        text-decoration: none;
+        list-style-type: none;
+        display: inline-block;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .links a{
+        color: white;
+        text-decoration: none;
+    }
+    .links ul li:hover{
+        text-decoration: underline;
+        transform: translateY(-0.25vw);
+    }
+    .navigation{
+        position: fixed;
+        width: 100%;
+        z-index: 900;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(48, 48, 48);
+        transition: transform 1s ease;
+    }
+    .navigation.hidden{
+        transform: translateY(-6vw);
+    }
+    .heroBanner{
+        display: flex;
+        background-image: url("images/ImageTitle.jpg");
+        background-size: 100% 100%;
+        aspect-ratio: 16/9;
+        width: 100vw;
+        height: 56vw;
+        justify-content: center;
+    }
+    .heroBanner img{
+        width: 40vw;
+        height: 10vw;
+        margin-top: 2vw;
+    }
+    .mainContent{
+        flex: 1;
+        align-items: center;
+    }
+    .bottomBar{
+        width: 100vw;
+        aspect-ratio: 60/1;
+    }
+    .bottomSection{
+        background-color: rgb(224, 224, 224)
+    }
+    .bottomSection p{
+        font-weight: lighter;
+    }
+    li{
+        list-style-type: none;
+    }
+    .column2 a{
+        text-decoration: none;
+        color: black;
+    }
+    .column2 a:hover{
+        text-decoration: underline;
+    }
+    .nonProfitStat{
+        text-align: center;
+        background-color: rgb(224, 224, 224);
+        margin: 0;
+        font-weight: lighter;
+        padding-bottom: 1vw;
+        color: rgb(60,60,60);
+    }
+    /* Phone */
+    @media(max-width: 770px){
+        body.no-scroll{
+        overflow:hidden;
         }
-        /* === Navbar Animation Styles END === */
-       
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow-y: auto;
-            height: 70vw;
-            background: rgba(0, 0, 0, 0);
-            overflow-x: hidden;
-        }
-        .navbar {
-            top: 0;
-            width: 100%;
-            background: rgb(48, 47, 47);
-            padding: 1vw 0;
+        .hamburger{
+            background: none;
+            border: none;
+            color: white;
+            font-size: 10vw;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1;
         }
-        .navbar-logo {
-            width: 3.5vw;
-            height: 4vw; 
-            position: relative;
+        .navigation{
+            height: 12vw;
+        }
+        .navigation.hidden{
+            transform: translateY(-12vw) !important;
+        }
+        .logoandname img{
+            width: 7.5vw;
+        }
+        .logoandname h1{
+            font-size: 4vw;
+            margin: 0px 0px 0px 2vw;
+            letter-spacing: 0.7vw;
+        }
+        .heroBanner{
+            margin-top: 12vw;
+        }
+        .mainContent{
             display: flex;
+            flex-direction: column;
+        }
+        .mainContent .imageAndText{
+            display: flex;
+            margin: 5vw;
+            flex-direction: column;
             align-items: center;
-            right:-1vw;
-            color: yellow;
+        }
+        .mainContent img{
+            width: 70vw;
+            border-radius: 2vw;
+        }
+        .mainContent h1{
             font-weight: bold;
+            font-size: 6vw;
+            text-align: center;
         }
-        h2,a{
-            font-family: proxima-nova, sans-serif;
-            font-style: normal;
-            font-weight: 100;
+        .mainContent p{
+            font-weight: lighter;
+            font-size: 3vw;
+            text-align: center;
+        }
+        .mainContent button{
+            font-family: sans-serif;
+            background: none;
+            border-radius: 2vw;
+            border: 1px solid black;
+            font-size: 3vw;
+            padding: 1vw;
+            font-weight: lighter !important;
+            cursor: pointer;
+            justify-self: center;
+        }
+        .ourGoal{
+            margin: 10vw;
+        }
+        .ourAim{
+            margin: 10vw;
+        }
+        .mainContent hr{
+            display: none;
+        }
+        .aimGoalSection{
+            border-top: 1vw solid black;
+            margin-top: 5vw;
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
+        .links ul{
+            display: flex;
+            flex-direction: column;
+            font-size: 4vw;
+            gap: 1.5vw;
+        }
+        .links{
+            flex-direction: column;
+            background-color: rgb(60,60,60);
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 40%;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            padding: 2rem 1rem;
+            gap: 1.5rem;
+            text-align: right;
+            z-index: 998;
+        }
+        .links.show{
+            transform: translateX(0);
+        }
+        .column1 img{
+            width: 40vw;
+            margin-top: 3vw;
+        }
+        .column1 hr{
+            width: 38vw;
+            border: none;
+            background-color: black;
+            height: 2px;
+        }
+        .column1{
+            text-align: center;
+        }
+        .column2{
+            text-align: center;
+            border-top: 1px solid black;
+            width: 40%;
+            padding: 2vw;
+        }
+        .column3{
+            text-align: center;
+            border-top: 1px solid black;
+            width: 40%;
+            padding: 2vw;
+        }
+        .column4 img{
+            width: 8vw;
+            margin: 2vw;
+        }
+        .bottomSection{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bottomSection h1{
+            font-size: 5vw;
+        }
+        .bottomSection p{
+            font-size: 3vw;
+        }
+        .nonProfitStat{
+            font-size: 2vw;
+        }
+        
+    }
+    /* Computer */
+    @media(min-width: 771px){
+        .hamburger{
+            display: none;
+        }
+        .close{
+            display: none;
+        }
+        .navigation{
+            height: 6vw;
+        }
+        .logoandname img{
+            width: 3vw;
+        }
+        .logoandname h1{
+            font-size: 2vw;
+            margin: 0px 0px 0px 1vw;
+            letter-spacing: 0.35vw;
+        }
+        .links ul li{
+            margin: 1vw;
+            font-size: 1vw;
+        }
+        .heroBanner{
+            margin-top: 6vw;
+        }
+        .mainContent .imageAndText{
+            display: flex;
+            margin: 5vw;
+        }
+        .mainContent img{
+            width: 35vw;
+            border-radius: 1vw;
+        }
+        .mainContent h1{
+            font-weight: bold;
+            font-size: 3vw;
+            text-align: center;
+        }
+        .mainContent p{
+            font-weight: lighter;
             font-size: 1.5vw;
         }
-        h1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 20vh;
-            font-size: 2vw;
-            font-weight: bold;
+        .mainContent .bodyText{ 
+            margin-left: 4vw;
         }
-        .navbar-menu {
-            margin-right: 1vw;
+        .mainContent .bodyText2{
+            margin-right: 4vw;
         }
-        .navbar-menu a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1vw;
-            font-weight: bold;
-            font-size: 1vw;
-        }
-        main {
-            /* padding-top: 10vw; */ /* Placeholder handles this now */
-            min-height: -4vw;
-            height:4vw;
-        }
-        .about{
-            font-weight: bold;
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position:relative;
-            right:-20vw;
-            font-size:2vw
-        }
-        .text{
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position:relative;
-            right:-25vw;
-            font-size:1.5vw
-        }
-        .section{
-            font-weight: bold;
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            top:-42vw;
-            font-size:2vw
-        }
-        .textA{
-            position: relative;
-            color: black;
-            display: flex;
-            text-align: center;
-            top:-40vw;
-            right:-8vw;
-        }
-        .textB{
-            position: relative;
-            color: black;
-            display: flex;
-            text-align: center;
-             top:-40vw;
-             left:-8vw;
-        }
-        .buttomPage {
-            position: relative;
-            width: 100vw;
-            height: 25vw;
-            background: rgba(225, 222, 222, 0.889);
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            justify-content: flex-start; 
-            z-index: 0;
-            top:-25vw;
-        }
-       
-        #myVideo{
-            width: 100vw; 
-            height: 80vw; 
-            object-fit: cover; 
-            z-index: -2;
-        }
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 80vw;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1));  
-            z-index: 0;
-        }
-        .overlay-text {
-            position: absolute;
-            top:10vw;
-            right:30vw;
-            width: 40vw; 
-            height: 15vw; 
-            z-index: 0;
-        }
-        .Aboutchallange{
-            position: relative;
-            font-weight: bold;
-            color: black;
-            display: flex;
-            align-items: left;
-            justify-content: left;
-            top:-29vw;
-            right:-10vw;
-            font-size:2vw
-        }
-        .textchallange{
-            position: relative;
-            margin: auto;
-            color: black;
-            display: flex;
-            justify-content: left;
-            right:-7vw;
-            top:-29vw;
-            text-align: left;
-            font-size:1.5vw
-        }
-        .text-container {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            width: 100vw; 
-        }
-       .test {
-           position: fixed;
-           right:66vw;
-           font-size: 2vw;
-           color: white;
-           text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-           font-weight: bold;
-           letter-spacing: 0.4vw;
-           white-space: nowrap;
-        }
-        .buttomPageLogo{
-            width:18vw;
-            height:5vw;
-            left:-38vw;
-            bottom: -1vw;
-            position: relative;
-        }
-        .Bar {
-           width:100vw;
-           height:1.8vw;
-            z-index: 1;
-        }
-        .buttomText {
-            left:-38vw;
-            bottom:-2vw;
-           font-size: 1vw;
-           position: relative;
-        }
-        .buttomLine{
-            right: 38.8vw;
-            bottom:-2vw;
-            position: relative;
-            width: 14vw;
-            height: 0.1vw;
-            border-radius: 20vw;
-            background-color: black; 
-        }
-        .QuickMenu{
-            position: absolute;
-            left:40%;
-            top: 13%; 
-            font-weight: bold;
-            font-size: 2vw;
-        }
-        .BottomLinks {
-            position: absolute;
-              bottom: 15%;
-              left:40vw;
-          text-decoration: none; 
-        }
-        .BottomLinks a {
-            text-decoration: none; 
-            color: inherit; 
-            display: inline; 
-            text-align: left;
-            font-size: 1vw;
-            display: block;
-            margin-bottom: 25%;
-        }
-        .Address{
-            position: absolute;
-            top: 13%; 
-            left: 55%;
-            font-weight: bold;
-            font-size: 2vw;
-            display: grid;
-        }
-        .verticalLine{
-            position: absolute;
-            width: 15vw;
-            height: 0.1%;
-            border-radius: 20vw;
-            background-color: black; 
-            right:53vw;
-            bottom:46%;
-           transform: rotate(90deg);
-        }
-        .AdressText{
-            position: absolute;
-            font-size: 1vw;
-            top:30%;
-            right:33.9vw;
-        }
-        .AddressLine{
-            position: absolute;
-            width: 10vw;
-            height: 0.1%;
-            border-radius: 20vw;
-            background-color: black; 
-            right:40.5vw;
-            bottom:56.5%;
-            transform: rotate(90deg);
-        }
-        .NonProfitStat{
-            position: absolute;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            bottom:-2%;
-            font-size: 1vw;
-            color:rgb(100,100,100)
-        }
-        .ReadMore{
-            border-radius: 25vw;
-            top:-57vw;
-            position: relative;
-            right:-8vw;
-            text-decoration: none; 
-            color: inherit; 
-            display: inline; 
-            border: 0.1vw solid black;
+        .mainContent button{
+            font-family: sans-serif;
+            background: none;
+            border-radius: 1vw;
+            border: 1px solid black;
+            font-size: 1.5vw;
             padding: 1vw;
+            margin-left: 5vw;
+            font-weight: lighter !important;
+            cursor: pointer;
         }
-        .AboutUsPic{
-            position: relative;
-            width:45vw;
-            height:35vw;
-            top:-30vw;
-            right: -4%;
-            border-radius: 40px;
-        }
-        .line {
-            position: relative;
-            width: 60vw;
+        .mainContent hr{
+            margin-top: 4vw;
+            margin-left: 20vw;
+            margin-right: 20vw;
+            background-color: black;
             height: 0.5vw;
-            border-radius: 20vw;
-            background-color: black; 
-            border: none; 
-            top: -48vw; 
+            border-radius: 1vw;
         }
-        .AboutSolarCar{
-            position: relative;
-            width:48vw;
-            height:30vw;
-            top:-58vw;
-            right:-50vw;
-            border-radius: 40px;
+        .aimGoalSection{
+            display: flex; 
         }
-        .Youtube_bottom{
-            position: relative;
-            width:3.5vw;
-            height:2vw;
-            right:-31vw;
-            top:-10vw;
+        .ourGoal{
+            margin: 5vw;
+        }
+        .ourAim{
+            margin: 5vw;
+        }
+        .bottomSection{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .bottomSection h1{
+            font-size: 2vw;
+        }
+        .bottomSection p{
+            font-size: 1vw;
+        }
+        .column1 img{
+            width: 20vw;
+            margin-top: 1.5vw;
+        }
+        .column1 hr{
+            width: 18.5vw;
+            border: none;
+            background-color: black;
+            height: 2px;
+            margin-left: 0;
+        }
+        .column2{
+            border-left: 1px solid black;
+            padding-left: 1vw;
+            margin-top: 1vw;
+        }
+        .column3{
+            margin-top: 1vw;
+            padding-left: 1vw;
+            border-left: 1px solid black;
+            margin-bottom: 8vw;
+        }
+        .column4{
+            align-content: center;
+        }
+        .column4 img{
+            width: 4vw;
+            margin: 1vw;
+        }
+        .column4 img:hover{
+            transform: translateY(-0.5vw);
             cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
         }
-        .Youtube_bottom img{
-            position: relative;
-            width:4vw;
-            height:4vw;
-            right:0.65vw;
-            top:-1vw;
+        .nonProfitStat{
+            font-size: 1vw;
         }
-        .Linkedin_bottom{
-            position: relative;
-            width:3vw;
-            height:2vw;
-            right:-25vw;
-            top:-8vw;
-            cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
-        }
-        .Linkedin_bottom img{
-            position: relative;
-            width:3.5vw;
-            height:3.5vw;
-            right:0.63vw;
-            top:-1vw;
-        }
-        .Instagram_bottom{
-            position: relative;
-            width:3vw;
-            height:2vw;
-            right:-37vw;
-            top:-12vw;
-            cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
-        }
-        .Instagram_bottom img{
-            position: relative;
-            width:3.5vw;
-            height:3.5vw;
-            right:0.63vw;
-            top:-1vw;
-        }
-        .Facebook_bottom{
-            position: relative;
-            width:2vw;
-            height:2vw;
-            right:-43vw;
-            top:-13.8vw;
-            cursor: pointer;
-            display: inline-block;
-            background: none;
-            border:none;
-        }
-        .Facebook_bottom img{
-            position: relative;
-            width:5.5vw;
-            height:3vw;
-            right:2.5vw;
-            top:-1vw;
-        }
-    </style>
-</head>
+    }
+</style>
 <body>
-    <img id ="myVideo" src="images/ImageTitle.png">
-    <div class="video-overlay"></div>
-    <img class="overlay-text" src = "images/Logo2.png" alt = "" >
-  
-    <div class="navbar" id="navbar">
-        <img class="navbar-logo"src = "images/imageLogo1.png" alt = "" >
-        <a class = "test"> GARAGE 803 RACING </a>
-        <div class="navbar-menu">
-            <a href="index.html">Home</a>
-            <a href="team.html">Team</a>
-            <a href="sponsors.html">Sponsors</a>
-            <a href="media.html">Media</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
+    <div class = "navigation" id = "navbar">
+        <div class = "logoandname">
+            <img src = "images/logo-black-outline.png">
+            <h1><a href = "index.html" style = "text-decoration: none; color: white">GARAGE 803 RACING</a></h1>
+        </div>
+        <button class = "hamburger" id = "hamburger">&#9776</button>
+        <div class = "links" id = "links">
+            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "navLinks.classList.toggle('show'); document.body.classList.toggle('no-scroll')">&times</button>
+            <ul>
+                <li><a href = "index.html">Home</a></li>
+                <li><a href = "team.html">Team</a></li>
+                <li><a href = "sponsors.html">Sponsors</a></li>
+                <li><a href = "media.html">Media</a></li>
+                <li><a href = "donate.html">Donate</a></li>
+                <li><a href = "contact.html">Contact</a></li>
+            </ul>
         </div>
     </div>
-    
-    <div class="navbar-placeholder"></div>
+    <div class = "heroBanner">
+        <img src = "images/Logo2.png">
+    </div>
 
-    <main>
-        <h2 class="about" >About Us</h2>
-        <h2 class = "text"> Garage 803 Racing is a high school team that competes<br> in the Solar Car Challenge. We are based in the MVLA<br> School District in Mountain View / Los Altos, California.<br> As a 501(c)(3) non profit organization, we are dedicated<br> to designing, constructing, and competing with solar-powered<br> vehicles while motivating hands-on STEM education and<br> sustainability. We are a group of passionate students that<br> collaborate to develop engineering solutions, gain real-world<br> problem-solving abilities, and improve our skills through<br> competition. Through commitment and perseverance, we<br> strive to push our boundaries and motivate the future<br> generation of innovators.</h2>
-        <img class = "AboutUsPic" src = "images/AboutUsPic.jpg" alt = "" >
-        <br><br><br><br><br>
-        <h2 class="Aboutchallange" >About The Solar Car Challenge</h2>
-        <h2 class = "textchallange">The Solar Car Challenge is a national competition for <br>
-            teams from across the U.S. that invites high school <br>
-            students to design, build, and compete with fully<br> 
-            solar-powered vehicles. The event happens every <br>
-            July, and sees around 40 teams across 5 divisions compete<br>
-             in Texas. The competition promotes STEM education, <br>
-            teamwork, and innovation while helping to advance the <br>
-            knowledge of renewable energy. Students apply real-world <br>
-            engineering and problem-solving techniques as they <br>
-            construct their vehicles, testing efficiency, speed, and <br>
-            endurance in a competitive environment. The Solar Car <br>
-            Challenge is greater than a competition, for it fosters<br>
-             leadership, sustainability, and a passion for cutting-edge<br>
-             technology, defining the future of engineers and innovators.
-        </h2>
-        <img class = "AboutSolarCar"src="images/competetion.jpg" alt="" >
-        <br><br><br>
-        <a class = "ReadMore"href="https://www.solarcarchallenge.org/challenge/" target="_blank">Read More →</a>
-        <hr class = "line" >
-        <h2 class ="section">Our Aim                                                                  Our goal</h2>
-        <div class = "text-container">
-            <h2 class="textA">We aim to provide an environment which allows for students<br> to explore one of the aspects of an engineering<br> pathway, work with peers, and serve the community.  </h2>
-            <h2 class="textB">Our goal is to foster the development of soft skills such<br> as teamwork, communication, and problem solving, as<br> well as hard skills in CAD, design, manufacturing, etc. </h2>
-        </div>
-        <div class="buttomPage">
-            <img class="Bar" src="images/bar.jpg" alt="">
-            <img class="buttomPageLogo" src="images/logo3.png" alt="">
-            <hr class = "buttomLine" >
-            <h2 class = "buttomText">Garage 803 Racing is the solar car<br> racing team for high school students<br> in the MVLA school district<br><br>Est. 2024
-            </h2>
-            <h2 class = "QuickMenu">Menu</h2>
-            <hr class = "verticalLine">
-            <div class="BottomLinks">
-                <a href="index.html">Home</a>
-                <a href="team.html">Team<br>
-                <a href="sponsors.html">Sponsors</a>
-                <a href="media.html">Media</a>
-                <a href="donate.html">Donate</a>
-                <a href="contact.html">Contact</a>
+
+    <div class = "mainContent">
+        <div class = "imageAndText">
+            <img src = "images/AboutUsPic.jpg">
+            <div class = "bodyText">
+                <h1>About Us</h1>
+                <p>Garage 803 Racing is a high school team that competes
+                in the Solar Car Challenge. We are based in the MVLA
+                School District in Mountain View / Los Altos, California.
+                As a 501(c)(3) non profit organization, we are dedicated
+                to designing, constructing, and competing with solar-powered
+                vehicles while motivating hands-on STEM education and
+                sustainability. We are a group of passionate students that
+                collaborate to develop engineering solutions, gain real-world
+                problem-solving abilities, and improve our skills through
+                competition. Through commitment and perseverance, we
+                strive to push our boundaries and motivate the future
+                generation of innovators.</p>
             </div>
-            <h2 class = "Address">Address</h2>
-            <h2 class = "AdressText">3535 Truman Avenue<br>Mountain View, California<br>94040 </h2>
-            <hr class = "AddressLine" >
-            <h2 class = "NonProfitStat">501(c)(3) Non-Profit Organization</h2>
-            <button class="Linkedin_bottom" onclick="window.open('https://www.linkedin.com/company/garage-803-racing/about/', '_blank')">
-                <img src="images/LinkedIn-Logo1-removebg-preview.png" alt="Youtube" class="Linkedin">
-            </button>
-            <button class="Youtube_bottom" onclick="window.open('https://www.youtube.com/@Garage.803.Racing/', '_blank')">
-                <img src="images/youtube-logo-removebg-preview.png" alt="Youtube" class="Youtube">
-            </button>
-            <button class="Instagram_bottom" onclick="window.open('https://www.instagram.com/garage803racing/', '_blank')">
-                <img src="images/instahram-removebg-preview.png" alt="Youtube" class="Instagram">
-            </button>
-            <button class="Facebook_bottom" onclick="window.open('https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr', '_blank')">
-                <img src="images/Facebook-Logo.png" alt="Youtube" class="Facebook">
-            </button>
         </div>
-    </main>
-   
-    <script>
-        const navbar = document.getElementById("navbar");
-        const placeholder = document.querySelector(".navbar-placeholder");
-        let lastScrollTop = 0;
+        <div class = "imageAndText">
+            <div class = "bodyText2">
+                <h1>About the Solar Car Challenge</h1>
+                <p>The Solar Car Challenge is a national competition for
+                teams from across the U.S. that invites high school
+                students to design, build, and compete with fully
+                solar-powered vehicles. The event happens every
+                July, and sees around 40 teams across 5 divisions compete
+                in Texas. The competition promotes STEM education,
+                teamwork, and innovation while helping to advance the
+                knowledge of renewable energy. Students apply real-world
+                engineering and problem-solving techniques as they
+                construct their vehicles, testing efficiency, speed, and
+                endurance in a competitive environment. The Solar Car
+                Challenge is greater than a competition, for it fosters
+                leadership, sustainability, and a passion for cutting-edge
+                technology, defining the future of engineers and innovators.</p>
+                
+            </div>
+            <img src = "images/competetion.jpg">
+        </div>
+        <a href = "https://www.solarcarchallenge.org/challenge/" target = "_blank"><button>Read More →</button></a>
+        <hr>
+        <div class = "aimGoalSection">
+            <div class = "ourAim">
+                <h1>Our Aim</h1>
+                <p>We aim to provide an environment which allows for students
+                to explore one of the aspects of an engineering
+                pathway, work with peers, and serve the community.</p>
+            </div>
+            <div class = "ourGoal">
+                <h1>Our Goal</h1>
+                <p>Our goal is to foster the development of soft skills such
+                as teamwork, communication, and problem solving, as
+                well as hard skills in CAD, design, manufacturing, etc.</p>
+            </div>
+        </div>
+    </div>
 
-        function setPlaceholderHeight() {
-            if (navbar && placeholder) {
-                const navbarHeight = navbar.offsetHeight;
-                placeholder.style.height = navbarHeight + "px";
-            }
-        }
 
-        window.addEventListener('load', setPlaceholderHeight);
-        window.addEventListener('resize', setPlaceholderHeight);
 
-        window.addEventListener("scroll", function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const atBottom = window.innerHeight + scrollTop >= document.body.offsetHeight - 2;
-
-            if (scrollTop <= 0) {
-                navbar.classList.remove("hidden");
-            }
-            else if (atBottom) {
-                navbar.classList.add("hidden");
-            }
-            else if (scrollTop > lastScrollTop) {
-                navbar.classList.add("hidden");
-            } else {
-                navbar.classList.remove("hidden");
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        }, false);
-    </script>
+    <img class = "bottomBar" src = "images/bar.jpg">
+    <div class = "bottomSection">
+        <div class = "column1">
+            <img src = "images/logo3.png">
+            <hr>
+            <p>Garage 803 Racing is the solar car<br>
+            racing team for high school students<br>
+            in the MVLA school district
+            <br><br>
+            Est. 2024</p>
+        </div>
+        <div class = "column2">
+            <h1 style = "margin-top: 0">Menu</h1>
+            <p><a href = "index.html">Home</a></p>
+            <p><a href = "team.html">Team</a></p>
+            <p><a href = "sponsors.html">Sponsors</a></p>
+            <p><a href = "media.html">Media</a></p>
+            <p><a href = "donate.html">Donate</a></p>
+            <p><a href = "contact.html">Contact</a></p>
+        </div>
+        <div class = "column3">
+            <h1 style = "margin-top: 0">Address</h1>
+                <p>3535 Truman Avenue
+                <br>Mountain View, California
+                <br>94040
+                </p>
+        </div>
+        <div class = "column4">
+            <a href = "https://www.linkedin.com/company/garage-803-racing/about/', '_blank" target = "_blank"><img src = "images/LinkedIn-Logo1-removebg-preview.png"></a>
+            <a href = "https://www.youtube.com/@Garage.803.Racing" target = "_blank"><img src = "images/youtube-logo-removebg-preview.png"></a>
+            <a href = "https://www.instagram.com/garage803racing/" target = "_blank"><img src = "images/instahram-removebg-preview.png"></a>
+            <a href = "https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr" target = "_blank"><img src = "images/Facebook-Logo.png"></a>
+        </div>
+    </div>
+    <p class = "nonProfitStat">501(c)(3) Non-Profit Organization</p>
 </body>
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      document.body.classList.toggle("no-scroll");
+    });
+
+</script>
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById('navbar');
+  const scrollThreshold = window.innerWidth * 0.12;
+
+  window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+      // Scrolling down
+      navbar.classList.add('hidden');
+    } else {
+      // Scrolling up
+      navbar.classList.remove('hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
+  });
+</script>
+
 </html>
