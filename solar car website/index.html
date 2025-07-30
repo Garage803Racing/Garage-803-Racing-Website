@@ -24,6 +24,65 @@
         flex-direction: column;
         height: 100vh;
     }
+    .overlay{
+        display: none;
+    }
+    .overlay.show{
+        position: fixed;
+        display: flex;
+        z-index: 9999;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,0.5);
+        top: 0;
+        left: 0;
+    }
+    .overlay-menu{
+        background-color: white;
+        width: 40vw;
+        height: 45vw;
+        border-radius: 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeInUp 0.5s forwards;
+    }
+    .overlay-logo{
+        margin: 1vw;
+        width: 25%;
+    }
+    .overlay-menu img{
+        border-radius: 1vw;
+    }
+    .overlay-menu h1{
+        font-size: 3vw;
+        margin-bottom: 0;
+        text-decoration: underline;
+    }
+    .overlay-menu p{
+        font-size: 1.5vw;
+    }
+    .overlay-buttons{
+        display: flex;
+    }
+    .overlay-buttons button{
+        font-family: sans-serif;
+        background: none;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        padding: 1vw;
+        font-size: 1vw;
+        font-weight: bold;
+        border: 0.25vw solid black;
+        width: 15vw;
+        border-radius: 1vw;
+    }
+    .overlay-buttons button:hover{
+        transform: translateY(-0.5vw);
+        cursor: pointer;
+    }
     .logoandname{
         display: flex;
         align-items: center;
@@ -61,15 +120,34 @@
     }
     .heroBanner{
         display: flex;
+        flex-direction: column;
         background-image: url("images/landing-page-banner\ 4K.png");
         background-size: 100% 100%;
         aspect-ratio: 16/9;
-        justify-content: center;
+        align-items: center;
     }
     .heroBanner img{
         width: 40vw;
         height: 10vw;
         margin-top: 2.5vw;
+        animation: fadeInUp 2s forwards;
+    }
+    .heroBanner button{
+        width: 20vw;
+        height: 5vw;
+        margin: 2vw;
+        font-size: 1.5vw;
+        background: none;
+        border: 0.25vw solid white;
+        color: white;
+        border-radius: 1vw;
+        font-weight: lighter;
+        font-family: sans-serif;
+        transition: background-color 0.25s linear;
+    }
+    .heroBanner button:hover{
+        cursor: pointer;
+        background-color: rgba(21, 22, 77, 0.5);
     }
     .mainContent{
         flex: 1;
@@ -78,6 +156,8 @@
     .bottomBar{
         width: 100vw;
         aspect-ratio: 60/1;
+        margin: 0;
+        padding: 0;
     }
     .bottomSection{
         background-color: rgb(224, 224, 224)
@@ -108,6 +188,48 @@
         body.no-scroll{
         overflow:hidden;
         }
+        .overlay-menu{
+        background-color: white;
+        width: 80vw;
+        height: 95vw;
+        border-radius: 4vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        .overlay-logo{
+            margin: 3vw;
+            width: 40%;
+        }
+        .overlay-menu img{
+            border-radius: 1vw;
+        }
+        .overlay-menu h1{
+            font-size: 5vw;
+            margin-bottom: 0;
+        }
+        .overlay-menu p{
+            font-size: 3vw;
+        }
+        .overlay-buttons{
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay-buttons button{
+            font-family: sans-serif;
+            background: none;
+            margin-bottom: 1vw;
+            padding: 1vw;
+            font-size: 2vw;
+            font-weight: bold;
+            width: 30vw;
+            border: 0.5vw solid black;
+            border-radius: 1vw;
+        }
+        .overlay-buttons button:hover{
+            transform: translateY(-0.5vw);
+            cursor: pointer;
+        }
         .hamburger{
             background: none;
             border: none;
@@ -134,13 +256,30 @@
             background-image: url("images/landing-page-banner\ 1080p.png") !important;
         }
         .heroBanner img{
-            width: 32vw;
-            height: 8vw;
+            width: 50vw;
+            height: 12.5vw;
             margin-top: 3vw;
         }
         .mainContent{
             display: flex;
             flex-direction: column;
+        }
+        .heroBanner button{
+            width: 30vw;
+            height: 6vw;
+            margin: 2vw;
+            font-size: 2.5vw;
+            background: none;
+            border: 0.5vw solid white;
+            color: white;
+            border-radius: 2vw;
+            font-weight: lighter;
+            font-family: sans-serif;
+            transition: background-color 0.25s linear;
+        }
+        .heroBanner button:hover{
+            cursor: pointer;
+            background-color: rgba(21, 22, 77, 0.5);
         }
         .mainContent .imageAndText{
             display: flex;
@@ -390,6 +529,18 @@
     }
 </style>
 <body>
+    <div class = "overlay" id = "overlay">
+        <div class = "overlay-menu">
+            <h1 style = "text-align: center">2025 Race Results</h1>
+            <img src = "images/logo3.png" class = "overlay-logo" style = "border-radius: 0">
+            <img src = "images/media-24.jpg" width = "70%">
+            <p style = "text-align: center">Classic Division - 3rd Place<br>382 Laps<br>573 Miles</p>
+            <div class = "overlay-buttons">
+                <a href = "https://www.solarcarchallenge.org/challenge/results2025.shtml" style = "text-decoration: none; color: black" target = "_blank"><button style = "background-color: rgb(230, 230, 230)">More Info</button></a>
+                <button style = "background-color: rgb(47, 150, 254)" onclick = "overlay.classList.toggle('show');">Close</button>
+            </div>
+        </div>
+    </div>
     <div class = "navigation" id = "navbar">
         <div class = "logoandname">
             <img src = "images/logo-black-outline.png">
@@ -410,8 +561,8 @@
     </div>
     <div class = "heroBanner">
         <img src = "images/Logo2.png">
+        <button onclick = "overlay.classList.toggle('show');">2025 Race Results</button>
     </div>
-
 
     <div class = "mainContent">
         <div class = "imageAndText">
@@ -510,6 +661,19 @@
     <p class = "nonProfitStat">501(c)(3) Non-Profit Organization</p>
 </body>
 <script>
+    //race results automatically show on first visit in the user's browser
+    window.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.querySelector('.overlay');
+
+    if (!localStorage.getItem('hasVisited')) {
+        overlay.classList.add('show');
+        localStorage.setItem('hasVisited', 'true');
+    }
+    });
+
+</script>
+<script>
+    //controls the navigation menu on mobile
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("links");
 
@@ -520,6 +684,7 @@
 
 </script>
 <script>
+    //for navigation bar animation
   let lastScrollTop = 0;
   const navbar = document.getElementById('navbar');
   const scrollThreshold = window.innerWidth * 0.12;
