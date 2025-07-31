@@ -24,7 +24,7 @@
         flex-direction: column;
         height: 100vh;
     }
-    body.no-scroll{
+    body.no-scroll-overlay{
         overflow:hidden !important;
     }
     .overlay{
@@ -191,7 +191,10 @@
         .results-button.disabled{
         opacity: 0.5;
         pointer-events: none;
-        }   
+        }
+        body.no-scroll-nav{
+            overflow: hidden;
+        }
         .overlay-menu{
         background-color: white;
         width: 80vw;
@@ -542,7 +545,7 @@
             <p style = "text-align: center">Classic Division - 3rd Place<br>382 Laps<br>573 Miles</p>
             <div class = "overlay-buttons">
                 <a href = "https://www.solarcarchallenge.org/challenge/results2025.shtml" style = "text-decoration: none; color: black" target = "_blank"><button style = "background-color: rgb(230, 230, 230)">More Info</button></a>
-                <button style = "background-color: rgb(47, 150, 254);" onclick = "overlay.classList.toggle('show'); document.body.classList.remove('no-scroll')">Close</button>
+                <button style = "background-color: rgb(47, 150, 254);" onclick = "overlay.classList.toggle('show'); document.body.classList.remove('no-scroll-overlay')">Close</button>
             </div>
         </div>
     </div>
@@ -551,9 +554,9 @@
             <img src = "images/logo-black-outline.png">
             <h1><a href = "index.html" style = "text-decoration: none; color: white">GARAGE 803 RACING</a></h1>
         </div>
-        <button class = "hamburger" id = "hamburger" onclick = "document.body.classList.add('no-scroll')">&#9776</button>
+        <button class = "hamburger" id = "hamburger" onclick = "document.body.classList.add('no-scroll-nav')">&#9776</button>
         <div class = "links" id = "links">
-            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "document.body.classList.remove('no-scroll');">&times</button>
+            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "document.body.classList.remove('no-scroll-nav');">&times</button>
             <ul>
                 <li><a href = "index.html">Home</a></li>
                 <li><a href = "team.html">Team</a></li>
@@ -566,7 +569,7 @@
     </div>
     <div class = "heroBanner">
         <img src = "images/Logo2.png">
-        <button class = "results-button" id = "results-button" onclick = "overlay.classList.toggle('show'); document.body.classList.add('no-scroll');">2025 Race Results</button>
+        <button class = "results-button" id = "results-button" onclick = "overlay.classList.toggle('show'); document.body.classList.add('no-scroll-overlay');">2025 Race Results</button>
     </div>
 
     <div class = "mainContent">
