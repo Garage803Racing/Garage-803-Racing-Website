@@ -24,6 +24,9 @@
         flex-direction: column;
         height: 100vh;
     }
+    body.no-scroll{
+        overflow:hidden !important;
+    }
     .overlay{
         display: none;
     }
@@ -35,7 +38,7 @@
         height: 100vh;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.75);
         top: 0;
         left: 0;
     }
@@ -185,13 +188,14 @@
     }
     /* Phone */
     @media(max-width: 770px){
-        body.no-scroll{
-        overflow:hidden;
-        }
+        .results-button.disabled{
+        opacity: 0.5;
+        pointer-events: none;
+        }   
         .overlay-menu{
         background-color: white;
         width: 80vw;
-        height: 95vw;
+        height: 100vw;
         border-radius: 4vw;
         display: flex;
         flex-direction: column;
@@ -213,16 +217,17 @@
         }
         .overlay-buttons{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
         }
         .overlay-buttons button{
             font-family: sans-serif;
             background: none;
             margin-bottom: 1vw;
             padding: 1vw;
-            font-size: 2vw;
+            font-size: 3vw;
             font-weight: bold;
             width: 30vw;
+            height: 10vw;
             border: 0.5vw solid black;
             border-radius: 1vw;
         }
@@ -331,7 +336,7 @@
             display: flex;
             flex-direction: column;
             font-size: 4vw;
-            gap: 1.5vw;
+            gap: 5vw;
         }
         .links{
             flex-direction: column;
@@ -537,7 +542,7 @@
             <p style = "text-align: center">Classic Division - 3rd Place<br>382 Laps<br>573 Miles</p>
             <div class = "overlay-buttons">
                 <a href = "https://www.solarcarchallenge.org/challenge/results2025.shtml" style = "text-decoration: none; color: black" target = "_blank"><button style = "background-color: rgb(230, 230, 230)">More Info</button></a>
-                <button style = "background-color: rgb(47, 150, 254)" onclick = "overlay.classList.toggle('show');">Close</button>
+                <button style = "background-color: rgb(47, 150, 254);" onclick = "overlay.classList.toggle('show'); document.body.classList.remove('no-scroll')">Close</button>
             </div>
         </div>
     </div>
@@ -546,9 +551,9 @@
             <img src = "images/logo-black-outline.png">
             <h1><a href = "index.html" style = "text-decoration: none; color: white">GARAGE 803 RACING</a></h1>
         </div>
-        <button class = "hamburger" id = "hamburger">&#9776</button>
+        <button class = "hamburger" id = "hamburger" onclick = "document.body.classList.add('no-scroll')">&#9776</button>
         <div class = "links" id = "links">
-            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "navLinks.classList.toggle('show'); document.body.classList.toggle('no-scroll')">&times</button>
+            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "document.body.classList.remove('no-scroll');">&times</button>
             <ul>
                 <li><a href = "index.html">Home</a></li>
                 <li><a href = "team.html">Team</a></li>
@@ -561,7 +566,7 @@
     </div>
     <div class = "heroBanner">
         <img src = "images/Logo2.png">
-        <button onclick = "overlay.classList.toggle('show');">2025 Race Results</button>
+        <button class = "results-button" id = "results-button" onclick = "overlay.classList.toggle('show'); document.body.classList.add('no-scroll');">2025 Race Results</button>
     </div>
 
     <div class = "mainContent">
@@ -673,16 +678,24 @@
 
 </script>
 <script>
-    //controls the navigation menu on mobile
+    //for opening the side menu on mobile
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("links");
+    const close = document.getElementById("close");
+    const resultsButton = document.getElementById("results-button");
 
     hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-      document.body.classList.toggle("no-scroll");
+      navLinks.classList.add("show");
+      resultsButton.classList.add("disabled");
     });
 
+    close.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      resultsButton.classList.remove("disabled");
+    });
 </script>
+
+
 <script>
     //for navigation bar animation
   let lastScrollTop = 0;
