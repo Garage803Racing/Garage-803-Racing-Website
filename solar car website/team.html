@@ -81,8 +81,10 @@
 		align-items: center;
     }
 	.gallery{
-		display: inline-block;
+		display: grid;
 		width: 100vw;
+        place-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
 	}
     .bottomBar{
         width: 100vw;
@@ -190,6 +192,10 @@
             aspect-ratio: 2/1;
             justify-content: center;
             margin-top: 12vw;
+        }
+        .gallery{
+            display: inline-block;
+            width: 100vw;
         }
 		.gallery .teamMember{
 			width: 80vw;
@@ -306,12 +312,10 @@
             margin-top: 6vw;
         }
 		.gallery .teamMember{
-			width: 30vw;
-			float: left;
-			margin: 1.66666666666vw;
+            margin: 1.5vw;
 		}
 		.gallery img{
-			width: 30vw;
+			width: 100%;
 			border-radius: 1vw;
 			border: 0.25vw solid black;
 		}
