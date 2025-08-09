@@ -2,12 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Garage 803 Racing</title>
+    <title>Garage 803 Racing - Join</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="http://garage803racing.org/images/preview-image.jpg">
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
 </head>
 <style>
+    /* Keyframe for fade-in-up animation */
     @keyframes fadeInUp{
         from{
             transform: translateY(1vw);
@@ -18,24 +19,32 @@
             opacity:1;
         }
     }
-    @font-face{
-        src: url("test-font-3.ttf");
-        font-family: test-font;
+    /* Basic body styling */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scrolling on the body */
     }
     body{
-        margin: 0;
         font-family: sans-serif;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh; /* Ensures footer is at the bottom */
         background-color: white;
     }
+    /* Prevents scrolling when mobile menu is open */
+    body.no-scroll{
+        overflow:hidden;
+    }
+    /* Logo and Name styling in navigation */
     .logoandname{
         display: flex;
         align-items: center;
         margin: 10px;
         color: white;
     }
+    /* Navigation links styling */
     .links ul li{
         text-decoration: none;
         list-style-type: none;
@@ -52,6 +61,7 @@
         text-decoration: underline;
         transform: translateY(-0.25vw);
     }
+    /* Main navigation bar */
     .navigation{
         position: fixed;
         width: 100%;
@@ -62,31 +72,59 @@
         background-color: rgb(48, 48, 48);
         transition: transform 1s ease;
     }
+    /* Class to hide navbar on scroll */
     .navigation.hidden{
-        transform: translateY(-6vw);
+        transform: translateY(-100%);
     }
+    /* Hero banner styling */
     .heroBanner{
         display: flex;
         background-image: url("images/bar.jpg");
         background-size: 100% 100%;
         align-items: center;
+        justify-content: center; /* Center the topic */
     }
+    /* Title box styling */
     .siteTopic{
         background-color: white;
         animation: fadeInUp 1s forwards;
+        text-align: center;
     }
     .siteTopic p{
         font-weight: lighter;
     }
+    /* Main content area */
     .mainContent{
         flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4vw; 
+        box-sizing: border-box;
     }
+    /* Responsive container for the Google Form */
+    .google-form-container {
+        width: 100%;
+        max-width: 800px; /* Adjust max-width as needed */
+        height: 120vh; /* A good default height */
+        border: 1px solid #ccc;
+        border-radius: 1vw;
+        overflow: hidden; /* Ensures the iframe stays within the border */
+    }
+    .google-form-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    /* Footer styling */
     .bottomBar{
         width: 100vw;
         aspect-ratio: 60/1;
+        display: block; /* Ensure it's visible */
     }
     .bottomSection{
-        background-color: rgb(224, 224, 224)
+        background-color: rgb(224, 224, 224);
+        padding: 2vw 0;
     }
     .bottomSection p{
         font-weight: lighter;
@@ -106,14 +144,11 @@
         background-color: rgb(224, 224, 224);
         margin: 0;
         font-weight: lighter;
-        padding-bottom: 1vw;
+        padding: 1vw;
         color: rgb(60,60,60);
     }
-    /* Phone */
+    /* Phone specific styles */
     @media(max-width: 770px){
-        body.no-scroll{
-        overflow:hidden;
-        }
         .hamburger{
             background: none;
             border: none;
@@ -123,9 +158,6 @@
         }
         .navigation{
             height: 12vw;
-        }
-        .navigation.hidden{
-            transform: translateY(-12vw) !important;
         }
         .logoandname img{
             width: 7.5vw;
@@ -159,86 +191,56 @@
         .links.show{
             transform: translateX(0);
         }
-
         .siteTopic{
             border-radius: 2vw;
-            width: 75%;
+            width: 85%;
+            padding: 2vw;
         }
         .siteTopic h1{
             font-size: 16vw;
             margin: 0;
-            padding-top: 3vw;
-            padding-left: 3vw;
-            padding-right: 3vw;
-            text-align: center;
             text-decoration: underline;
             text-decoration-thickness: 1vw;
             text-underline-offset: 2vw;
         }
         .siteTopic p{
-            font-size: 3vw;
-            padding-bottom: 3vw;
-            padding-left: 3vw;
-            padding-right: 3vw;
-            text-align: center;
-            margin: 2vw;
+            font-size: 3.5vw;
+            margin: 2vw 0 0 0;
         }
         .heroBanner{
             aspect-ratio: 2/1;
-            justify-content: center;
             margin-top: 12vw;
         }
-        .column1 img{
-            width: 40vw;
-            margin-top: 3vw;
+        .mainContent {
+            padding: 5vw;
         }
-        .column1 hr{
-            width: 38vw;
-            border: none;
-            background-color: black;
-            height: 2px;
-        }
-        .column1{
-            text-align: center;
-        }
-        .column2{
-            text-align: center;
-            border-top: 1px solid black;
-            width: 40%;
-            padding: 2vw;
-        }
-        .column3{
-            text-align: center;
-            border-top: 1px solid black;
-            width: 40%;
-            padding: 2vw;
-        }
-        .column4 img{
-            width: 8vw;
-            margin: 2vw;
+        .google-form-container {
+            height: 150vh; /* Taller form for mobile */
+            border-radius: 2vw; /* Rounded corners for mobile */
         }
         .bottomSection{
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .bottomSection h1{
-            font-size: 5vw;
+        .column1, .column2, .column3, .column4 {
+            text-align: center;
+            width: 80%;
+            padding: 2vw;
         }
-        .bottomSection p{
-            font-size: 3vw;
+        .column2, .column3 {
+            border-top: 1px solid black;
         }
-        .nonProfitStat{
-            font-size: 2vw;
-        }
-        
+        .column1 img{ width: 40vw; margin-top: 3vw; }
+        .column1 hr{ width: 38vw; border: none; background-color: black; height: 2px; }
+        .column4 img{ width: 8vw; margin: 2vw; display: inline-block; }
+        .bottomSection h1{ font-size: 5vw; }
+        .bottomSection p{ font-size: 3vw; }
+        .nonProfitStat{ font-size: 2.5vw; }
     }
-    /* Computer */
+    /* Computer specific styles */
     @media(min-width: 771px){
-        .hamburger{
-            display: none;
-        }
-        .close{
+        .hamburger, .close {
             display: none;
         }
         .navigation{
@@ -260,23 +262,18 @@
             margin-left: 2vw;
             border-radius: 1vw;
             width: 40%;
+            padding: 1.5vw;
         }
         .siteTopic h1{
             font-size: 8vw;
             margin: 0;
-            padding-top: 1.5vw;
-            padding-left: 1.5vw;
-            padding-right: 1.5vw;
             text-decoration: underline;
             text-decoration-thickness: 0.5vw;
             text-underline-offset: 1vw;
         }
         .siteTopic p{
             font-size: 1.5vw;
-            padding-bottom: 1.5vw;
-            padding-left: 1.5vw;
-            padding-right: 1.5vw;
-            margin: 1vw;
+            margin: 1vw 0 0 0;
         }
         .heroBanner{
             aspect-ratio: 4/1;
@@ -286,60 +283,29 @@
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            align-items: flex-start;
         }
-        .bottomSection h1{
-            font-size: 2vw;
-        }
-        .bottomSection p{
-            font-size: 1vw;
-        }
-        .column1 img{
-            width: 20vw;
-            margin-top: 1.5vw;
-        }
-        .column1 hr{
-            width: 18.5vw;
-            border: none;
-            background-color: black;
-            height: 2px;
-            margin-left: 0;
-        }
-        .column2{
-            border-left: 1px solid black;
-            padding-left: 1vw;
-            margin-top: 1vw;
-        }
-        .column3{
-            margin-top: 1vw;
-            padding-left: 1vw;
-            border-left: 1px solid black;
-            margin-bottom: 8vw;
-        }
-        .column4{
-            align-content: center;
-        }
-        .column4 img{
-            width: 4vw;
-            margin: 1vw;
-        }
-        .column4 img:hover{
-            transform: translateY(-0.5vw);
-            cursor: pointer;
-        }
-        .nonProfitStat{
-            font-size: 1vw;
-        }
+        .column1 img{ width: 20vw; margin-top: 1.5vw; }
+        .column1 hr{ width: 18.5vw; border: none; background-color: black; height: 2px; margin-left: 0; }
+        .column2, .column3 { border-left: 1px solid black; padding-left: 2vw; margin-top: 1vw; }
+        .column4{ align-content: center; }
+        .column4 img{ width: 4vw; margin: 1vw; }
+        .column4 img:hover{ transform: translateY(-0.5vw); cursor: pointer; }
+        .bottomSection h1{ font-size: 2vw; }
+        .bottomSection p{ font-size: 1vw; }
+        .nonProfitStat{ font-size: 1vw; }
     }
 </style>
 <body>
+    <!-- Navigation Bar -->
     <div class = "navigation" id = "navbar">
         <div class = "logoandname">
-            <img src = "images/logo-black-outline.png">
+            <img src = "images/logo-black-outline.png" alt="Garage 803 Racing Logo">
             <h1><a href = "index.html" style = "text-decoration: none; color: white">GARAGE 803 RACING</a></h1>
         </div>
         <button class = "hamburger" id = "hamburger">&#9776</button>
         <div class = "links" id = "links">
-            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "navLinks.classList.toggle('show'); document.body.classList.toggle('no-scroll')">&times</button>
+            <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close">&times;</button>
             <ul>
                 <li><a href = "index.html">Home</a></li>
                 <li><a href = "team.html">Team</a></li>
@@ -351,19 +317,27 @@
             </ul>
         </div>
     </div>
+
+    <!-- Hero Banner -->
     <div class = "heroBanner">
         <div class = "siteTopic">
-            <h1>TITLE</h1>
-            <p>Description Goes Here!</p>
+            <h1>JOIN US</h1>
+            <p>Interested in being a part of the team? Fill out the form below to get started!</p>
         </div>
     </div>
+
+    <!-- Main Content with Google Form -->
     <div class = "mainContent">
-        <p style = "text-align: center" >Main Content Goes Here</p>
+        <div class="google-form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdtvcCUGSctIEfUPF6ntLFRTg2jaba3j591F7mQ5DIlA61DdA/viewform?embedded=true">Loading…</iframe>
+        </div>
     </div>
-    <img class = "bottomBar" src = "images/bar.jpg">
+
+    <!-- Footer -->
+    <img class = "bottomBar" src = "images/bar.jpg" alt="Color Bar">
     <div class = "bottomSection">
         <div class = "column1">
-            <img src = "images/logo3.png">
+            <img src = "images/logo3.png" alt="Garage 803 Racing Footer Logo">
             <hr>
             <p>Garage 803 Racing is the solar car<br>
             racing team for high school students<br>
@@ -379,6 +353,7 @@
             <p><a href = "media.html">Media</a></p>
             <p><a href = "donate.html">Donate</a></p>
             <p><a href = "contact.html">Contact</a></p>
+            <p><a href = "join.html">Join</a></p>
         </div>
         <div class = "column3">
             <h1 style = "margin-top: 0">Address</h1>
@@ -388,42 +363,50 @@
                 </p>
         </div>
         <div class = "column4">
-            <a href = "https://www.linkedin.com/company/garage-803-racing/about/', '_blank" target = "_blank"><img src = "images/LinkedIn-Logo1-removebg-preview.png"></a>
-            <a href = "https://www.youtube.com/@Garage.803.Racing" target = "_blank"><img src = "images/youtube-logo-removebg-preview.png"></a>
-            <a href = "https://www.instagram.com/garage803racing/" target = "_blank"><img src = "images/instahram-removebg-preview.png"></a>
-            <a href = "https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr" target = "_blank"><img src = "images/Facebook-Logo.png"></a>
+            <a href = "https://www.linkedin.com/company/garage-803-racing/about/" target = "_blank"><img src = "images/LinkedIn-Logo1-removebg-preview.png" alt="LinkedIn"></a>
+            <a href = "https://www.youtube.com/@Garage.803.Racing" target = "_blank"><img src = "images/youtube-logo-removebg-preview.png" alt="YouTube"></a>
+            <a href = "https://www.instagram.com/garage803racing/" target = "_blank"><img src = "images/instahram-removebg-preview.png" alt="Instagram"></a>
+            <a href = "https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr" target = "_blank"><img src = "images/Facebook-Logo.png" alt="Facebook"></a>
         </div>
     </div>
     <p class = "nonProfitStat">501(c)(3) Non-Profit Organization</p>
-</body>
+
 <script>
+    // Script for mobile navigation (hamburger menu)
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("links");
+    const closeButton = document.getElementById("close");
 
     hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-      document.body.classList.toggle("no-scroll");
+      navLinks.classList.add("show");
+      document.body.classList.add("no-scroll");
     });
 
+    closeButton.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      document.body.classList.remove("no-scroll");
+    });
+
+    // Script to hide navigation bar on scroll
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+    // Use a smaller threshold to make it more sensitive
+    const scrollThreshold = 50; 
+
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            // Scrolling down
+            navbar.classList.add('hidden');
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hidden');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
 </script>
-<script>
-  let lastScrollTop = 0;
-  const navbar = document.getElementById('navbar');
-  const scrollThreshold = window.innerWidth * 0.12;
 
-  window.addEventListener('scroll', function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-      // Scrolling down
-      navbar.classList.add('hidden');
-    } else {
-      // Scrolling up
-      navbar.classList.remove('hidden');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
-  });
-</script>
-
+</body>
 </html>
