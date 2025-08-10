@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Garage 803 Racing - Join</title>
+    <title>Garage 803 Racing - FAQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="http://garage803racing.org/images/preview-image.jpg">
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
 </head>
 <style>
-    /* Keyframe for fade-in-up animation */
+    /* General animation for elements fading in from the bottom */
     @keyframes fadeInUp{
         from{
             transform: translateY(1vw);
@@ -19,32 +19,27 @@
             opacity:1;
         }
     }
-    /* Basic body styling */
-    html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden; /* Prevent horizontal scrolling on the body */
+    /* Animation for each letter fading in */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
+    /* Basic body styling */
     body{
+        margin: 0;
         font-family: sans-serif;
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Ensures footer is at the bottom */
+        min-height: 100vh;
         background-color: white;
     }
-    /* Prevents scrolling when mobile menu is open */
-    body.no-scroll{
-        overflow:hidden;
-    }
-    /* Logo and Name styling in navigation */
     .logoandname{
         display: flex;
         align-items: center;
         margin: 10px;
         color: white;
     }
-    /* Navigation links styling */
+    /* Navigation link styles */
     .links ul li{
         text-decoration: none;
         list-style-type: none;
@@ -72,22 +67,21 @@
         background-color: rgb(48, 48, 48);
         transition: transform 1s ease;
     }
-    /* Class to hide navbar on scroll */
     .navigation.hidden{
         transform: translateY(-100%);
     }
-    /* Hero banner styling */
+    /* Top banner section */
     .heroBanner{
         display: flex;
         background-image: url("images/bar.jpg");
         background-size: 100% 100%;
         align-items: center;
-        justify-content: center; /* Center the topic */
+        justify-content: center;
     }
-    /* Title box styling */
     .siteTopic{
         background-color: white;
         animation: fadeInUp 1s forwards;
+        text-align: center;
     }
     .siteTopic p{
         font-weight: lighter;
@@ -95,31 +89,66 @@
     /* Main content area */
     .mainContent{
         flex: 1;
+        padding: 2vw;
+    }
+    /* FAQ Section styles */
+    .faq-container {
+        width: 80%;
+        margin: 2vw auto;
+    }
+    .faq-item {
+        margin-bottom: 1vw;
+        border: 1px solid #ddd;
+        border-radius: 0.5vw;
+        overflow: hidden;
+    }
+    .faq-question {
+        background-color: #f1f1f1;
+        color: #333;
+        cursor: pointer;
+        padding: 1.5vw;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1.2vw;
+        transition: background-color 0.4s;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        padding: 4vw; 
-        box-sizing: border-box;
     }
-    /* Responsive container for the Google Form */
-    .google-form-container {
-        width: 100%;
-        max-width: 800px; /* Adjust max-width as needed */
-        height: 120vh; /* A good default height */
-        border: 1px solid #ccc;
-        border-radius: 1vw;
-        overflow: hidden; /* Ensures the iframe stays within the border */
+    .faq-question:hover, .faq-question.active {
+        background-color: #ddd;
     }
-    .google-form-container iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
+    .faq-question .arrow {
+        transition: transform 0.3s ease;
     }
-    /* Footer styling */
+    .faq-question.active .arrow {
+        transform: rotate(90deg);
+    }
+    .faq-answer {
+        padding: 0 1.5vw;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+    .faq-answer p {
+        margin: 1.5vw 0;
+        font-weight: lighter;
+        line-height: 1.6;
+    }
+    /* Styling for the animated letters */
+    .faq-answer p span {
+        opacity: 0;
+        animation-name: fadeIn;
+        animation-duration: 0.1s;
+        animation-fill-mode: forwards;
+    }
+    /* Footer styles */
     .bottomBar{
         width: 100vw;
         aspect-ratio: 60/1;
-        display: block; /* Ensure it's visible */
     }
     .bottomSection{
         background-color: rgb(224, 224, 224);
@@ -143,11 +172,14 @@
         background-color: rgb(224, 224, 224);
         margin: 0;
         font-weight: lighter;
-        padding: 1vw;
+        padding-bottom: 1vw;
         color: rgb(60,60,60);
     }
-    /* Phone specific styles */
+    /* Phone Styles */
     @media(max-width: 770px){
+        body.no-scroll{
+            overflow:hidden;
+        }
         .hamburger{
             background: none;
             border: none;
@@ -157,6 +189,9 @@
         }
         .navigation{
             height: 12vw;
+        }
+        .navigation.hidden{
+            transform: translateY(-12vw) !important;
         }
         .logoandname img{
             width: 7.5vw;
@@ -197,9 +232,7 @@
         .siteTopic h1{
             font-size: 16vw;
             margin: 0;
-            padding-top: 3vw;
-            padding-left: 3vw;
-            padding-right: 3vw;
+            padding: 3vw;
             text-align: center;
             text-decoration: underline;
             text-decoration-thickness: 1vw;
@@ -207,102 +240,57 @@
         }
         .siteTopic p{
             font-size: 3vw;
-            padding-bottom: 3vw;
-            padding-left: 3vw;
-            padding-right: 3vw;
+            padding: 0 3vw 3vw 3vw;
             text-align: center;
             margin: 2vw;
         }
         .heroBanner{
             aspect-ratio: 2/1;
+            justify-content: center;
             margin-top: 12vw;
         }
-        .mainContent {
-            padding: 5vw;
+        .faq-container {
+            width: 90%;
         }
-        .google-form-container {
-            height: 150vh; /* Taller form for mobile */
-            border-radius: 2vw; /* Rounded corners for mobile */
+        .faq-question {
+            font-size: 4vw;
+            padding: 4vw;
         }
-        .bottomSection{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .column1, .column2, .column3, .column4 {
-            text-align: center;
-            width: 80%;
-            padding: 2vw;
-        }
-        .column2, .column3 {
-            border-top: 1px solid black;
+        .faq-answer p {
+            font-size: 3.5vw;
         }
         .column1 img{ width: 40vw; margin-top: 3vw; }
         .column1 hr{ width: 38vw; border: none; background-color: black; height: 2px; }
-        .column4 img{ width: 8vw; margin: 2vw; display: inline-block; }
+        .column1{ text-align: center; }
+        .column2{ text-align: center; border-top: 1px solid black; width: 40%; padding: 2vw; }
+        .column3{ text-align: center; border-top: 1px solid black; width: 40%; padding: 2vw; }
+        .column4 img{ width: 8vw; margin: 2vw; }
+        .bottomSection{ display: flex; flex-direction: column; align-items: center; }
         .bottomSection h1{ font-size: 5vw; }
         .bottomSection p{ font-size: 3vw; }
-        .nonProfitStat{ font-size: 2.5vw; }
+        .nonProfitStat{ font-size: 2vw; }
     }
-    /* Computer specific styles */
+    /* Computer Styles */
     @media(min-width: 771px){
-        .hamburger, .close {
-            display: none;
-        }
-        .navigation{
-            height: 6vw;
-        }
-        .logoandname img{
-            width: 3vw;
-        }
-        .logoandname h1{
-            font-size: 2vw;
-            margin: 0px 0px 0px 1vw;
-            letter-spacing: 0.35vw;
-        }
-        .links ul li{
-            margin: 1vw;
-            font-size: 1vw;
-        }
-        .siteTopic{
-            border-radius: 1vw;
-            width: 40%;
-        }
-        .siteTopic h1{
-            font-size: 8vw;
-            margin: 0;
-            padding-top: 1.5vw;
-            padding-left: 1.5vw;
-            padding-right: 1.5vw;
-            text-decoration: underline;
-            text-decoration-thickness: 0.5vw;
-            text-underline-offset: 1vw;
-        }
-        .siteTopic p{
-            font-size: 1.5vw;
-            padding-bottom: 1.5vw;
-            padding-left: 1.5vw;
-            padding-right: 1.5vw;
-            margin: 1vw;
-        }
-        .heroBanner{
-            aspect-ratio: 4/1;
-            margin-top: 6vw;
-        }
-        .bottomSection{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: flex-start;
-        }
+        .hamburger, .close { display: none; }
+        .navigation{ height: 6vw; }
+        .logoandname img{ width: 3vw; }
+        .logoandname h1{ font-size: 2vw; margin: 0 0 0 1vw; letter-spacing: 0.35vw; }
+        .links ul li{ margin: 1vw; font-size: 1vw; }
+        .siteTopic{ margin-left: 2vw; border-radius: 1vw; width: 40%; }
+        .siteTopic h1{ font-size: 8vw; margin: 0; padding: 1.5vw; text-decoration: underline; text-decoration-thickness: 0.5vw; text-underline-offset: 1vw; }
+        .siteTopic p{ font-size: 1.5vw; padding: 0 1.5vw 1.5vw 1.5vw; margin: 1vw; }
+        .heroBanner{ aspect-ratio: 4/1; margin-top: 6vw; }
+        .bottomSection{ display: flex; flex-direction: row; justify-content: space-evenly; }
+        .bottomSection h1{ font-size: 2vw; }
+        .bottomSection p{ font-size: 1vw; }
         .column1 img{ width: 20vw; margin-top: 1.5vw; }
         .column1 hr{ width: 18.5vw; border: none; background-color: black; height: 2px; margin-left: 0; }
-        .column2, .column3 { border-left: 1px solid black; padding-left: 2vw; margin-top: 1vw; }
+        .column2{ border-left: 1px solid black; padding-left: 1vw; margin-top: 1vw; }
+        .column3{ margin-top: 1vw; padding-left: 1vw; border-left: 1px solid black; margin-bottom: 8vw; }
         .column4{ align-content: center; }
         .column4 img{ width: 4vw; margin: 1vw; }
         .column4 img:hover{ transform: translateY(-0.5vw); cursor: pointer; }
-        .bottomSection h1{ font-size: 2vw; }
-        .bottomSection p{ font-size: 1vw; }
         .nonProfitStat{ font-size: 1vw; }
     }
 </style>
@@ -332,15 +320,38 @@
     <!-- Hero Banner -->
     <div class = "heroBanner">
         <div class = "siteTopic">
-            <h1>JOIN US</h1>
-            <p>Interested in being a part of the team? Fill out the form below to get started!</p>
+            <h1>FAQ</h1>
+            <p>Frequently Asked Questions</p>
         </div>
     </div>
 
-    <!-- Main Content with Google Form -->
+    <!-- Main Content: FAQ Section -->
     <div class = "mainContent">
-        <div class="google-form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdtvcCUGSctIEfUPF6ntLFRTg2jaba3j591F7mQ5DIlA61DdA/viewform?embedded=true">Loading…</iframe>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Q: What are the requirements to join? <span class="arrow">▶</span></button>
+                <div class="faq-answer">
+                    <p>There are no skill requirements, but some sort of engineering experience is preferred. However, we look for individuals who show very high commitment levels, and those who are willing to put in the time, and the effort. Our main qualities we look for in a member are commitment, responsibility, and accountability.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Q: What is the time commitment? <span class="arrow">▶</span></button>
+                <div class="faq-answer">
+                    <p>This club doesn’t have a significant amount of meetings during the school year, and most work is done online by yourself. During the school year, this could mean up to ~20-30 hours per week. During summer break, this could be even higher.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Q: How do I join the team? <span class="arrow">▶</span></button>
+                <div class="faq-answer">
+                    <p>This team is a very small team, meaning it is not an open invite. The first step is to fill out the Recruitment Application form on our “Join” page of our website. We will then reach out to schedule an interview to get to know you better. If we determine that you are a suitable member, then you will be invited.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Q: What can I learn from this team? <span class="arrow">▶</span></button>
+                <div class="faq-answer">
+                    <p>Being a member of Garage 803 Racing is a very rewarding experience. We will teach you skills like designing in CAD, working with various machines in manufacturing, designing and constructing electrical systems, etc. Furthermore, you will also be introduced to advanced college level physics topics like finite element analysis and computational fluid dynamics. Apart from technical skills, you will also find yourself developing soft skills through our outreach programs and negotiating sponsorship. Being able to communicate with companies, pitch our solar car project, and giving presentations are all necessary skills you will need in the future.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -381,9 +392,53 @@
         </div>
     </div>
     <p class = "nonProfitStat">501(c)(3) Non-Profit Organization</p>
-<body>
+</body>
 <script>
-    // Script for mobile navigation (hamburger menu)
+    // --- FAQ Dropdown Logic ---
+    document.addEventListener('DOMContentLoaded', function () {
+        const questions = document.querySelectorAll('.faq-question');
+
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+
+                // First, close all other open questions
+                questions.forEach(q => {
+                    if (q !== question) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                // Now, toggle the clicked question
+                if (isActive) {
+                    // If it's already active, close it
+                    question.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
+                    // If it's not active, open it
+                    question.classList.add('active');
+                    // Set max-height to the element's scrollHeight for a perfect fit
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+
+                    // Animate the text appearing letter by letter
+                    const answerP = answer.querySelector('p');
+                    const text = answerP.textContent; // Use textContent for better performance
+                    answerP.innerHTML = ''; // Clear the paragraph
+                    text.split('').forEach((char, index) => {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        // Stagger the animation for each letter
+                        span.style.animationDelay = `${index * 0.003}s`;
+                        answerP.appendChild(span);
+                    });
+                }
+            });
+        });
+    });
+
+    // --- Mobile Navigation (Hamburger Menu) ---
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("links");
     const closeButton = document.getElementById("close");
@@ -392,17 +447,16 @@
       navLinks.classList.add("show");
       document.body.classList.add("no-scroll");
     });
-
+    
     closeButton.addEventListener("click", () => {
       navLinks.classList.remove("show");
       document.body.classList.remove("no-scroll");
     });
 
-    // Script to hide navigation bar on scroll
+    // --- Hide Navigation Bar on Scroll ---
     let lastScrollTop = 0;
     const navbar = document.getElementById('navbar');
-    // Use a smaller threshold to make it more sensitive
-    const scrollThreshold = 50; 
+    const scrollThreshold = 50; // A smaller threshold for responsiveness
 
     window.addEventListener('scroll', function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -414,10 +468,8 @@
             // Scrolling up
             navbar.classList.remove('hidden');
         }
-
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 </script>
 
-</body>
 </html>
