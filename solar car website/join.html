@@ -19,6 +19,21 @@
             opacity:1;
         }
     }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Semibold.otf");
+        font-weight: 500;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Thin.otf");
+        font-weight: 300;
+    }
     /* Basic body styling */
     html, body {
         margin: 0;
@@ -27,7 +42,7 @@
         overflow-x: hidden; /* Prevent horizontal scrolling on the body */
     }
     body{
-        font-family: sans-serif;
+        font-family: sf-pro;
         display: flex;
         flex-direction: column;
         min-height: 100vh; /* Ensures footer is at the bottom */
