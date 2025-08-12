@@ -79,6 +79,13 @@
     .mainContent{
         flex: 1;
     }
+    .sponsor-logos{
+        display: flex;
+        justify-content: center;
+    }
+    .sponsor-logos img{
+        width: 40vw;
+    }
     .buttonQRcode{
         display: flex;
         flex-direction: column;
@@ -191,13 +198,8 @@
             text-align: center;
             margin: 2vw;
         }
-        .siteTopic img{
-            width: 50vw;
-            margin-left: 4vw;
-            margin-bottom: 4vw;
-        }
         .heroBanner{
-            aspect-ratio: 3/2;
+            aspect-ratio: 2/1;
             justify-content: center;
             margin-top: 12vw;
         }
@@ -210,6 +212,9 @@
             justify-content: space-evenly;
             margin-bottom: 8vw;
             margin-top: 8vw;
+        }
+        .sponsor-logos img{
+            width: 80vw;
         }
         .buttonQRcode button{
             width: 80vw;
@@ -315,13 +320,8 @@
             padding-right: 1.5vw;
             margin: 1vw;
         }
-        .siteTopic img{
-            width: 25vw;
-            margin-left: 2vw;
-            margin-bottom: 2vw;
-        }
         .heroBanner{
-            aspect-ratio: 3/1;
+            aspect-ratio: 4/1;
             margin-top: 6vw;
         }
         .mainContent h1{
@@ -426,12 +426,14 @@
         <div class = "siteTopic">
             <h1>SPONSORS</h1>
             <p>Garage 803 Racing is only possible thanks to the
-            support of these sponsors.</p>
-            <img src = "sponsor-logos/simscale.jpg">
-            
+            support of these sponsors.</p>            
         </div>
     </div>
     <div class = "mainContent">
+        <h1 style = "text-align: center">THANK YOU TO OUR SPONSORS!</h1>
+        <div class = "sponsor-logos">  
+            <img src = "sponsor-logos/simscale.jpg">
+        </div>
         <h1 style = "text-align: center" >INTERESTED IN BECOMING A SPONSOR?</h1>
         <div class = "sponsorsContent">
             <div class = "buttonQRcode">
