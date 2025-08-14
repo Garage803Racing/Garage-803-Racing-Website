@@ -313,9 +313,15 @@
         }
         .mainContent .imageAndText{
             display: flex;
-            margin: 5vw;
+            padding: 5vw 10vw 5vw 10vw;
             flex-direction: column;
             align-items: center;
+        }
+        #section-background-1{
+            background-image: url("images/section-background-mobile-1.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            color: white;
         }
         .mainContent img{
             width: 70vw;
@@ -331,16 +337,22 @@
             font-size: 3vw;
             text-align: center;
         }
+        .bodyText2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .mainContent button{
             font-family: sf-pro;
             background: none;
             border-radius: 2vw;
-            border: 1px solid black;
+            border: 1px solid white;
+            color: white;
             font-size: 3vw;
-            padding: 1vw;
-            font-weight: lighter !important;
+            padding: 2vw;
+            font-weight: lighter;
             cursor: pointer;
-            justify-self: center;
+            margin: 5vw;
         }
         .ourGoal{
             margin: 10vw;
@@ -454,11 +466,19 @@
         }
         .mainContent .imageAndText{
             display: flex;
-            margin: 5vw;
+            padding: 5vw;
+        }
+        #section-background-1{
+            background-image: url("images/section-background-pc-1.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            color: white;
         }
         .mainContent img{
             width: 35vw;
+            height: 25vw;
             border-radius: 1vw;
+            align-self: center;
         }
         .mainContent h1{
             font-weight: bold;
@@ -479,17 +499,18 @@
             font-family: sf-pro;
             background: none;
             border-radius: 1vw;
-            border: 1px solid black;
+            border: 1px solid white;
+            color: white;
             font-size: 1.5vw;
             padding: 1vw;
-            margin-left: 5vw;
+            margin-top: 5vw;
             font-weight: lighter !important;
             cursor: pointer;
             transition: background-color 0.5s ease;
         }
         .mainContent button:hover{
-            background-color: rgb(0,0,0);
-            color: white;
+            background-color: white;
+            color: black;
             border: 1px solid white;
         }
         .mainContent hr{
@@ -615,7 +636,7 @@
                 generation of innovators.</p>
             </div>
         </div>
-        <div class = "imageAndText">
+        <div class = "imageAndText" id = "section-background-1">
             <div class = "bodyText2">
                 <h1>What is the Solar Car Challenge?</h1>
                 <p>The Solar Car Challenge is a national competition for
@@ -632,11 +653,12 @@
                 Challenge is greater than a competition, for it fosters
                 leadership, sustainability, and a passion for cutting-edge
                 technology, defining the future of engineers and innovators.</p>
-                
+                <a href = "https://www.solarcarchallenge.org/challenge/" target = "_blank"><button>Read More →</button></a>
+
             </div>
             <img src = "images/competetion.jpg">
+            
         </div>
-        <a href = "https://www.solarcarchallenge.org/challenge/" target = "_blank"><button>Read More →</button></a>
         <hr>
         <div class = "aimGoalSection">
             <div class = "ourAim">
