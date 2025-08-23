@@ -417,26 +417,26 @@
       navLinks.classList.remove("show");
       document.body.classList.remove("no-scroll");
     });
+</script>
+<script>
+    //for navbar animation
+  let lastScrollTop = 0;
+  const navbar = document.getElementById('navbar');
+  const scrollThreshold = window.innerWidth * 0.12;
 
-    // Script to hide navigation bar on scroll
-    let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-    // Use a smaller threshold to make it more sensitive
-    const scrollThreshold = 50; 
+  window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    window.addEventListener('scroll', function () {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+      // Scrolling down
+      navbar.classList.add('hidden');
+    } else {
+      // Scrolling up
+      navbar.classList.remove('hidden');
+    }
 
-        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-            // Scrolling down
-            navbar.classList.add('hidden');
-        } else {
-            // Scrolling up
-            navbar.classList.remove('hidden');
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
+  });
 </script>
 
 </body>
