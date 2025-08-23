@@ -20,6 +20,10 @@
     }
     /* Custom Fonts*/
     @font-face{
+        font-family: sf-pro-donate-button;
+        src: url("fonts/SF-Pro-Display-Heavy.otf");
+    }
+    @font-face{
         font-family: sf-pro;
         src: url("fonts/SF-Pro-Display-Semibold.otf");
         font-weight: 500;
@@ -235,7 +239,7 @@
             font-size: 10vw;
             padding: 5vw;
             border-radius: 5vw;
-            font-weight: bold;
+            font-family: sf-pro-donate-button;
         }
         .column1 img{
             width: 40vw;
@@ -340,7 +344,9 @@
             margin: 2vw;
             width: 50vw;
             border-radius: 5vw;
+            font-family: sf-pro-donate-button;
             font-weight: bold;
+            align-self: center;
         }
         .mainContent a{
             align-self: center;
@@ -435,7 +441,7 @@
         </div>
     </div>
     <div class = "mainContent">
-        <a href = "https://www.gofundme.com/f/help-high-school-students-compete-in-the-solar-car-challenge" target = "_blank"><button>DONATE NOW</button></a>
+        <button onclick = "window.open('https://www.gofundme.com/f/help-high-school-students-compete-in-the-solar-car-challenge','_blank')">DONATE NOW</button>
         <h1>WHAT WE DO</h1>
         <p>We will design and build a one-seater solar car that's fully dependent on solar energy. This car will be designed to race on
         the Texas Motor Speedway over the course of 4 days during the summer (2025 event). Throughout the season, we will
