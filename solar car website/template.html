@@ -80,6 +80,13 @@
     }
     .join-navbar-button:hover{
         cursor: pointer;
+        opacity: 0.75;
+        transition: opacity 0.25s linear;
+    }
+    .contact-navbar-button:hover{
+        cursor: pointer;
+        opacity:0.75;
+        transition: opacity 0.25s linear;
     }
     .contact-navbar-button{
         background: none;
@@ -202,6 +209,42 @@
         .links.show{
             transform: translateX(0);
         }
+        .join-navbar-button{
+            background-color: white;
+            color: rgb(48,48,48);
+            border: 0.5vw solid white;
+            padding: 1vw;
+            width: 20vw;
+            margin-right: 0;
+            font-family: sf-pro;
+            font-weight: bold;
+            font-size: 2.5vw;
+            border-radius: 1vw !important;
+            align-self: flex-end;
+        }
+        .join-navbar-button:hover{
+            cursor: pointer;
+            opacity: 0.75;
+            transition: opacity 0.25s linear;
+        }
+        .contact-navbar-button:hover{
+            cursor: pointer;
+            opacity:0.75;
+            transition: opacity 0.25s linear;
+        }
+        .contact-navbar-button{
+            background: none;
+            border: 0.5vw solid white;
+            color: white;
+            padding: 1vw;
+            width: 20vw;
+            margin-right: 0;
+            font-family: sf-pro;
+            font-weight: bold;
+            font-size: 2.5vw;
+            border-radius: 1vw !important;
+            align-self: flex-end;
+        }
 
         .siteTopic{
             border-radius: 2vw;
@@ -294,6 +337,9 @@
             font-size: 2vw;
             margin: 0px 0px 0px 1vw;
             letter-spacing: 0.35vw;
+        }
+        .links{
+            margin-right: 1.5vw;
         }
         .links ul li{
             margin: 1vw;
