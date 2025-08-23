@@ -65,6 +65,35 @@
         text-decoration: underline;
         transform: translateY(-0.25vw);
     }
+    .join-navbar-button{
+        background-color: white;
+        color: rgb(48,48,48);
+        border: 0.25vw solid white;
+        padding: 0.5vw;
+        width: 7.5vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
+        font-family: sf-pro;
+        font-weight: bold;
+        font-size: 1.25vw;
+        border-radius: 0.5vw !important;
+    }
+    .join-navbar-button:hover{
+        cursor: pointer;
+    }
+    .contact-navbar-button{
+        background: none;
+        border: 0.25vw solid white;
+        color: white;
+        padding: 0.5vw;
+        width: 7.5vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
+        font-family: sf-pro;
+        font-weight: bold;
+        font-size: 1.25vw;
+        border-radius: 0.5vw !important;
+    }
     .navigation{
         position: fixed;
         width: 100%;
@@ -361,8 +390,8 @@
                 <li><a href = "media.html">Media</a></li>
                 <li><a href = "donate.html">Donate</a></li>
                 <li><a href = "faq.html">FAQ</a></li>
-                <li><a href = "join.html">Join</a></li>
-                <li><a href = "contact.html">Contact</a></li>
+                <button class = "join-navbar-button" onclick = "location.assign('join.html')">Join</button>
+                <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact</button>
             </ul>
         </div>
     </div>
