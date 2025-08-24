@@ -48,6 +48,11 @@
         align-items: center;
         margin: 10px;
     }
+    .links a{
+        color: white;
+        text-decoration: none;
+        letter-spacing: 0.05vw;
+    }
     .links ul li{
         text-decoration: none;
         list-style-type: none;
@@ -55,15 +60,13 @@
         color: white;
         font-weight: bold;
         cursor: pointer;
-    }
-    .links a{
-        color: white;
-        text-decoration: none;
-        letter-spacing: 0.05vw;
+        padding: 0.5vw;
+        transition: background-color 0.25s linear;
+        border-radius: 0.5vw;
     }
     .links ul li:hover{
-        text-decoration: underline;
-        transform: translateY(-0.25vw);
+        background-color: rgba(17, 130, 210, 0.75);
+        border-radius: 0.5vw;
     }
     .join-navbar-button{
         background-color: white;
@@ -353,7 +356,7 @@
             margin-right: 1.5vw;
         }
         .links ul li{
-            margin: 1vw;
+            margin: 0.5vw;
             font-size: 1vw;
         }
         .siteTopic{

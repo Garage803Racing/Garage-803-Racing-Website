@@ -55,7 +55,10 @@
         display: inline-block;
         color: white;
         font-weight: bold;
+        border-radius: 0.5vw;
         cursor: pointer;
+        padding: 0.5vw;
+        transition: background-color 0.25s linear;
     }
     .links a{
         color: white;
@@ -63,8 +66,7 @@
         letter-spacing: 0.05vw;
     }
     .links ul li:hover{
-        text-decoration: underline;
-        transform: translateY(-0.25vw);
+        background-color: rgba(17,130,210,0.75);
     }
     .join-navbar-button{
         background-color: white;
@@ -382,7 +384,7 @@
             margin-right: 1.5vw;
         }
         .links ul li{
-            margin: 1vw;
+            margin: 0.5vw;
             font-size: 1vw;
         }
         .siteTopic{
@@ -489,7 +491,7 @@
             <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "navLinks.classList.toggle('show'); document.body.classList.toggle('no-scroll')">&times</button>
             <ul>
                 <li><a href = "index.html">Home</a></li>
-                <li><a href = "team.html">Team</a></li>
+                <li style = "background-color: rgba(17,130,210,0.75);"><a href = "team.html">Team</a></li>
                 <li><a href = "sponsors.html">Sponsors</a></li>
                 <li><a href = "media.html">Media</a></li>
                 <li><a href = "donate.html">Donate</a></li>

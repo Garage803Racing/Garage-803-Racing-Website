@@ -67,6 +67,9 @@
         color: white;
         font-weight: bold;
         cursor: pointer;
+        transition: background-color 0.25s linear;
+        border-radius: 0.5vw;
+        padding: 0.5vw;
     }
     .links a{
         color: white;
@@ -74,8 +77,7 @@
         letter-spacing: 0.05vw;
     }
     .links ul li:hover{
-        text-decoration: underline;
-        transform: translateY(-0.25vw);
+        background-color: rgba(17,130,210,0.75);
     }
     /* Main navigation bar */
     .join-navbar-button{
@@ -376,7 +378,7 @@
         .logoandname img{ width: 3vw; }
         .logoandname h1{ font-size: 2vw; margin: 0 0 0 1vw; letter-spacing: 0.35vw; }
         .links{margin-right: 1.5vw;}
-        .links ul li{ margin: 1vw; font-size: 1vw; }
+        .links ul li{ margin: 0.5vw; font-size: 1vw; }
         .siteTopic{ border-radius: 1vw; width: 40%; }
         .siteTopic h1{ font-size: 8vw; margin: 0; padding: 1.5vw; text-decoration: underline; text-decoration-thickness: 0.5vw; text-underline-offset: 1vw; }
         .siteTopic p{ font-size: 1.5vw; padding: 0 1.5vw 1.5vw 1.5vw; margin: 1vw; }
@@ -410,7 +412,7 @@
                 <li><a href = "sponsors.html">Sponsors</a></li>
                 <li><a href = "media.html">Media</a></li>
                 <li><a href = "donate.html">Donate</a></li>
-                <li><a href = "faq.html">FAQ</a></li>
+                <li style = "background-color: rgba(17,130,210,0.75);"><a href = "faq.html">FAQ</a></li>
                 <button class = "join-navbar-button" onclick = "location.assign('join.html')">Join</button>
                 <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact</button>
             </ul>
