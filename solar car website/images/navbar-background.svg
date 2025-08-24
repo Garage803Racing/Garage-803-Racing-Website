@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Navbar_Background_Design" data-name="Navbar Background Design" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 112.78">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-68.94" y1="56.39" x2="698.99" y2="56.39" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101f28"/>
+      <stop offset="1" stop-color="#00101c"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <polygon points="1988.94 -4.05 1988.94 116.83 833 116.83 872.51 56.39 838.42 -4.05 1988.94 -4.05" fill="#00101c"/>
+    <polygon points="838.42 -4.05 872.51 56.39 833 116.83 746.25 116.83 785.76 56.39 751.67 -4.05 838.42 -4.05" fill="#1b3d56"/>
+    <polygon points="751.67 -4.05 785.76 56.39 746.25 116.83 659.49 116.83 698.99 56.39 664.92 -4.05 751.67 -4.05" fill="#ce3254"/>
+    <polygon points="664.92 -4.05 698.99 56.39 659.49 116.83 -68.94 116.83 -68.94 -4.05 664.92 -4.05" fill="url(#linear-gradient)"/>
+  </g>
+  <polygon points="838.42 -4.05 1988.94 -4.05 1988.94 116.83 833 116.83 746.25 116.83 659.49 116.83 -68.94 116.83 -68.94 -4.05 664.92 -4.05 751.67 -4.05 838.42 -4.05" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+</svg>
