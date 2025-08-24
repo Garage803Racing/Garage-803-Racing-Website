@@ -127,6 +127,40 @@
         text-decoration: underline;
         transform: translateY(-0.25vw);
     }
+    .join-navbar-button{
+        background-color: white;
+        color: rgb(48,48,48);
+        border: 0.25vw solid white;
+        padding: 0.5vw;
+        width: 7.5vw;
+        margin-left: 1vw;
+        font-family: sf-pro;
+        font-weight: normal;
+        font-size: 1.25vw;
+        border-radius: 0.5vw !important;
+    }
+    .join-navbar-button:hover{
+        cursor: pointer;
+        opacity: 0.75;
+        transition: opacity 0.25s linear;
+    }
+    .contact-navbar-button:hover{
+        cursor: pointer;
+        opacity:0.75;
+        transition: opacity 0.25s linear;
+    }
+    .contact-navbar-button{
+        background: none;
+        border: 0.25vw solid white;
+        color: white;
+        padding: 0.5vw;
+        width: 7.5vw;
+        margin-left: 1vw;
+        font-family: sf-pro;
+        font-weight: normal;
+        font-size: 1.25vw;
+        border-radius: 0.5vw !important;
+    }
     .navigation{
         position: fixed;
         width: 100%;
@@ -134,7 +168,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgb(48, 48, 48);
+        background-image: url("images/navbar-background-pc.jpg");
+        background-size: 100% 100%;
         transition: transform 1s ease;
     }
     .navigation.hidden{
@@ -269,6 +304,8 @@
         }
         .navigation{
             height: 12vw;
+            background-image: url("images/navbar-background-mobile.jpg");
+            background-size: 100% 100%;
         }
         .navigation.hidden{
             transform: translateY(-12vw) !important;
@@ -280,6 +317,42 @@
             font-size: 4vw;
             margin: 0px 0px 0px 2vw;
             letter-spacing: 0.7vw;
+        }
+        .join-navbar-button{
+            background-color: white;
+            color: rgb(48,48,48);
+            border: 0.5vw solid white;
+            padding: 1vw;
+            width: 30vw;
+            margin-right: 0;
+            font-family: sf-pro;
+            font-weight: normal;
+            font-size: 5vw;
+            border-radius: 1vw !important;
+            align-self: center;
+        }
+        .join-navbar-button:hover{
+            cursor: pointer;
+            opacity: 0.75;
+            transition: opacity 0.25s linear;
+        }
+        .contact-navbar-button:hover{
+            cursor: pointer;
+            opacity:0.75;
+            transition: opacity 0.25s linear;
+        }
+        .contact-navbar-button{
+            background: none;
+            border: 0.5vw solid white;
+            color: white;
+            padding: 1vw;
+            width: 30vw;
+            margin-right: 0;
+            font-family: sf-pro;
+            font-weight: normal;
+            font-size: 5vw;
+            border-radius: 1vw !important;
+            align-self: center;
         }
         .heroBanner{
             margin-top: 12vw;
@@ -381,6 +454,11 @@
             flex-direction: column;
             font-size: 4vw;
             gap: 5vw;
+            padding-left: 0;
+        }
+        .links ul li{
+            display: flex;
+            align-self: center;
         }
         .links{
             flex-direction: column;
@@ -463,6 +541,9 @@
             font-size: 2vw;
             margin: 0px 0px 0px 1vw;
             letter-spacing: 0.35vw;
+        }
+        .links{
+            margin-right: 1.5vw;
         }
         .links ul li{
             margin: 1vw;
@@ -624,8 +705,8 @@
                 <li><a href = "media.html">Media</a></li>
                 <li><a href = "donate.html">Donate</a></li>
                 <li><a href = "faq.html">FAQ</a></li>
-                <li><a href = "join.html">Join</a></li>
-                <li><a href = "contact.html">Contact</a></li>
+                <button class = "join-navbar-button" onclick = "location.assign('join.html')">Join</button>
+                <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact</button>
             </ul>
         </div>
     </div>
