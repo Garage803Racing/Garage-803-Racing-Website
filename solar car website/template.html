@@ -449,10 +449,10 @@
             <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "navLinks.classList.toggle('show'); document.body.classList.toggle('no-scroll')">&times</button>
             <ul>
                 <li><a href = "index.html">Home</a></li>
-                <li><a href = "team.html" class = "team-link">Team</a>
-                    <ul class = "team-dropdown">
-                        <li>Team 2025</li>
-                        <li>Team 2026</li>
+                <li><a class = "team-link" id = "team-link">Team</a>
+                    <ul class = "team-dropdown" id = "team-dropdown">
+                        <li><a href = "team.html">Team 2025</a></li>
+                        <li><a>Team 2026</a></li>
                     </ul>
                 </li>
                 <li><a href = "sponsors.html">Sponsors</a></li>
@@ -525,11 +525,13 @@
   let lastScrollTop = 0;
   const navbar = document.getElementById('navbar');
   const scrollThreshold = window.innerWidth * 0.12;
+  const teamLink = document.getElementById('team-link');
+  const teamDropdown = document.getElementById('team-dropdown');
 
   window.addEventListener('scroll', function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold && window.getComputedStyle(teamDropdown).display === "none") {
       // Scrolling down
       navbar.classList.add('hidden');
     } else {
@@ -538,6 +540,11 @@
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
+  });
+</script>
+<script>
+    teamLink.addEventListener("click", function() {
+        teamDropdown.classList.toggle('show');
   });
 </script>
 

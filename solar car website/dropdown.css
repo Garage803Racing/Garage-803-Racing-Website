@@ -11,6 +11,10 @@
         margin-top: 2vw;
     }
     .team-dropdown{
+        display: none !important;
+    }
+    .team-dropdown.show{
+        display: flex !important;
         gap: 0 !important;
     }
 }
@@ -19,7 +23,7 @@
         display: none;
         position: absolute !important;
         width: 200%;
-        top: 110%;
+        top: 105%;
         left: 0;
         padding-left: 0;
         transform: translateX(-25%);
@@ -30,6 +34,9 @@
         list-style: none;
         display: block !important;
         text-align: center !important;
+    }
+    .team-dropdown a{
+        letter-spacing: 0 !important;
     }
     li:hover .team-dropdown{
         display: block;
