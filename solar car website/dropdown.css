@@ -1,0 +1,41 @@
+
+
+/* Mobile Device Styling */
+@media(max-width: 770px){
+    .links li{
+       display: flex;
+       flex-direction: column !important;
+    }
+    .team-dropdown li{
+        font-weight: lighter !important;
+        margin-top: 2vw;
+    }
+    .team-dropdown{
+        gap: 0 !important;
+    }
+}
+@media(min-width: 771px){
+    .team-dropdown{
+        display: none;
+        position: absolute !important;
+        width: 200%;
+        top: 110%;
+        left: 0;
+        padding-left: 0;
+        transform: translateX(-25%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0.5vw;
+    }
+    .team-dropdown li{
+        list-style: none;
+        display: block !important;
+        text-align: center !important;
+    }
+    li:hover .team-dropdown{
+        display: block;
+    }
+    .team-dropdown:hover{
+        display: block !important;
+    }
+}
+
