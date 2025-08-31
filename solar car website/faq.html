@@ -573,60 +573,7 @@
             });
         });
     });
-
-    // --- Mobile Navigation (Hamburger Menu) ---
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("links");
-    const closeButton = document.getElementById("close");
-
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.add("show");
-      document.body.classList.add("no-scroll");
-    });
-    
-    closeButton.addEventListener("click", () => {
-      navLinks.classList.remove("show");
-      document.body.classList.remove("no-scroll");
-    });
-
-    /*
-    // --- Hide Navigation Bar on Scroll ---
-    let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-    const scrollThreshold = 50; // A smaller threshold for responsiveness
-
-    window.addEventListener('scroll', function () {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-            // Scrolling down
-            navbar.classList.add('hidden');
-        } else {
-            // Scrolling up
-            navbar.classList.remove('hidden');
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-    */
 </script>
-<script>
-  let lastScrollTop = 0;
-  const navbar = document.getElementById('navbar');
-  const scrollThreshold = window.innerWidth * 0.12;
-
-  window.addEventListener('scroll', function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-      // Scrolling down
-      navbar.classList.add('hidden');
-    } else {
-      // Scrolling up
-      navbar.classList.remove('hidden');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
-  });
-</script>
+<script src = "navbar.js"></script>
 
 </html>
