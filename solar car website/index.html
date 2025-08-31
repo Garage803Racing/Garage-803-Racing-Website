@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="http://garage803racing.org/images/preview-image.jpg">
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
+    <link rel = "stylesheet" href = "dropdown.css">
 </head>
 <style>
     @keyframes fadeInUp{
@@ -116,6 +117,7 @@
         list-style-type: none;
         display: inline-block;
         color: white;
+        position: relative;
         font-weight: bold;
         cursor: pointer;
         border-radius: 0.5vw;
@@ -126,6 +128,7 @@
         color: white;
         text-decoration: none;
         letter-spacing: 0.05vw;
+        text-align: center;
     }
     .links ul li:hover{
         background-color: rgba(17, 130, 210, 0.75);
@@ -704,7 +707,12 @@
             <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "document.body.classList.remove('no-scroll-nav');">&times</button>
             <ul>
                 <li style = "background-color:rgba(17,130,210,0.75)"><a href = "index.html">Home</a></li>
-                <li><a href = "team.html">Team</a></li>
+                <li><a class = "team-link" id = "team-link">Team</a>
+                    <ul class = "team-dropdown" id = "team-dropdown">
+                        <li><a href = "team.html">2024-2025</a></li>
+                        <li><a>2025-2026</a></li>
+                    </ul>
+                </li>
                 <li><a href = "sponsors.html">Sponsors</a></li>
                 <li><a href = "media.html">Media</a></li>
                 <li><a href = "donate.html">Donate</a></li>
@@ -818,10 +826,9 @@
     });
 
 </script>
+<script src = "navbar.js"></script>
 <script>
     //for opening the side menu on mobile
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("links");
     const close = document.getElementById("close");
     const resultsButton = document.getElementById("results-button");
 
@@ -836,6 +843,4 @@
     });
 </script>
 
-
-<script src = "navbar.js"></script>
 </html>
