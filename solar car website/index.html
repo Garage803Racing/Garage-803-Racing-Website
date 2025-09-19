@@ -40,32 +40,25 @@
         font-family: sf-pro, sans-serif; 
         display: flex;
         flex-direction: column;
-        height: 100vh;
         background-color: white;
         overflow-x: hidden; 
         overscroll-behavior: none;
     }
     .heroBanner{
-        background-size: 100% 100%;
-        aspect-ratio: 16/9;
-        position: relative;
-    }
-    .heroBannerBackground{
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100vw;
         height: 56.25vw;
+        position: relative;
+        background-image: url("images/landing-page-banner\ 4K.png");
+        background-size: 100% 100%;
+        margin-top: 6vw;
     }
-    
     .heroBannerLogo{
+        width: 40vw;
+        height: 10vw;
         position: absolute;
         top: 20%;
         left: 50%;
         transform: translate(-50%,-50%) !important;
-        width: 40vw;
-        height: 10vw;
-        animation: fadeInUp 2s forwards;
     }
     .mainContent{
         align-items: center;
@@ -105,13 +98,6 @@
     @media(max-width: 770px){
         .heroBanner{
             margin-top: 12vw;
-        }
-         .heroBannerBackground{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 56.25vw;
         }
         .mainContent{
             display: flex;
@@ -229,9 +215,6 @@
     }
     /* Computer */
     @media(min-width: 771px){
-        .heroBanner{
-            margin-top: 6vw;
-        }
         .mainContent .imageAndText{
             display: flex;
             padding: 5vw;
@@ -359,12 +342,11 @@
 </style>
 <body>
     <!-- Inner HTML in navbar.js-->
-    <div class = "navigation" id = "navbar"></div>
+    <div class = "navigation" id = "navbar">
+    </div>
     <div class = "heroBanner">
-        <img class = "heroBannerBackground" src = "images/landing-page-banner 4K.png">
         <img class = "heroBannerLogo" src = "images/Logo2.png">
     </div>
-
     <div class = "mainContent">
         <div class = "imageAndText">
             <img src = "images/AboutUsPic2.jpg" class = "teamPicture">
