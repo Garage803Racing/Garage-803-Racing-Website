@@ -7,6 +7,7 @@
     <meta property="og:image" content="http://garage803racing.org/images/preview-image.jpg">
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
     <link rel = "stylesheet" href = "dropdown.css">
+     <link rel = "stylesheet" href = "navbar.css">
 </head>
 <style>
     @keyframes fadeInUp{
@@ -44,145 +45,6 @@
         overflow-x: hidden; 
         overscroll-behavior: none;
     }
-    body.no-scroll{
-        overflow:hidden !important;
-    }
-    .overlay{
-        display: none;
-    }
-    .overlay.show{
-        position: fixed;
-        display: flex;
-        z-index: 9999;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0,0,0,0.75);
-        top: 0;
-        left: 0;
-    }
-    .overlay-menu{
-        background-color: white;
-        width: 40%;
-        aspect-ratio: 8/9;
-        border-radius: 2vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        animation: fadeInUp 0.5s forwards;
-    }
-    .overlay-logo{
-        margin: 1vw;
-        width: 25%;
-    }
-    .overlay-menu img{
-        border-radius: 1vw;
-    }
-    .overlay-menu h1{
-        font-size: 3vw;
-        margin-bottom: 0;
-        text-decoration: underline;
-    }
-    .overlay-menu p{
-        font-size: 1.5vw;
-    }
-    .overlay-buttons{
-        display: flex;
-    }
-    .overlay-buttons button{
-        font-family: sf-pro;
-        background: none;
-        margin-left: 1vw;
-        margin-right: 1vw;
-        padding: 1vw;
-        font-size: 1.2vw;
-        font-weight: bold;
-        border: 0.1vw solid black;
-        width: 15vw;
-        border-radius: 1vw;
-        transition: opacity 0.25s linear;
-    }
-    .overlay-buttons button:hover{
-        opacity: 0.75;
-        cursor: pointer;
-    }
-    .logoandname{
-        display: flex;
-        align-items: center;
-        margin: 10px;
-        color: white;
-    }
-    .links ul li{
-        text-decoration: none;
-        list-style-type: none;
-        display: inline-block;
-        color: white;
-        position: relative;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 0.5vw;
-        padding: 0.5vw;
-        transition: background-color 0.25s linear;
-    }
-    .links a{
-        color: white;
-        text-decoration: none;
-        letter-spacing: 0.05vw;
-        text-align: center;
-    }
-    .links ul li:hover{
-        background-color: rgba(17, 130, 210, 0.75);
-        border-radius: 0.5vw;
-    }
-    .join-navbar-button{
-        background-color: white;
-        color: rgb(48,48,48);
-        border: 0.25vw solid white;
-        padding: 0.5vw;
-        width: 7.5vw;
-        margin-left: 1vw;
-        font-family: sf-pro;
-        font-weight: normal;
-        font-size: 1.25vw;
-        border-radius: 0.5vw !important;
-    }
-    .join-navbar-button:hover{
-        cursor: pointer;
-        opacity: 0.75;
-        transition: opacity 0.25s linear;
-    }
-    .contact-navbar-button:hover{
-        cursor: pointer;
-        opacity:0.75;
-        transition: opacity 0.25s linear;
-    }
-    .contact-navbar-button{
-        background: none;
-        border: 0.25vw solid white;
-        color: white;
-        padding: 0.5vw;
-        width: 7.5vw;
-        margin-left: 1vw;
-        font-family: sf-pro;
-        font-weight: normal;
-        font-size: 1.25vw;
-        border-radius: 0.5vw !important;
-    }
-    .navigation{
-        position: fixed;
-        width: 100%;
-        z-index: 900;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-image: url("images/navbar-background-pc.jpg");
-        background-size: 100% 100%;
-        transition: transform 1s ease;
-    }
-    .navigation.hidden{
-        transform: translateY(-6vw);
-    }
     .heroBanner{
         display: flex;
         flex-direction: column;
@@ -199,24 +61,6 @@
         height: 10vw;
         margin-top: 5vw;
         animation: fadeInUp 2s forwards;
-    }
-    .heroBanner button{
-        width: 20vw;
-        height: 5vw;
-        margin-top: 2vw;
-        margin-bottom: 36.75vw;
-        font-size: 1.5vw;
-        background: none;
-        border: 0.25vw solid white;
-        color: white;
-        border-radius: 1vw;
-        font-weight: lighter;
-        font-family: sf-pro;
-        transition: background-color 0.25s linear;
-    }
-    .heroBanner button:hover{
-        cursor: pointer;
-        background-color: rgba(21, 22, 77, 0.5);
     }
     .mainContent{
         align-items: center;
@@ -254,115 +98,6 @@
     }
     /* Phone */
     @media(max-width: 770px){
-        .results-button.disabled{
-        opacity: 0.5;
-        pointer-events: none;
-        }
-        body.no-scroll{
-            overflow: hidden;
-        }
-        .overlay-menu{
-        background-color: white;
-        width: 80vw;
-        height: 100vw;
-        border-radius: 4vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-        .overlay-logo{
-            margin: 3vw;
-            width: 40%;
-        }
-        .overlay-menu img{
-            border-radius: 1vw;
-        }
-        .overlay-menu h1{
-            font-size: 5vw;
-            margin-bottom: 0;
-        }
-        .overlay-menu p{
-            font-size: 3vw;
-        }
-        .overlay-buttons{
-            display: flex;
-            flex-direction: row;
-        }
-        .overlay-buttons button{
-            font-family: sf-pro;
-            background: none;
-            margin-bottom: 1vw;
-            padding: 1vw;
-            font-size: 3vw;
-            font-weight: bold;
-            width: 30vw;
-            height: 10vw;
-            border: 0.5vw solid rgb(65, 65, 90);
-            border-radius: 1vw;
-        }
-        .overlay-buttons button:hover{
-            transform: translateY(-0.5vw);
-            cursor: pointer;
-        }
-        .hamburger{
-            background: none;
-            border: none;
-            color: white;
-            font-size: 10vw;
-            display: flex;
-        }
-        .navigation{
-            height: 12vw;
-            background-image: url("images/navbar-background-mobile.jpg");
-            background-size: 100% 100%;
-        }
-        .navigation.hidden{
-            transform: translateY(-12vw) !important;
-        }
-        .logoandname img{
-            width: 7.5vw;
-        }
-        .logoandname h1{
-            font-size: 4vw;
-            margin: 0px 0px 0px 2vw;
-            letter-spacing: 0.7vw;
-        }
-        .join-navbar-button{
-            background-color: white;
-            color: rgb(48,48,48);
-            border: 0.5vw solid white;
-            padding: 1vw;
-            width: 30vw;
-            margin-right: 0;
-            font-family: sf-pro;
-            font-weight: normal;
-            font-size: 5vw;
-            border-radius: 1vw !important;
-            align-self: center;
-        }
-        .join-navbar-button:hover{
-            cursor: pointer;
-            opacity: 0.75;
-            transition: opacity 0.25s linear;
-        }
-        .contact-navbar-button:hover{
-            cursor: pointer;
-            opacity:0.75;
-            transition: opacity 0.25s linear;
-        }
-        .contact-navbar-button{
-            background: none;
-            border: 0.5vw solid white;
-            color: white;
-            padding: 1vw;
-            width: 30vw;
-            margin-right: 0;
-            font-family: sf-pro;
-            font-weight: normal;
-            font-size: 5vw;
-            border-radius: 1vw !important;
-            align-self: center;
-        }
         .heroBanner{
             margin-top: 12vw;
             background-image: url("images/landing-page-banner\ 1080p.png") !important;
@@ -375,24 +110,6 @@
         .mainContent{
             display: flex;
             flex-direction: column;
-        }
-        .heroBanner button{
-            width: 30vw;
-            height: 6vw;
-            margin-top: 2vw;
-            margin-bottom: 32.75vw;
-            font-size: 2.5vw;
-            background: none;
-            border: 0.5vw solid white;
-            color: white;
-            border-radius: 2vw;
-            font-weight: lighter;
-            font-family: sf-pro;
-            transition: background-color 0.25s linear;
-        }
-        .heroBanner button:hover{
-            cursor: pointer;
-            background-color: rgba(21, 22, 77, 0.5);
         }
         .mainContent .imageAndText{
             display: flex;
@@ -534,30 +251,6 @@
     }
     /* Computer */
     @media(min-width: 771px){
-        .hamburger{
-            display: none;
-        }
-        .close{
-            display: none;
-        }
-        .navigation{
-            height: 6vw;
-        }
-        .logoandname img{
-            width: 3vw;
-        }
-        .logoandname h1{
-            font-size: 2vw;
-            margin: 0px 0px 0px 1vw;
-            letter-spacing: 0.35vw;
-        }
-        .links{
-            margin-right: 1.5vw;
-        }
-        .links ul li{
-            margin: 0.5vw;
-            font-size: 1vw;
-        }
         .heroBanner{
             margin-top: 6vw;
         }
