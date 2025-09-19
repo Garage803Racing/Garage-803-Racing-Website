@@ -46,20 +46,25 @@
         overscroll-behavior: none;
     }
     .heroBanner{
-        display: flex;
-        flex-direction: column;
-        background-image: url("images/landing-page-banner\ 4K.png");
-        width: 100vw;
-        height: 56.25vw;
         background-size: 100% 100%;
         aspect-ratio: 16/9;
-        flex: 1;
-        align-items: center;
+        position: relative;
     }
-    .heroBanner img{
+    .heroBannerBackground{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 56.25vw;
+    }
+    
+    .heroBannerLogo{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,-50%) !important;
         width: 40vw;
         height: 10vw;
-        margin-top: 5vw;
         animation: fadeInUp 2s forwards;
     }
     .mainContent{
@@ -100,12 +105,13 @@
     @media(max-width: 770px){
         .heroBanner{
             margin-top: 12vw;
-            background-image: url("images/landing-page-banner\ 1080p.png") !important;
         }
-        .heroBanner img{
-            width: 50vw;
-            height: 12.5vw;
-            margin-top: 3vw;
+         .heroBannerBackground{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 56.25vw;
         }
         .mainContent{
             display: flex;
@@ -355,7 +361,8 @@
     <!-- Inner HTML in navbar.js-->
     <div class = "navigation" id = "navbar"></div>
     <div class = "heroBanner">
-        <img src = "images/Logo2.png">
+        <img class = "heroBannerBackground" src = "images/landing-page-banner 4K.png">
+        <img class = "heroBannerLogo" src = "images/Logo2.png">
     </div>
 
     <div class = "mainContent">
