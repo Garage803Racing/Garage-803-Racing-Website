@@ -84,17 +84,38 @@
 		margin-bottom: 2.5vw;
 		
 	}
-	.gallery img{
+	.gallery .imgContainer{
 		animation: photo linear;
 		animation-timeline: view();
 		animation-range: entry 0% cover 20%;
 		width: 100%;
-		margin-top: 1vw;
+        height: auto;
+		margin-bottom: 1vw;
 		border-radius: 1vw;
 		border: 0.25vw solid black;
         overflow: clip;
         position: relative;
+        display: flex;
 	}
+    .imgContainer img{
+        width: 100%;
+    }
+    .imgContainer figcaption{
+        position: absolute;
+        width: 100%;
+        opacity: 1;
+        align-self: flex-end;
+        text-align: center;
+        color: white;
+        background-color: rgba(0,0,0,0.75);
+        font-size: clamp(10px,1.5vw,30px);
+        transform: translateY(100%);
+        transition: transform 0.5s ease;
+        padding: 0.25vw;
+    }
+    .imgContainer:hover figcaption{
+        transform: translateY(0);
+    }
     .bottomBar{
         width: 100vw;
         aspect-ratio: 60/1;
@@ -371,36 +392,127 @@
 		</div>
 		<h1 style = "text-align: center">Construction & Competition Photos</h1>
 		<div class = "gallery">
-			<div class="imgContainer"><img src="images/media-1.jpg"></div>
-            <div class="imgContainer"><img src="images/media-2.jpg"></div>
-            <div class="imgContainer"><img src="images/media-3.jpg"></div>
-            <div class="imgContainer"><img src="images/media-4.jpg"></div>
-            <div class="imgContainer"><img src="images/media-5.jpg"></div>
-            <div class="imgContainer"><img src="images/media-6.jpg"></div>
-            <div class="imgContainer"><img src="images/media-7.jpg"></div>
-            <div class="imgContainer"><img src="images/media-8.jpg"></div>
-            <div class="imgContainer"><img src="images/media-9.jpg"></div>
-            <div class="imgContainer"><img src="images/media-10.jpg"></div>
-            <div class="imgContainer"><img src="images/media-11.jpg"></div>
-            <div class="imgContainer"><img src="images/media-12.jpg"></div>
-            <div class="imgContainer"><img src="images/media-13.jpg"></div>
-            <div class="imgContainer"><img src="images/media-14.jpg"></div>
-            <div class="imgContainer"><img src="images/media-15.jpg"></div>
-            <div class="imgContainer"><img src="images/media-16.jpg"></div>
-            <div class="imgContainer"><img src="images/media-17.jpg"></div>
-            <div class="imgContainer"><img src="images/media-18.jpg"></div>
-            <div class="imgContainer"><img src="images/media-19.jpg"></div>
-            <div class="imgContainer"><img src="images/media-20.jpg"></div>
-            <div class="imgContainer"><img src="images/media-21.jpg"></div>
-            <div class="imgContainer"><img src="images/media-22.jpg"></div>
-            <div class="imgContainer"><img src="images/media-23.jpg"></div>
-            <div class="imgContainer"><img src="images/media-24.jpg"></div>
-            <div class="imgContainer"><img src="images/media-25.jpeg"></div>
-            <div class="imgContainer"><img src="images/media-26.jpg"></div>
-            <div class="imgContainer"><img src="images/media-27.jpg"></div>
-            <div class="imgContainer"><img src="images/media-28.jpg"></div>
-            <div class="imgContainer"><img src="images/media-29.jpg"></div>
-            <div class="imgContainer"><img src="images/media-30.jpg"></div>
+			<div class="imgContainer">
+            <img src="images/media-1.jpg">
+            <figcaption>Caption 1</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-2.jpg">
+            <figcaption>Caption 2</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-3.jpg">
+            <figcaption>Caption 3</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-4.jpg">
+            <figcaption>Caption 4</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-5.jpg">
+            <figcaption>Caption 5</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-6.jpg">
+            <figcaption>Caption 6</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-7.jpg">
+            <figcaption>Caption 7</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-8.jpg">
+            <figcaption>Caption 8</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-9.jpg">
+            <figcaption>Caption 9</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-10.jpg">
+            <figcaption>Caption 10</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-11.jpg">
+            <figcaption>Caption 11</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-12.jpg">
+            <figcaption>Caption 12</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-13.jpg">
+            <figcaption>Caption 13</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-14.jpg">
+            <figcaption>Caption 14</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-15.jpg">
+            <figcaption>Caption 15</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-16.jpg">
+            <figcaption>Caption 16</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-17.jpg">
+            <figcaption>Caption 17</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-18.jpg">
+            <figcaption>Caption 18</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-19.jpg">
+            <figcaption>Caption 19</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-20.jpg">
+            <figcaption>Caption 20</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-21.jpg">
+            <figcaption>Caption 21</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-22.jpg">
+            <figcaption>Caption 22</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-23.jpg">
+            <figcaption>Caption 23</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-24.jpg">
+            <figcaption>Caption 24</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-25.jpeg">
+            <figcaption>Caption 25</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-26.jpg">
+            <figcaption>Caption 26</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-27.jpg">
+            <figcaption>Caption 27</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-28.jpg">
+            <figcaption>Caption 28</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-29.jpg">
+            <figcaption>Caption 29</figcaption>
+            </div>
+            <div class="imgContainer">
+            <img src="images/media-30.jpg">
+            <figcaption>Caption 30</figcaption>
+            </div>
+
 
 		</div>
     </div>
