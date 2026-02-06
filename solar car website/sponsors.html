@@ -68,10 +68,11 @@
     }
     .sponsor-logos{
         display: flex;
+        align-items: center;
         justify-content: center;
     }
     .sponsor-logos img{
-        width: 40vw;
+        height: 10vw;
     }
     .buttonQRcode{
         display: flex;
@@ -145,15 +146,14 @@
             font-size: 6vw;
         }
         .sponsorsContent{
-            display: none;
-            /* display: flex */
+            display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             margin-bottom: 8vw;
             margin-top: 8vw;
         }
         .sponsor-logos img{
-            width: 80vw;
+            height: 20vw;
         }
         .buttonQRcode button{
             width: 80vw;
@@ -164,6 +164,7 @@
             font-size: 6vw;
             font-weight: bolder;
             padding: 4vw;
+            margin-top: 2vw;
         }
         .buttonQRcode img{
             width: 60vw;
@@ -247,8 +248,7 @@
             font-size: 3vw;
         }
         .sponsorsContent{
-            display: none;
-            /* display: flex; */
+            display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             margin-bottom: 4vw;
@@ -263,6 +263,7 @@
             font-size: 3vw;
             font-weight: bolder;
             padding: 2vw;
+            transition: transform 0.25s ease;
         }
         .buttonQRcode button:hover{
             cursor: pointer;
@@ -334,15 +335,18 @@
         <h1 style = "text-align: center">THANK YOU TO OUR SPONSORS!</h1>
         <div class = "sponsor-logos">  
             <img src = "sponsor-logos/simscale.jpg">
+            <img src = "sponsor-logos/home-depot.jpg">
         </div>
+        <h1 style = "text-align: center">INTERESTED IN SUPPORTING US?</h1>
         <div class = "sponsorsContent">
             <div class = "buttonQRcode">
-                <button onclick = "window.open('https://drive.google.com/file/d/1X6KWdAJbhIXHhKkkaeX4BMumPUr5_zqS/view?usp=sharing','_blank');">Sponsorship Proposal</button>
-                <img src = "images/qr2_Sponsors.png">
+                <button onclick = "window.open('https://garage803racing.org/project_pitch.pdf','_blank');">Project Pitch</button>
+                <!-- <img src = "images/qr2_Sponsors.png"> --->
             </div>
             <div class = "buttonQRcode">
-                <button onclick = "window.open('https://docs.google.com/spreadsheets/d/1wN3Aw8IwPtanfm5_lgxY-9ZaNwSH8zwehEyiY4SH6RY/edit?pli=1&gid=0#gid=0','_blank')">Cost Breakdown</button>
-                <img src = "images/qr_Cost.png">
+                <button onclick = "window.open('https://garage803racing.org/sponsorship_package','_blank')">Sponsorship Proposal</button>
+                
+                <!-- <img src = "images/qr_Cost.png"> -->
             </div>
         </div>
     </div>
