@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
     <link rel = "stylesheet" href = "dropdown.css">
      <link rel = "stylesheet" href = "navbar.css">
+     <link rel = "stylesheet" href = "footer.css">
 </head>
 <style>
     /* General animation for elements fading in from the bottom */
@@ -133,36 +134,10 @@
         animation-duration: 0.1s;
         animation-fill-mode: forwards;
     }
-    /* Footer styles */
-    .bottomBar{
-        width: 100vw;
-        aspect-ratio: 60/1;
-    }
-    .bottomSection{
-        background-color: rgb(224, 224, 224);
-        padding: 2vw 0;
-    }
-    .bottomSection p{
-        font-weight: lighter;
-    }
     li{
         list-style-type: none;
     }
-    .column2 a{
-        text-decoration: none;
-        color: black;
-    }
-    .column2 a:hover{
-        text-decoration: underline;
-    }
-    .nonProfitStat{
-        text-align: center;
-        background-color: rgb(224, 224, 224);
-        margin: 0;
-        font-weight: lighter;
-        padding-bottom: 1vw;
-        color: rgb(60,60,60);
-    }
+
     /* Phone Styles */
     @media(max-width: 770px){
         .siteTopic{
@@ -199,16 +174,6 @@
         .faq-answer p {
             font-size: 3.5vw;
         }
-        .column1 img{ width: 40vw; margin-top: 3vw; }
-        .column1 hr{ width: 38vw; border: none; background-color: black; height: 2px; }
-        .column1{ text-align: center; }
-        .column2{ text-align: center; border-top: 1px solid black; width: 40%; padding: 2vw; }
-        .column3{ text-align: center; border-top: 1px solid black; width: 40%; padding: 2vw; }
-        .column4 img{ width: 8vw; margin: 2vw; }
-        .bottomSection{ display: flex; flex-direction: column; align-items: center; }
-        .bottomSection h1{ font-size: 5vw; }
-        .bottomSection p{ font-size: 3vw; }
-        .nonProfitStat{ font-size: 2vw; }
     }
     /* Computer Styles */
     @media(min-width: 771px){
@@ -216,17 +181,7 @@
         .siteTopic h1{ font-size: 8vw; margin: 0; padding: 1.5vw; text-decoration: underline; text-decoration-thickness: 0.5vw; text-underline-offset: 1vw; }
         .siteTopic p{ font-size: 1.5vw; padding: 0 1.5vw 1.5vw 1.5vw; margin: 1vw; }
         .heroBanner{ aspect-ratio: 4/1; margin-top: 6vw; }
-        .bottomSection{ display: flex; flex-direction: row; justify-content: space-evenly; }
-        .bottomSection h1{ font-size: 2vw; }
-        .bottomSection p{ font-size: 1vw; }
-        .column1 img{ width: 20vw; margin-top: 1.5vw; }
-        .column1 hr{ width: 18.5vw; border: none; background-color: black; height: 2px; margin-left: 0; }
-        .column2{ border-left: 1px solid black; padding-left: 1vw; margin-top: 1vw; }
-        .column3{ margin-top: 1vw; padding-left: 1vw; border-left: 1px solid black; margin-bottom: 8vw; }
-        .column4{ align-content: center; }
-        .column4 img{ width: 4vw; margin: 1vw; }
-        .column4 img:hover{ transform: translateY(-0.5vw); cursor: pointer; }
-        .nonProfitStat{ font-size: 1vw; }
+        
     }
 </style>
 <body>
@@ -306,40 +261,7 @@
 
     <!-- Footer -->
      <footer id = "footer" style = "background-color: rgb(224, 224, 224);">
-    <img class = "bottomBar" src = "images/bar.jpg" alt="Color Bar">
-    <div class = "bottomSection">
-        <div class = "column1">
-            <img src = "images/logo3.png" alt="Garage 803 Racing Footer Logo">
-            <hr>
-            <p>Garage 803 Racing is the solar car<br>
-            racing team for high school students<br>
-            in the Mountain View-Los Altos Region
-            <br><br>
-            Est. 2024</p>
-        </div>
-        <div class = "column2">
-            <h1 style = "margin-top: 0">Menu</h1>
-            <p><a href = "index.html">Home</a></p>
-            <p><a href = "team-25.html">Team</a></p>
-            <p><a href = "sponsors.html">Sponsors</a></p>
-            <p><a href = "media.html">Media</a></p>
-            <p><a href = "donate.html">Donate</a></p>
-            <p><a href = "faq.html">FAQ</a></p>
-            <p><a href = "join.html">Join</a></p>
-            <p><a href = "contact.html">Contact</a></p>
-        </div>
-        <div class = "column3">
-            <h1 style = "margin-top: 0">Address</h1>
-               <p>Mountain View CA, 94040</p>
-        </div>
-        <div class = "column4">
-            <a href = "https://www.linkedin.com/company/garage-803-racing/about/" target = "_blank"><img src = "images/LinkedIn-Logo1-removebg-preview.png" alt="LinkedIn"></a>
-            <a href = "https://www.youtube.com/@Garage.803.Racing" target = "_blank"><img src = "images/youtube-logo-removebg-preview.png" alt="YouTube"></a>
-            <a href = "https://www.instagram.com/garage803racing/" target = "_blank"><img src = "images/instahram-removebg-preview.png" alt="Instagram"></a>
-            <a href = "https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr" target = "_blank"><img src = "images/Facebook-Logo.png" alt="Facebook"></a>
-        </div>
-    </div>
-    <p class = "nonProfitStat">501(c)(3) Non-Profit Organization</p>
+    
     </footer>
 </body>
 <script>
@@ -388,5 +310,7 @@
     });
 </script>
 <script src = "navbar.js"></script>
+<script src = "footer.js"></script>
+
 
 </html>

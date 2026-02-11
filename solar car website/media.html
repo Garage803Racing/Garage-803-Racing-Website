@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
     <link rel = "stylesheet" href = "dropdown.css">
      <link rel = "stylesheet" href = "navbar.css">
+     <link rel = "stylesheet" href = "footer.css">
 </head>
 <style>
 	@keyframes photo{
@@ -118,35 +119,10 @@
     .imgContainer:hover figcaption{
         transform: translateY(0);
     }
-    .bottomBar{
-        width: 100vw;
-        aspect-ratio: 60/1;
-    }
-    .bottomSection{
-        background-color: rgb(224, 224, 224);
-        padding: 2vw 0;
-    }
-    .bottomSection p{
-        font-weight: lighter;
-    }
     li{
         list-style-type: none;
     }
-    .column2 a{
-        text-decoration: none;
-        color: black;
-    }
-    .column2 a:hover{
-        text-decoration: underline;
-    }
-    .nonProfitStat{
-        text-align: center;
-        background-color: rgb(224, 224, 224);
-        margin: 0;
-        font-weight: lighter;
-        padding-bottom: 1vw;
-        color: rgb(60,60,60);
-    }
+    
     /* Phone */
     @media(max-width: 770px){
 
@@ -213,49 +189,6 @@
 			border-radius: 2vw !important;
 			border: 0.5vw solid black !important;
 		}
-        .column1 img{
-            width: 40vw;
-            margin-top: 3vw;
-        }
-        .column1 hr{
-            width: 38vw;
-            border: none;
-            background-color: black;
-            height: 2px;
-        }
-        .column1{
-            text-align: center;
-        }
-        .column2{
-            text-align: center;
-            border-top: 1px solid black;
-            width: 40%;
-            padding: 2vw;
-        }
-        .column3{
-            text-align: center;
-            border-top: 1px solid black;
-            width: 40%;
-            padding: 2vw;
-        }
-        .column4 img{
-            width: 8vw;
-            margin: 2vw;
-        }
-        .bottomSection{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .bottomSection h1{
-            font-size: 5vw;
-        }
-        .bottomSection p{
-            font-size: 3vw;
-        }
-        .nonProfitStat{
-            font-size: 2vw;
-        }
         
     }
     /* Computer */
@@ -328,53 +261,6 @@
 			aspect-ratio: 16/9;
 			border-radius: 0.5vw;
 		}
-        .bottomSection{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: flex-start;
-        }
-        .bottomSection h1{
-            font-size: 2vw;
-        }
-        .bottomSection p{
-            font-size: 1vw;
-        }
-        .column1 img{
-            width: 20vw;
-            margin-top: 1.5vw;
-        }
-        .column1 hr{
-            width: 18.5vw;
-            border: none;
-            background-color: black;
-            height: 2px;
-            margin-left: 0;
-        }
-        .column2{
-            border-left: 1px solid black;
-            padding-left: 1vw;
-            margin-top: 1vw;
-        }
-        .column3{
-            margin-top: 1vw;
-            padding-left: 1vw;
-            border-left: 1px solid black;
-        }
-        .column4{
-            align-self: center;
-        }
-        .column4 img{
-            width: 4vw;
-            margin: 1vw;
-        }
-        .column4 img:hover{
-            transform: translateY(-0.5vw);
-            cursor: pointer;
-        }
-        .nonProfitStat{
-            font-size: 1vw;
-        }
     }
 </style>
 <body>
@@ -395,162 +281,130 @@
 		<h1 style = "text-align: center">Construction & Competition Photos</h1>
 		<div class = "gallery">
 			<div class="imgContainer">
-  <img src="images/media-1.jpg" loading="lazy">
-  <figcaption>Our team members arranging the aluminum rods</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-2.jpg" loading="lazy">
-  <figcaption>Our team members measuring the aluminum rods</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-3.jpg" loading="lazy">
-  <figcaption>Ryan Liu cutting a steel rod</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-4.jpg" loading="lazy">
-  <figcaption>Tyler Wang adjusting a safety frame aluminum rod</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-5.jpg" loading="lazy">
-  <figcaption>Wilder White preparing to use an angle grinder</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-6.jpg" loading="lazy">
-  <figcaption>Wilder White measuring an aluminum rod for the wheel suspension attachment</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-7.jpg" loading="lazy">
-  <figcaption>Tyler Wang and Carl Haller measuring the aluminum rods</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-8.jpg" loading="lazy">
-  <figcaption>Ryan Liu welding the steering system</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-9.jpg" loading="lazy">
-  <figcaption>Our first iteration of the steering joint</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-10.jpg" loading="lazy">
-  <figcaption>Our car with the steering wheel in place</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-11.jpg" loading="lazy">
-  <figcaption>Safety frame rods arranged in place</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-12.jpg" loading="lazy">
-  <figcaption>Lezhi Zeng wiring the low voltage electrical system</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-13.jpg" loading="lazy">
-  <figcaption>Liam Abelson cutting a steel plate for the solar array</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-14.jpg" loading="lazy">
-  <figcaption>Ryan Liu and Tyler Wang preparing to test the car</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-15.jpg" loading="lazy">
-  <figcaption>Liam Abelson, Yuriy Korniychuk, and Tyler Wang leading the car</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-17.jpg" loading="lazy">
-  <figcaption>Carl Haller adding finishing touches to the electrical system</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-18.jpg" loading="lazy">
-  <figcaption>Our car parked in the Texas Motor Speedway garage</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-19.jpg" loading="lazy">
-  <figcaption>Carl Haller cleaning the solar panels</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-20.jpg" loading="lazy">
-  <figcaption>Our car outside the garage in the sunset</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-21.jpg" loading="lazy">
-  <figcaption>Our car on the Texas Motor Speedway</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-22.jpg" loading="lazy">
-  <figcaption>Tyler Wang creating a lot of sparks from cutting metal</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-23.jpg" loading="lazy">
-  <figcaption>Tyler Wang and Jerry Liang build the windshield together</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-24.jpg" loading="lazy">
-  <figcaption>Our Team in the closing ceremony</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-25.jpeg" loading="lazy">
-  <figcaption>Our car in the tilt and turn scrutineering station</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-26.jpg" loading="lazy">
-  <figcaption>Our car after our first day of racing</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-27.jpg" loading="lazy">
-  <figcaption>Our car on the Texas Motor Speedway</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-28.jpg" loading="lazy">
-  <figcaption>Our car's nose with a shark face on it</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-29.jpg" loading="lazy">
-  <figcaption>Our team after finishing scrutineering</figcaption>
-</div>
-<div class="imgContainer">
-  <img src="images/media-30.jpg" loading="lazy">
-  <figcaption>Photo of our car taken from the competition staff</figcaption>
-</div>
-
-
-
-		</div>
-    </div>
+                <img src="images/media-1.jpg" loading="lazy">
+                <figcaption>Our team members arranging the aluminum rods</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-2.jpg" loading="lazy">
+                <figcaption>Our team members measuring the aluminum rods</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-3.jpg" loading="lazy">
+                <figcaption>Ryan Liu cutting a steel rod</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-4.jpg" loading="lazy">
+                <figcaption>Tyler Wang adjusting a safety frame aluminum rod</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-5.jpg" loading="lazy">
+                <figcaption>Wilder White preparing to use an angle grinder</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-6.jpg" loading="lazy">
+                <figcaption>Wilder White measuring an aluminum rod for the wheel suspension attachment</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-7.jpg" loading="lazy">
+                <figcaption>Tyler Wang and Carl Haller measuring the aluminum rods</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-8.jpg" loading="lazy">
+                <figcaption>Ryan Liu welding the steering system</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-9.jpg" loading="lazy">
+                <figcaption>Our first iteration of the steering joint</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-10.jpg" loading="lazy">
+                <figcaption>Our car with the steering wheel in place</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-11.jpg" loading="lazy">
+                <figcaption>Safety frame rods arranged in place</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-12.jpg" loading="lazy">
+                <figcaption>Lezhi Zeng wiring the low voltage electrical system</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-13.jpg" loading="lazy">
+                <figcaption>Liam Abelson cutting a steel plate for the solar array</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-14.jpg" loading="lazy">
+                <figcaption>Ryan Liu and Tyler Wang preparing to test the car</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-15.jpg" loading="lazy">
+                <figcaption>Liam Abelson, Yuriy Korniychuk, and Tyler Wang leading the car</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-17.jpg" loading="lazy">
+                <figcaption>Carl Haller adding finishing touches to the electrical system</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-18.jpg" loading="lazy">
+                <figcaption>Our car parked in the Texas Motor Speedway garage</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-19.jpg" loading="lazy">
+                <figcaption>Carl Haller cleaning the solar panels</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-20.jpg" loading="lazy">
+                <figcaption>Our car outside the garage in the sunset</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-21.jpg" loading="lazy">
+                <figcaption>Our car on the Texas Motor Speedway</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-22.jpg" loading="lazy">
+                <figcaption>Tyler Wang creating a lot of sparks from cutting metal</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-23.jpg" loading="lazy">
+                <figcaption>Tyler Wang and Jerry Liang build the windshield together</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-24.jpg" loading="lazy">
+                <figcaption>Our Team in the closing ceremony</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-25.jpeg" loading="lazy">
+                <figcaption>Our car in the tilt and turn scrutineering station</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-26.jpg" loading="lazy">
+                <figcaption>Our car after our first day of racing</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-27.jpg" loading="lazy">
+                <figcaption>Our car on the Texas Motor Speedway</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-28.jpg" loading="lazy">
+                <figcaption>Our car's nose with a shark face on it</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-29.jpg" loading="lazy">
+                <figcaption>Our team after finishing scrutineering</figcaption>
+                </div>
+                <div class="imgContainer">
+                <img src="images/media-30.jpg" loading="lazy">
+                <figcaption>Photo of our car taken from the competition staff</figcaption>
+                </div>
+            </div>
+        </div>
     <!-- Footer -->
-    <img class = "bottomBar" src = "images/bar.jpg" alt="Color Bar">
-    <div class = "bottomSection">
-        <div class = "column1">
-            <img src = "images/logo3.png" alt="Garage 803 Racing Footer Logo">
-            <hr>
-            <p>Garage 803 Racing is the solar car<br>
-            racing team for high school students<br>
-            in the Mountain View-Los Altos Region
-            <br><br>
-            Est. 2024</p>
-        </div>
-        <div class = "column2">
-            <h1 style = "margin-top: 0">Menu</h1>
-            <p><a href = "index.html">Home</a></p>
-            <p><a href = "team-25.html">Team</a></p>
-            <p><a href = "sponsors.html">Sponsors</a></p>
-            <p><a href = "media.html">Media</a></p>
-            <p><a href = "donate.html">Donate</a></p>
-            <p><a href = "faq.html">FAQ</a></p>
-            <p><a href = "join.html">Join</a></p>
-            <p><a href = "contact.html">Contact</a></p>
-        </div>
-        <div class = "column3">
-            <h1 style = "margin-top: 0">Address</h1>
-                <p>Mountain View CA, 94040</p>
-        </div>
-        <div class = "column4">
-            <a href = "https://www.linkedin.com/company/garage-803-racing/about/" target = "_blank"><img src = "images/LinkedIn-Logo1-removebg-preview.png" alt="LinkedIn"></a>
-            <a href = "https://www.youtube.com/@Garage.803.Racing" target = "_blank"><img src = "images/youtube-logo-removebg-preview.png" alt="YouTube"></a>
-            <a href = "https://www.instagram.com/garage803racing/" target = "_blank"><img src = "images/instahram-removebg-preview.png" alt="Instagram"></a>
-            <a href = "https://www.facebook.com/people/Garage-803-Racing/61574178865224/?mibextid=wwXIfr" target = "_blank"><img src = "images/Facebook-Logo.png" alt="Facebook"></a>
-        </div>
-    </div>
-    <p class = "nonProfitStat">501(c)(3) Non-Profit Organization</p>
+     <footer id = "footer" style = "background-color: rgb(224, 224, 224);">
+    
+    </footer>
 </body>
 <script src = "navbar.js"></script>
+<script src = "footer.js"></script>
+
 
 </html>
