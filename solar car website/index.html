@@ -46,27 +46,78 @@
         overscroll-behavior: none;
     }
     .heroBanner{
-        width: 100vw;
-        height: 56.25vw;
+        width: 100%;
         position: relative;
-        background-image: url("images/landing-page-banner\ 4K.png");
-        background-size: 100% 100%;
         margin-top: 6vw;
+        overflow: clip;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .raceBackground{
+        width: 100%;
+        min-width: 1080px;
     }
     .heroBannerLogo{
         width: 40vw;
-        height: 10vw;
+        min-width: 370px;
         position: absolute;
         top: 20%;
         left: 50%;
         transform: translate(-50%,-50%) !important;
     }
     .mainContent{
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
     li{
         list-style-type: none;
     }
+    .blogSection{
+        display: flex !important;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    .thumbnailAndTitle{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 30%;
+    }
+    .thumbnailAndTitle > img{
+        border-radius: 1vw;
+    }
+    .postTitle{
+        font-size: clamp(30px,2vw,80px) !important;
+        margin-bottom: 0;
+        margin-left: 0 !important;
+    }
+    .postDate{
+        font-size: clamp(20px,1.5vw,40px) !important;
+        margin-top: 0;
+    }
+    .seeAllPostsButton{
+        margin: 0 !important;
+        color: black !important;
+        border: 1px solid black !important;
+        align-self: center;
+        background-color: white;
+        margin-bottom: 5vw !important;
+        font-size: clamp(25px,2vw,80px) !important;
+        font-family: sf-pro;
+        font-weight: lighter;
+        padding: 1vw;
+        border-radius: 1vw;
+        transition: background-color 0.25s ease;
+    }
+    .seeAllPostsButton:hover{
+        cursor: pointer;
+        background-color: black;
+        color: white !important;
+    }
+
     /* Phone */
     @media(max-width: 770px){
         .heroBanner{
@@ -89,25 +140,23 @@
             color: white;
         }
         .teamPicture{
-            width: 72vw;
-            height: 54vw;
+            width: clamp(350px,32vw,1000px);
             border-radius: 1vw;
             align-self: center;
         }
         .workshopPhoto{
-            width: 75vw;
-            height: 75vw;
+            width: clamp(350px,35vw,1000px);
             border-radius: 1vw;
             align-self: center;
         }
         .mainContent h1{
             font-weight: bold;
-            font-size: 6vw;
+            font-size: clamp(40px,3vw,100px);
             text-align: center;
         }
         .mainContent p{
             font-weight: lighter;
-            font-size: 3vw;
+            font-size: clamp(20px,1.5vw,50px);
             text-align: center;
         }
         .bodyText2{
@@ -115,13 +164,13 @@
             flex-direction: column;
             align-items: center;
         }
-        .mainContent button{
+        .photosButton{
             font-family: sf-pro;
             background: none;
             border-radius: 2vw;
             border: 1px solid white;
             color: white;
-            font-size: 3vw;
+            font-size: clamp(20px,1.5vw,60px) !important;
             padding: 2vw;
             font-weight: lighter;
             cursor: pointer;
@@ -141,6 +190,13 @@
             margin-right: 10vw;
             display: none;
         }
+        .blogSection{
+            flex-direction: column;
+            align-items: center;
+        }
+        .thumbnailAndTitle{
+            width: 90%;
+        }
     }
     /* Computer */
     @media(min-width: 771px){
@@ -156,25 +212,23 @@
             background-position: center;
         }
         .teamPicture{
-            width: 32vw;
-            height: 24vw;
+            width: clamp(350px,32vw,1000px);
             border-radius: 1vw;
             align-self: center;
         }
         .workshopPhoto{
-            width: 35vw;
-            height: 35vw;
+            width: clamp(350px,35vw,1000px);
             border-radius: 1vw;
             align-self: center;
         }
         .mainContent h1{
             font-weight: bold;
-            font-size: 3vw;
+            font-size: clamp(40px,3vw,100px);
             text-align: center;
         }
         .mainContent p{
             font-weight: lighter;
-            font-size: 1.5vw;
+            font-size: clamp(20px,1.5vw,50px);
         }
         .mainContent .bodyText{ 
             margin-left: 4vw;
@@ -182,20 +236,20 @@
         .mainContent .bodyText2{
             margin-right: 4vw;
         }
-        .mainContent button{
+        .photosButton{
             font-family: sf-pro;
             background: none;
             border-radius: 1vw;
             border: 1px solid white;
             color: white;
-            font-size: 1.5vw;
+            font-size: clamp(20px,1.5vw,60px) !important;
             padding: 1vw;
             margin-top: 5vw;
             font-weight: lighter !important;
             cursor: pointer;
             transition: background-color 0.5s ease;
         }
-        .mainContent button:hover{
+        .photosButton:hover{
             background-color: white;
             color: black;
             border: 1px solid white;
@@ -221,6 +275,7 @@
         .ourAim{
             margin: 5vw;
         }
+        
     }
 </style>
 <body>
@@ -228,10 +283,11 @@
     <div class = "navigation" id = "navbar">
     </div>
     <div class = "heroBanner">
+        <img class = "raceBackground" src = "images/landing-page-banner 4K.png">
         <img class = "heroBannerLogo" src = "images/Logo2.png">
     </div>
-    <div class = "mainContent">
-        <div class = "imageAndText">
+    <main class = "mainContent">
+        <section class = "imageAndText">
             <img src = "images/AboutUsPic2.jpg" class = "teamPicture">
             <div class = "bodyText">
                 <h1>About Us</h1>
@@ -247,18 +303,18 @@
                 strive to push our boundaries and motivate the future
                 generation of innovators.</p>
             </div>
-        </div>
-        <div class = "imageAndText" id = "section-background-1">
+        </section>
+        <section class = "imageAndText" id = "section-background-1">
             <div class = "bodyText2">
                 <h1>2025 Race Results</h1>
                 <p>The 2025 Texas Solar Car Challenge has come to an end. This season was our first time competing in the challenge. We spent two months building the car in our garage, learning how to work with various power tools and materials to get our car function by mid-July. During the competition, we made good friends with many other teams, and managed to pass scrutineering within just half an hour before the deadline. After countless hours of building and fixing, we are proud to have successfully scored 3rd place in the Classic Division, with a total distance of 382 laps or 573 miles on the Texas Motor Speedway. Thank you to all the Solar Car teams, parents, and friends for providing resources and supporting us along the way as it wouldn’t have been possible without you.</p>
-                <button onclick = "location.assign('media.html');">2025 Season Photos →</button>
+                <button class = "photosButton" onclick = "location.assign('media.html');">2025 Season Photos →</button>
             </div>
             <img src = "images/2025-race-results-image.jpg" class = "workshopPhoto">
             
-        </div>
+        </section>
         <hr>
-        <div class = "aimGoalSection">
+        <section class = "aimGoalSection">
             <div class = "ourAim">
                 <h1>Our Aim</h1>
                 <p>We aim to provide an environment which allows for students
@@ -271,14 +327,33 @@
                 as teamwork, communication, and problem solving, as
                 well as hard skills in CAD, design, manufacturing, etc.</p>
             </div>
-        </div>
-    </div>
+        </section>
+        <h1>Latest Posts</h1>
+        <section class = "blogSection">
+            <div class = "thumbnailAndTitle">
+                <img src = "thumbnails/awards-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Classic Division 3rd Place!</h2>
+                <p class = "postDate">July 23rd, 2025</p>
+            </div>
+             <div class = "thumbnailAndTitle">
+                <img src = "thumbnails/race-day-4-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Race Day 4</h2>
+                <p class = "postDate">July 23rd, 2025</p>
+            </div>
+             <div class = "thumbnailAndTitle">
+                <img src = "thumbnails/race-day-3-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Race Day 3</h2>
+                <p class = "postDate">July 22nd, 2025</p>
+            </div>
+        </section>
+        <button class = "seeAllPostsButton">See All →</button>
+    </main>
 
 
 
     <!-- Footer -->
      <footer id = "footer" style = "background-color: rgb(224, 224, 224);">
-    
+        
     </footer>
 </body>
 <script src = "navbar.js"></script>
