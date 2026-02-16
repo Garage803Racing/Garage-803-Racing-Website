@@ -11,6 +11,26 @@
     <link rel = "stylesheet" href = "footer.css">
 </head>
 <style>
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Semibold.otf");
+        font-weight: 500;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Thin.otf");
+        font-weight: 300;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Heavy.otf");
+        font-weight: 600;
+    }
     @keyframes fade-to-black{
         0%, 50%{
             opacity: 0;
@@ -20,6 +40,11 @@
         0%, 50%{
             opacity: 0;
             transform: translateY(50px);
+        }
+    }
+    @keyframes fade-in-posts{
+        0%, 60%{
+            opacity: 0;
         }
     }
     html{
@@ -68,7 +93,7 @@
     }
     .title{
         color: white;
-        font-weight: 100;
+        font-weight: 300;
         font-size: clamp(40px,4vw,100px);
         text-align: center;
         animation: fade-in-text 5s forwards;
@@ -76,12 +101,59 @@
     }
     .subtitle{
         color: white;
-        font-weight: 100;
+        font-weight: 300;
         font-size: clamp(20px,2vw,50px);
         margin-top: 30px;
         text-align: center;
         animation: fade-in-text 5s forwards;
         margin: 0;
+    }
+    .postsContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 4em;
+        width: 100%;
+        animation: fade-in-posts 6s ease;
+    }
+    .postThumbnail{
+        width: 100%;
+        filter: brightness(0.9);
+    }
+    .postCard{
+        background-color: white;
+        min-width: 250px;
+        width: 25vw;
+        max-width: 450px;
+        margin: 25px;
+        transition: transform 0.25s ease;
+        min-height: 325px;
+    }
+    .postCard:hover{
+        cursor: pointer;
+        transform: translateY(-0.5em);
+    }
+    .postTextContainer{
+        padding: 1em;
+    }
+    .postTitle{
+        font-weight: 400;
+        margin-bottom: 0;
+        font-size: clamp(20px,1.5vw,60px);
+    }
+    .postDate{
+        font-weight: 300;
+        font-size: clamp(12.5px,1vw,40px);
+        margin-top: 0;
+    }
+    @media(max-width: 768px){
+        .postCard{
+            width: 90vw;
+        }
+        .title{
+            margin-top: 50px;
+        }
     }
 </style>
 <body style = "margin: 0; font-family: sf-pro; display: flex; flex-direction: column;">
@@ -97,12 +169,82 @@
     <main>
         <h1 class = "title">Building our car, one weld at a time.</h1>
         <p class = "subtitle">Garage 803 Racing</p>
+        <div class = "postsContainer">
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/awards-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">Classic Division 3rd Place!</h2>
+                    <p class = "postDate">July 23rd, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/race-day-4-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">Race Day 4</h2>
+                    <p class = "postDate">July 23rd, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/race-day-3-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">Race Day 3</h2>
+                    <p class = "postDate">July 22nd, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/race-day-2-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">Race Day 2</h2>
+                    <p class = "postDate">July 21st, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/race-day-1-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">First Day of Racing</h2>
+                    <p class = "postDate">July 20th, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/scrutineering-day-3-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">We Passed Scrutineering!</h2>
+                    <p class = "postDate">July 19th, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/scrutineering-day-2-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">Scrutineering Day 2</h2>
+                    <p class = "postDate">July 18th, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/scrutineering-day-1-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">First Day of Scrutineering</h2>
+                    <p class = "postDate">July 17th, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/team-check-in-thumbnail.png">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">Team Check-In</h2>
+                    <p class = "postDate">July 16th, 2025</p>
+                </div>
+            </div>
+            <div class = "postCard">
+                <img class = "postThumbnail" src = "thumbnails/texas-day-1-thumbnail.jpg">
+                <div class = "postTextContainer">
+                    <h2 class = "postTitle">First Day in Texas</h2>
+                    <p class = "postDate">July 15th, 2025</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Inner HTML in footer.js -->
-     <footer id = "footer" style = "background-color: rgb(224, 224, 224); display: flex; flex-direction: column;">
-        
-    </footer>
+     <footer id = "footer" style = "background-color: rgb(224, 224, 224); display: flex; flex-direction: column;"></footer>
 </body>
 <script src = "navbar.js"></script>
 <script src = "footer.js"></script>

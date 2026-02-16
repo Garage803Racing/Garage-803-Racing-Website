@@ -1,4 +1,4 @@
- @font-face{
+    @font-face{
         font-family: sf-pro;
         src: url("fonts/SF-Pro-Display-Semibold.otf");
         font-weight: 500;
@@ -26,6 +26,7 @@
         font-size: 2vw;
         margin: 0px 0px 0px 1vw;
         letter-spacing: 0.35vw;
+        font-weight: 500;
     }
     .links{
             margin-right: 1.5vw;
@@ -38,7 +39,7 @@
         display: inline-block;
         position: relative;
         color: white;
-        font-weight: bold;
+        font-weight: 500;
         cursor: pointer;
         border-radius: 0.5vw;
         padding: 0.5vw;

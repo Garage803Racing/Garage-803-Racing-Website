@@ -80,6 +80,7 @@
         }
         .bottomSection h1{
             font-size: 5vw;
+            font-weight: 500 !important;
         }
         .bottomSection p{
             font-size: 3vw;
@@ -98,6 +99,7 @@
         }
         .bottomSection h1{
             font-size: 2vw;
+            font-weight: 500;
         }
         .bottomSection p{
             font-size: 1vw;
