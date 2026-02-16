@@ -78,6 +78,8 @@
         display: flex !important;
         justify-content: space-evenly;
         align-items: flex-start;
+        width: 95%;
+        margin-top: 50px;
     }
     .thumbnailAndTitle{
         display: flex;
@@ -90,12 +92,12 @@
         border-radius: 1vw;
     }
     .postTitle{
-        font-size: clamp(30px,2vw,80px) !important;
+        font-size: clamp(20px,2vw,80px) !important;
         margin-bottom: 0;
         margin-left: 0 !important;
     }
     .postDate{
-        font-size: clamp(20px,1.5vw,40px) !important;
+        font-size: clamp(15px,1.5vw,40px) !important;
         margin-top: 0;
     }
     .seeAllPostsButton{
@@ -307,7 +309,7 @@
         <section class = "imageAndText" id = "section-background-1">
             <div class = "bodyText2">
                 <h1>2025 Race Results</h1>
-                <p>The 2025 Texas Solar Car Challenge has come to an end. This season was our first time competing in the challenge. We spent two months building the car in our garage, learning how to work with various power tools and materials to get our car function by mid-July. During the competition, we made good friends with many other teams, and managed to pass scrutineering within just half an hour before the deadline. After countless hours of building and fixing, we are proud to have successfully scored 3rd place in the Classic Division, with a total distance of 382 laps or 573 miles on the Texas Motor Speedway. Thank you to all the Solar Car teams, parents, and friends for providing resources and supporting us along the way as it wouldn’t have been possible without you.</p>
+                <p>The 2025 Texas Solar Car Challenge has come to an end. This season was our first time competing in the challenge. We spent two months building the car in our garage, learning how to work with various power tools and materials to get our car function by mid-July. During the competition, we made good friends with many other teams, and managed to pass scrutineering within just half an hour before the deadline. After countless hours of building and fixing, we are proud to have successfully scored 3rd place in the Classic Division, with a total distance of 382 laps or 573 miles on the Texas Motor Speedway. Thank you to all the solar car teams, parents, and friends for providing resources and supporting us along the way as it wouldn’t have been possible without you.</p>
                 <button class = "photosButton" onclick = "location.assign('media.html');">2025 Season Photos →</button>
             </div>
             <img src = "images/2025-race-results-image.jpg" class = "workshopPhoto">
@@ -328,7 +330,7 @@
                 well as hard skills in CAD, design, manufacturing, etc.</p>
             </div>
         </section>
-        <h1>Latest Posts</h1>
+        <h1 style = "margin-top: 50px;">Our Stories</h1>
         <section class = "blogSection">
             <div class = "thumbnailAndTitle">
                 <img src = "thumbnails/awards-thumbnail.jpg" style = "width: 100%;">
@@ -346,13 +348,13 @@
                 <p class = "postDate">July 22nd, 2025</p>
             </div>
         </section>
-        <button class = "seeAllPostsButton">See All →</button>
+        <button class = "seeAllPostsButton" onclick = "location.assign('blogs.html')">See All →</button>
     </main>
 
 
 
     <!-- Footer -->
-     <footer id = "footer" style = "background-color: rgb(224, 224, 224);">
+     <footer id = "footer" style = "background-color: rgb(224, 224, 224); display: flex; flex-direction: column;">
         
     </footer>
 </body>
