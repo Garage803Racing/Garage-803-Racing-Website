@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage 803 Racing</title>
+    <meta property="og:image" content="http://garage803racing.org/images/preview-image.jpg">
+    <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
+    <link rel = "stylesheet" href = "dropdown.css">
+    <link rel = "stylesheet" href = "navbar.css">
+    <link rel = "stylesheet" href = "footer.css">
+</head>
+<style>
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Semibold.otf");
+        font-weight: 500;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Thin.otf");
+        font-weight: 300;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Heavy.otf");
+        font-weight: 600;
+    }
+    @keyframes fade-in{
+        from{
+            opacity: 0;
+        }
+    }
+    html{
+        overscroll-behavior-y: none;
+    }
+    main{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .blogContent{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 10vw;
+        margin-bottom: 5em;
+        width: clamp(250px,90vw,1200px);
+        animation: fade-in 2.5s forwards;
+    }
+    .blogTitle{
+        font-family: sf-pro;
+        font-weight: 300;
+        margin-bottom: 0;
+        font-size: clamp(40px,5vw,65px);
+        text-align: center;
+    }
+    .blogDate{
+        font-family: sf-pro;
+        font-weight: 300;
+        margin-top: 0;
+        font-size: clamp(15px,2vw,40px);
+    }
+    .blogMedia{
+        width: 100%;
+        min-height: 300px;
+        height: 40vw;
+        max-height: 600px;
+    }
+    .blogDescription{
+        font-family: sf-pro;
+        font-weight: 300;
+        font-size: clamp(13px,1.5vw,20px);
+        width: 100%;
+        background-color: rgb(176, 231, 245);
+        padding: 1em;
+        box-sizing: border-box;
+        margin-bottom: 0.5em;
+    }
+    @media(max-width: 768px){
+        .blogContent{
+            margin-top: 15vw;
+        }
+    }
+</style>
+<body style = "margin: 0; font-family: sf-pro;">
+    <!-- Inner HTML in navbar.js-->
+    <div class = "navigation" id = "navbar">
+    </div>
+    <main>
+        <div class = "blogContent">
+            <h1 class = "blogTitle">First Day in Texas</h1>
+            <h2 class = "blogDate">July 15th, 2025</h2>
+            <iframe class = "blogMedia" src="https://www.youtube.com/embed/TaXT4iVZyUQ?si=QaO8vx3Q9XXrEJfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class = "blogDescription">Paragraph 1</p>
+            <p class = "blogDescription">Paragraph 2</p>
+            <p class = "blogDescription">And so on...</p>
+        </div>
+    </main>
+    <!-- Inner HTML in footer.js -->
+     <footer id = "footer" style = "background-color: rgb(224, 224, 224);">
+        
+    </footer>
+</body>
+<script src = "navbar.js"></script>
+<script src = "footer.js"></script>
+</html>
