@@ -43,6 +43,7 @@
         height: 100%;
         margin: 0;
         object-fit:cover;
+        pointer-events: none;
     }
     .blackDiv{
         position: absolute;
@@ -68,15 +69,17 @@
     .title{
         color: white;
         font-weight: 100;
-        font-size: 4vw;
+        font-size: clamp(40px,4vw,100px);
+        text-align: center;
         animation: fade-in-text 5s forwards;
         margin: 0;
     }
     .subtitle{
         color: white;
         font-weight: 100;
-        font-size: 2vw;
+        font-size: clamp(20px,2vw,50px);
         margin-top: 30px;
+        text-align: center;
         animation: fade-in-text 5s forwards;
         margin: 0;
     }
