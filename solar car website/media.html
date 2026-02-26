@@ -75,6 +75,7 @@
 		flex-direction: column;
 		justify-content: center;
         flex: 1;
+        
     }
 	.gallery{
 		width: 95%;
@@ -122,7 +123,27 @@
     li{
         list-style-type: none;
     }
-    
+    .awardImages > img{
+        min-height: 400px;
+        height: 20vw;
+        max-height: 1000px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+     .awardDescription{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .awardDescription > span{
+        margin: 0;
+        font-family: sf-pro;
+        font-weight: lighter;
+        font-size: clamp(20px,2vw,100px);
+        width: 80%;
+        text-align: center;
+    }
     /* Phone */
     @media(max-width: 770px){
 
@@ -189,6 +210,20 @@
 			border-radius: 2vw !important;
 			border: 0.5vw solid black !important;
 		}
+        .awardImages > img{
+            min-height: 300px;
+            height: 40vw;
+            max-height: 1000px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+         .awardDescription > span{
+            margin: 0;
+            font-family: sf-pro;
+            font-weight: lighter;
+             font-size: clamp(20px,3vw,100px);
+        }
+       
         
     }
     /* Computer */
@@ -245,7 +280,10 @@
         }
 		.mainContent h1{
 			font-weight: lighter;
-			margin: 3vw;
+			margin-top: 3vw;
+            margin-left: 3vw;
+            margin-right: 3vw;
+            margin-bottom: 3vw;
 			font-size: 2.5vw;
 		}
 		.news{
@@ -272,6 +310,12 @@
         </div>
     </div>
     <div class = "mainContent">
+        <h1 style = "text-align: center">Garage 803 Racing earns the Congressional Recognition Award</h1>
+        <p class = "awardDescription"><span>Office of Sam Liccardo grants Garage 803 Racing Congressional Recognition in honor of achieving 3rd Place in the Texas Solar Car Challenge through exceptional teamwork and dedication.<span></p>
+        <div class = "awardImages" style = "display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;">
+            <img src = "images/congressional-award-photo-1.jpg">
+            <img src = "images/congressional-award-photo-2.jpg">
+        </div>
 		<h1 style = "text-align: center">We are proud to be featured in our local media outlets!</h1>
 		<div class = "news">
 			<iframe class = "youtube-video" src="https://www.youtube.com/embed/hcIBrMhQyHw?si=wFDSWiZWj1QqsWXN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
