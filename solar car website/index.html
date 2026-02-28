@@ -21,6 +21,12 @@
             opacity:1;
         }
     }
+    @keyframes popUp{
+        0%, 50%{
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
     @font-face{
         font-family: sf-pro;
         src: url("fonts/SF-Pro-Display-Semibold.otf");
@@ -35,6 +41,50 @@
         font-family: sf-pro;
         src: url("fonts/SF-Pro-Display-Thin.otf");
         font-weight: 300;
+    }
+    .overlay{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.75);
+        z-index: 99999;
+        animation: popUp 1.5s ease-in-out;
+    }
+    .overlay.hidden{
+        display: none;
+    }
+    .popup{ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 300px;
+        width: 50vw;
+        max-width: 1500px;
+        min-height: 500px;
+        height: 50vw;
+        background-color: rgb(255,255,255);
+    }
+    .popup > img{
+        width: 50%;
+    }
+    .popup > span{
+        align-self: flex-end;
+        color: black;
+        font-size: clamp(30px,3vw,80px);
+        margin-right: clamp(10px,2vw,50px);
+        cursor: pointer;
+    }
+    .popup > p{
+        font-weight: 600;
+        font-size: clamp(15px,1.25vw,60px);
+        width: 90%;
+        text-align: center;
     }
     body{
         margin: 0;
@@ -134,7 +184,6 @@
         }
         .mainContent .imageAndText{
             display: flex;
-            padding: 5vw 10vw 5vw 10vw;
             flex-direction: column;
             align-items: center;
         }
@@ -145,24 +194,27 @@
             color: white;
         }
         .teamPicture{
-            width: clamp(350px,32vw,1000px);
+            width: clamp(300px,28vw,1000px);
             border-radius: 1vw;
             align-self: center;
         }
         .workshopPhoto{
-            width: clamp(350px,35vw,1000px);
+            width: clamp(250px,28vw,1000px);
             border-radius: 1vw;
             align-self: center;
+            margin: 50px;
         }
         .mainContent h1{
             font-weight: bold;
             font-size: clamp(40px,3vw,100px);
             text-align: center;
+            margin: 50px;
         }
         .mainContent p{
             font-weight: lighter;
             font-size: clamp(20px,1.5vw,50px);
             text-align: center;
+            margin: 50px;
         }
         .bodyText2{
             display: flex;
@@ -286,6 +338,13 @@
 <body>
     <!-- Inner HTML in navbar.js-->
     <div class = "navigation" id = "navbar">
+    </div>
+     <div class = "overlay" id = "overlay">
+        <div class = "popup">
+            <span class = "closeButton" onclick = "document.getElementById('overlay').classList.toggle('hidden')">&times</span>
+            <img src = "images/asian-box-flyer.png">
+            <p>Support Garage 803 Racing Solar Car by enjoying some Asian Box at Downtown Mountain View on March 1st! Use code FUNDMV25 in your online order or show this flyer in person when purchasing. 25% of all sales will help fund our project for the 2026 Solar Car Competition.</p>
+        </div>
     </div>
     <div class = "heroBanner">
         <img class = "raceBackground" src = "images/landing-page-banner 4K.png">
