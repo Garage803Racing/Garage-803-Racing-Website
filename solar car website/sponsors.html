@@ -77,16 +77,22 @@
     }
     .mainContent{
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .sponsor-logos{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        width: 90%;
+        margin-top: 50px;
     }
     .sponsor-logos img{
-        height: 10vw;
-        margin: 1vw;
+        width: clamp(150px,20vw,300px);
+        margin: 25px;
         cursor: pointer;
     }
     .buttonQRcode{
@@ -133,17 +139,6 @@
         }
         .mainContent h1{
             font-size: 6vw;
-        }
-        .sponsorsContent{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            margin-bottom: 8vw;
-            margin-top: 8vw;
-        }
-        .sponsor-logos img{
-            height: 20vw;
-
         }
         .buttonQRcode button{
             width: 80vw;
@@ -209,6 +204,7 @@
             font-size: 3vw;
             font-weight: bolder;
             padding: 2vw;
+            margin: 20px;
             transition: transform 0.25s ease;
         }
         .buttonQRcode button:hover{
@@ -231,24 +227,17 @@
         </div>
     </div>
     <div class = "mainContent">
-        <h1 style = "text-align: center; background-color: rgb(198, 217, 237);">2026 Platinum Sponsors</h1>
+        
         <div class = "sponsor-logos">  
             <img src = "sponsor-logos/simscale.jpg" onclick = "location.assign('https://www.simscale.com')">
-            
-        </div>
-         <h1 style = "text-align: center; background-color: rgb(255, 204, 76);">2026 Gold Sponsors</h1>
-        <div class = "sponsor-logos">  
             <img src = "sponsor-logos/fpr-logo.png" onclick = "location.assign('https://www.fpr-newenergy.com/')">
+             <img src = "sponsor-logos/d2-solar-logo.png" onclick = "location.assign('https://www.d2solar.com/')">
             <img src = "sponsor-logos/ace-fire-inc-logo.png" onclick = "location.assign('https://www.acefireinc.com/')">
-            <img src = "sponsor-logos/d2-solar-logo.png" onclick = "location.assign('https://www.d2solar.com/')">
-        </div>
-        <h1 style = "text-align: center; background-color: rgb(249, 204, 181);">2026 Bronze Sponsors</h1>
-        <div class = "sponsor-logos">  
             <img src = "sponsor-logos/home-depot.jpg" onclick = "location.assign('https://www.homedepot.com/')">
             <img src = "sponsor-logos/lowes.png" onclick = "location.assign('https://www.lowes.com')">
             <img src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
         </div>
-        <h1 style = "text-align: center">INTERESTED IN SUPPORTING US?</h1>
+        <h1 style = "text-align: center">Interested in supporting our team?</h1>
         <div class = "sponsorsContent">
             <div class = "buttonQRcode">
                 <button onclick = "window.open('https://garage803racing.org/project_pitch.pdf','_blank');">Project Pitch</button>
