@@ -81,7 +81,7 @@
         justify-content: center;
         align-items: center;
     }
-    .sponsor-logos{
+    .bronze-sponsors{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -89,7 +89,15 @@
         width: 90%;
         margin-top: 50px;
     }
-    .sponsor-logos img{
+    .gold-sponsors{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin-top: 50px;
+    }
+    .logo{
         width: clamp(150px,20vw,300px);
         margin: 25px;
         cursor: pointer;
@@ -105,6 +113,36 @@
     }
     li{
         list-style-type: none;
+    }
+    .gold-sponsors.hidden{
+            display: none !important;
+    }
+    .bronze-sponsors.hidden{
+        display: none !important;
+    }
+    .filter-buttons-container{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+    }
+    .sponsors-filter-button{
+        cursor: pointer;
+        background: none;
+        width: clamp(200px,20vw,700px);
+        margin: 20px;
+        font-family: sf-pro;
+        font-weight: 500;
+        border-radius: 5px;
+        font-size: 1.25em;
+        border: 2px solid black;
+        transition: background-color 0.25s ease;
+    }
+    .sponsors-filter-button:hover{
+        background-color: black;
+        color: white;
+        
     }
     /* Phone */
     @media(max-width: 770px){
@@ -153,6 +191,19 @@
         .buttonQRcode img{
             width: 60vw;
             margin: 8vw;
+        }
+        .filter-buttons-container{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .filter-buttons-container{
+            margin-top: 10px;
+        }
+        .sponsors-filter-button{
+            margin: 5px;
         }
     }
     /* Computer */
@@ -226,15 +277,21 @@
         </div>
     </div>
     <div class = "mainContent">
-        
-        <div class = "sponsor-logos">  
-            <img src = "sponsor-logos/simscale.jpg" onclick = "location.assign('https://www.simscale.com')">
-            <img src = "sponsor-logos/fpr-logo.png" onclick = "location.assign('https://www.fpr-newenergy.com/')">
-             <img src = "sponsor-logos/d2-solar-logo.png" onclick = "location.assign('https://www.d2solar.com/')">
-            <img src = "sponsor-logos/ace-fire-inc-logo.png" onclick = "location.assign('https://www.acefireinc.com/')">
-            <img src = "sponsor-logos/home-depot.jpg" onclick = "location.assign('https://www.homedepot.com/')">
-            <img src = "sponsor-logos/lowes.png" onclick = "location.assign('https://www.lowes.com')">
-            <img src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
+        <div class = "filter-buttons-container">
+            <button class = "all-sponsors-button sponsors-filter-button" onclick = "showAll()">All Sponsors</button>
+            <button class = "gold-sponsors-button sponsors-filter-button" onclick = "showGold()">Gold Sponsors</button>
+            <button class = "bronze-sponsors-button sponsors-filter-button" onclick = "showBronze()">Bronze Sponsors</button>
+        </div>
+        <div class = "gold-sponsors">
+            <img class = "logo" src = "sponsor-logos/simscale.jpg" onclick = "location.assign('https://www.simscale.com')">
+            <img class = "logo" src = "sponsor-logos/fpr-logo.png" onclick = "location.assign('https://www.fpr-newenergy.com/')">
+            <img class = "logo" src = "sponsor-logos/d2-solar-logo.png" onclick = "location.assign('https://www.d2solar.com/')">
+             <img class = "logo" src = "sponsor-logos/ace-fire-inc-logo.png" onclick = "location.assign('https://www.acefireinc.com/')">
+        </div>
+        <div class = "bronze-sponsors">  
+            <img class = "logo" src = "sponsor-logos/home-depot.jpg" onclick = "location.assign('https://www.homedepot.com/')">
+            <img class = "logo" src = "sponsor-logos/lowes.png" onclick = "location.assign('https://www.lowes.com')">
+            <img class = "logo"src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
         </div>
         <h1 style = "text-align: center">Interested in supporting our team?</h1>
         <div class = "sponsorsContent">
@@ -254,6 +311,23 @@
     
     </footer>
 </body>
+<script>
+    const goldSponsors = document.querySelector(".gold-sponsors");
+    const bronzeSponsors = document.querySelector(".bronze-sponsors");
+
+    function showAll(){
+        goldSponsors.classList.remove("hidden");
+        bronzeSponsors.classList.remove("hidden");
+    }
+    function showGold(){
+        goldSponsors.classList.remove("hidden");
+        bronzeSponsors.classList.add("hidden");
+    }
+    function showBronze(){
+        goldSponsors.classList.add("hidden");
+        bronzeSponsors.classList.remove("hidden");
+    }
+</script>
 <script src = "navbar.js"></script>
 <script src = "footer.js"></script>
 
