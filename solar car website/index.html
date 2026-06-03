@@ -56,8 +56,7 @@
     }
     .overlay{
         position: fixed;
-        /* display: flex; */
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
         top: 0;
@@ -80,11 +79,12 @@
         width: 50vw;
         max-width: 1500px;
         min-height: 500px;
-        height: 50vw;
+        height: 35vw;
         background-color: rgb(255,255,255);
     }
     .popup > img{
-        width: 50%;
+        width: 75%;
+        max-width: 450px;
         cursor: pointer;
     }
     .popup > span{
@@ -361,8 +361,8 @@
      <div class = "overlay" id = "overlay">
         <div class = "popup">
             <span class = "closeButton" onclick = "document.getElementById('overlay').classList.toggle('hidden')">&times</span>
-            <img src = "images/chipotle-flyer.jpg" alt = "Chipotle Fundraising Flyer">
-            <p>Support Garage 803 Racing Solar Car by enjoying Chipotle on May 2nd from 5-9 PM at the Mountain View Location! Use code JVX3JDM in mobile app or website, or simply present the flyer upon checkout. 25% of sales will support us in the 2026 Solar Car Competition.</p>
+            <img src = "thumbnails/aeroshell-base-complete-thumbnail.jpg" alt = "Foam aeroshell base of our car.">
+            <p>Our team is building our second ever solar car to compete in the 2026 Texas Solar Car Challenge. Check out our latest blog posts by scrolling down or go to <a href = "https://garage803racing.org/blogs">our blogs page</a> to see what we are up to!</p>
         </div>
     </div>
     <div class = "heroBanner">
@@ -413,20 +413,20 @@
         </section>
         <h1 style = "margin-top: 50px;">Our Stories</h1>
         <section class = "blogSection">
-            <div class = "thumbnailAndTitle" onclick = "location.assign('2025-competition-awards.html')">
-                <img src = "thumbnails/awards-thumbnail.jpg" style = "width: 100%;">
-                <h2 class = "postTitle">Classic Division 3rd Place!</h2>
-                <p class = "postDate">July 23rd, 2025</p>
+            <div class = "thumbnailAndTitle" onclick = "location.assign('2026-new-aeroshell.html')">
+                <img src = "thumbnails/aeroshell-base-complete-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">New Aeroshell Base</h2>
+                <p class = "postDate">May 21st, 2026</p>
             </div>
-             <div class = "thumbnailAndTitle" onclick = "location.assign('2025-texas-day-9.html')">
-                <img src = "thumbnails/race-day-4-thumbnail.jpg" style = "width: 100%;">
-                <h2 class = "postTitle">Race Day 4</h2>
-                <p class = "postDate">July 23rd, 2025</p>
+             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-canopy-mold.html')">
+                <img src = "thumbnails/canopy-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Foam Canopy Mold</h2>
+                <p class = "postDate">April 21st, 2026</p>
             </div>
-             <div class = "thumbnailAndTitle" onclick = "location.assign('2025-texas-day-8.html')">
-                <img src = "thumbnails/race-day-3-thumbnail.jpg" style = "width: 100%;">
-                <h2 class = "postTitle">Race Day 3</h2>
-                <p class = "postDate">July 22nd, 2025</p>
+             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-aeroshell-bottom.html')">
+                <img src = "thumbnails/aeroshell-bottom-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Foam Aeroshell</h2>
+                <p class = "postDate">April 16, 2026</p>
             </div>
         </section>
         <button class = "seeAllPostsButton" onclick = "location.assign('blogs.html')">See All →</button>
