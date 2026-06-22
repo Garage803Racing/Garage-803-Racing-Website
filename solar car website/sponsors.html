@@ -142,7 +142,9 @@
         display: none !important;
     }
     .filter-buttons-container{
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        place-items: center;
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
@@ -170,12 +172,20 @@
         background-color: rgb(255, 200, 163);
     }
     .gold-sponsors-button{
-         background-color: rgb(242, 195, 87);
+         background-color: rgb(255, 210, 120);
     }
     .silver-sponsors-button{
         background-color: rgb(224, 224, 224);
     }
-    /* Phone */
+   @media(max-width: 1080px){
+    .filter-buttons-container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .sponsors-filter-button{
+        width: clamp(400px,40vw,700px);
+        margin: 10px;
+    }
+   }
     @media(max-width: 770px){
         .siteTopic{
             border-radius: 2vw;
@@ -229,12 +239,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-        .filter-buttons-container{
             margin-top: 10px;
         }
         .sponsors-filter-button{
             margin: 5px;
+            width: clamp(250px,75vw,700px);
         }
     }
     /* Computer */
@@ -328,7 +337,8 @@
             <img class = "logo" src = "sponsor-logos/polycarbonate-depot-logo.jpg" onclick = "location.assign('https://polycarbonatedepot.com/')">
             <img class = "logo" src = "sponsor-logos/home-depot.jpg" onclick = "location.assign('https://www.homedepot.com/')">
             <img class = "logo" src = "sponsor-logos/lowes.png" onclick = "location.assign('https://www.lowes.com')">
-            <img class = "logo"src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
+            <img class = "logo" src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
+            <img class = "logo" src = "sponsor-logos/spartan-robotics-logo.jpeg" onclick = "location.assign('https://www.spartanrobotics.org/')">
         </div>
         <h1 style = "text-align: center">Interested in supporting our team?</h1>
         <div class = "sponsorsContent">
