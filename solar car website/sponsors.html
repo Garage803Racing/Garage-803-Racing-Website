@@ -89,7 +89,7 @@
         width: 90%;
         margin-top: 50px;
         border: 2px solid rgb(255, 200, 163);
-        border-radius: 10px;;
+        border-radius: 10px;
     }
     .gold-sponsors{
         display: flex;
@@ -101,10 +101,24 @@
         border: 2px solid rgb(242, 195, 87);
         border-radius: 10px;
     }
+    .silver-sponsors{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin-top: 50px;
+        border: 2px solid rgb(160, 164, 182);
+        border-radius: 10px;
+    }
     .logo{
         width: clamp(150px,20vw,300px);
         margin: 25px;
         cursor: pointer;
+        transition: transform 0.25s ease;
+    }
+    .logo:hover{
+        transform: translateY(-0.5em);
     }
     .buttonQRcode{
         display: flex;
@@ -124,6 +138,9 @@
     .bronze-sponsors.hidden{
         display: none !important;
     }
+    .silver-sponsors.hidden{
+        display: none !important;
+    }
     .filter-buttons-container{
         display: flex;
         flex-wrap: nowrap;
@@ -140,13 +157,23 @@
         font-weight: 500;
         border-radius: 5px;
         font-size: 1.25em;
-        border: 2px solid black;
-        transition: background-color 0.25s ease;
+        transition: scale 0.25s ease;
+        border: none !important;
     }
     .sponsors-filter-button:hover{
-        background-color: black;
-        color: white;
-        
+       scale: 1.05;
+    }
+    .all-sponsors-button{
+        background-color: rgb(200, 198, 255);
+    }
+    .bronze-sponsors-button{
+        background-color: rgb(255, 200, 163);
+    }
+    .gold-sponsors-button{
+         background-color: rgb(242, 195, 87);
+    }
+    .silver-sponsors-button{
+        background-color: rgb(224, 224, 224);
     }
     /* Phone */
     @media(max-width: 770px){
@@ -284,6 +311,7 @@
         <div class = "filter-buttons-container">
             <button class = "all-sponsors-button sponsors-filter-button" onclick = "showAll()">All Sponsors</button>
             <button class = "gold-sponsors-button sponsors-filter-button" onclick = "showGold()">Gold Sponsors</button>
+            <button class = "silver-sponsors-button sponsors-filter-button" onclick = "showSilver()">Silver Sponsors</button>
             <button class = "bronze-sponsors-button sponsors-filter-button" onclick = "showBronze()">Bronze Sponsors</button>
         </div>
         <div class = "gold-sponsors">
@@ -292,8 +320,12 @@
             <img class = "logo" src = "sponsor-logos/d2-solar-logo.png" onclick = "location.assign('https://www.d2solar.com/')">
              <img class = "logo" src = "sponsor-logos/ace-fire-inc-logo.png" onclick = "location.assign('https://www.acefireinc.com/')">
         </div>
-        <div class = "bronze-sponsors"> 
+        <div class = "silver-sponsors">
             <img class = "logo" src = "sponsor-logos/evolution-motorcycles-logo.png" onclick = "location.assign('https://evolution-motorcycles.com/')">
+            <img class = "logo" src = "sponsor-logos/bicycle-outfitter-logo.png" onclick = "location.assign('https://www.bicycleoutfitter.com/')">
+        </div>
+        <div class = "bronze-sponsors"> 
+            <img class = "logo" src = "sponsor-logos/polycarbonate-depot-logo.jpg" onclick = "location.assign('https://polycarbonatedepot.com/')">
             <img class = "logo" src = "sponsor-logos/home-depot.jpg" onclick = "location.assign('https://www.homedepot.com/')">
             <img class = "logo" src = "sponsor-logos/lowes.png" onclick = "location.assign('https://www.lowes.com')">
             <img class = "logo"src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
@@ -319,18 +351,27 @@
 <script>
     const goldSponsors = document.querySelector(".gold-sponsors");
     const bronzeSponsors = document.querySelector(".bronze-sponsors");
+    const silverSponsors = document.querySelector(".silver-sponsors");
 
     function showAll(){
         goldSponsors.classList.remove("hidden");
         bronzeSponsors.classList.remove("hidden");
+        silverSponsors.classList.remove("hidden");
     }
     function showGold(){
         goldSponsors.classList.remove("hidden");
         bronzeSponsors.classList.add("hidden");
+        silverSponsors.classList.add("hidden");
     }
     function showBronze(){
         goldSponsors.classList.add("hidden");
         bronzeSponsors.classList.remove("hidden");
+        silverSponsors.classList.add("hidden");
+    }
+    function showSilver(){
+        silverSponsors.classList.remove("hidden");
+        goldSponsors.classList.add("hidden");
+        bronzeSponsors.classList.add("hidden");
     }
 </script>
 <script src = "navbar.js"></script>
