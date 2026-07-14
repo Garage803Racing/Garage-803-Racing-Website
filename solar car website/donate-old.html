@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Garage 803 Racing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://garage803racing.org/images/preview-image.jpg">
+    <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
+    <link rel = "stylesheet" href = "dropdown.css">
+     <link rel = "stylesheet" href = "navbar.css">
+     <link rel = "stylesheet" href = "footer.css">
+     <meta property="og:site_name" content="Garage 803 Racing" />
+    <meta property="og:title" content="Garage 803 Racing - Donate" />
+    <meta property="twitter:title" content="Garage 803 Racing - Donate" />
+    <meta property="og:url" content="https://garage803racing.org/" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Garage 803 Racing is not possible without the support of our donors. Your donations will help us purchase building materials, tools, equipment, and pay off various fees for the competition."/>
+    
+    <meta property="og:image:secure_url" content="https://garage803racing.org/images/preview-image.jpg"/>
+    <meta property="twitter:image" content="https://garage803racing.org/images/preview-image.jpg"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Garage 803 Racing is not possible without the support of our donors. Your donations will help us purchase building materials, tools, equipment, and pay off various fees for the competition.">
+</head>
+<style>
+    @keyframes fadeInUp{
+        from{
+            transform: translateY(1vw);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0vw);
+            opacity:1;
+        }
+    }
+    /* Custom Fonts*/
+    @font-face{
+        font-family: sf-pro-donate-button;
+        src: url("fonts/SF-Pro-Display-Heavy.otf");
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Semibold.otf");
+        font-weight: 500;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Thin.otf");
+        font-weight: 300;
+    }
+    button a{
+        text-decoration: none;
+        color: rgb(48, 48, 48);
+    }
+    body{
+        margin: 0;
+        font-family: sf-pro;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: white;
+        overflow-x: hidden; 
+        overscroll-behavior: none;
+    }
+    .heroBanner{
+        display: flex;
+        background-image: url("site-banners/image5.jpg");
+        background-size: cover;
+        background-position: center bottom;
+        background-attachment: fixed;
+        align-items: center;
+    }
+    .siteTopic{
+        background-color: white;
+        animation: fadeInUp 1s forwards;
+    }
+    .siteTopic p{
+        font-weight: lighter;
+    }
+    .mainContent{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .donate-button{
+        background-color: rgb(37,170,225);
+        border: none;
+        color: rgb(48, 48, 48);
+        font-family: sf-pro-donate-button;
+        transition: scale 0.1s linear;
+    }
+    .donate-button:hover{
+        cursor: pointer;
+        scale: 1.25;
+        transition: scale 0.1s linear;
+    }
+    .mainContent h1{
+        font-size: 6vw;
+        text-decoration: underline;
+        text-underline-offset: 2vw;
+    }
+    .mainContent p{
+        font-size: 4vw;
+        font-weight: lighter;
+    }
+    li{
+        list-style-type: none;
+    }
+    
+    /* Phone */
+    @media(max-width: 770px){
+        .siteTopic{
+            border-radius: 2vw;
+            width: 75%;
+        }
+        .siteTopic h1{
+            font-size: 16vw;
+            margin: 0;
+            padding-top: 3vw;
+            padding-left: 3vw;
+            padding-right: 3vw;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-thickness: 1vw;
+            text-underline-offset: 2vw;
+        }
+        .siteTopic p{
+            font-size: 2.5vw;
+            padding-bottom: 3vw;
+            padding-left: 3vw;
+            padding-right: 3vw;
+            text-align: center;
+            margin: 2vw;
+        }
+        .heroBanner{
+            aspect-ratio: 2/1;
+            justify-content: center;
+            margin-top: 12vw;
+        }
+        .mainContent{
+            align-items: center;
+            text-align: center;
+            margin: 5vw;
+        }
+        .mainContent button{
+            font-size: 10vw;
+            padding: 5vw;
+            border-radius: 5vw;
+            font-family: sf-pro-donate-button;
+            color: rgb(48, 48, 48);
+        }
+        
+    }
+    /* Computer */
+    @media(min-width: 771px){
+        .siteTopic{
+            margin-left: 2vw;
+            border-radius: 1vw;
+            width: 40%;
+        }
+        .siteTopic h1{
+            font-size: 8vw;
+            margin: 0;
+            padding-top: 1.5vw;
+            padding-left: 1.5vw;
+            padding-right: 1.5vw;
+            text-decoration: underline;
+            text-decoration-thickness: 0.5vw;
+            text-underline-offset: 1vw;
+        }
+        .siteTopic p{
+            font-size: 1.25vw;
+            padding-bottom: 1.5vw;
+            padding-left: 1.5vw;
+            padding-right: 1.5vw;
+            margin: 1vw;
+        }
+        .heroBanner{
+            aspect-ratio: 4/1;
+            margin-top: 6vw;
+        }
+        .mainContent{
+            margin: 5vw;
+        }
+        .mainContent button{
+            font-size: 5vw;
+            padding: 5vw;
+            margin: 2vw;
+            width: 50vw;
+            border-radius: 5vw;
+            font-family: sf-pro-donate-button;
+            font-weight: bold;
+            align-self: center;
+            color: rgb(48, 48, 48);
+        }
+        .mainContent a{
+            align-self: center;
+        }
+        .mainContent h1{
+            font-size: 4vw;
+            text-decoration: underline;
+            text-underline-offset: 1vw;
+        }
+        .mainContent p{
+            font-size: 2vw;
+            font-weight: lighter;
+        }
+    }
+</style>
+<body>
+    <div class = "navigation" id = "navbar">
+    </div>
+    <div class = "heroBanner">
+        <div class = "siteTopic">
+            <h1>DONATE</h1>
+            <p>Garage 803 Racing relies on the generosity of sponsors
+            and donors. Their support gives students the opportunity to
+            apply their engineering skills in a real world project while
+            learning about sustainability in engineering. Help support
+            the next generation of engineers in bringing our solar car to life.</p>
+        </div>
+    </div>
+    <div class = "mainContent">
+        <button onclick = "window.open('https://www.paypal.com/donate?campaign_id=E4A8GQ32ZB4LC','_blank')" class = "donate-button">DONATE NOW</button>
+        <h1>WHAT WE DO</h1>
+        <p>We will design and build a one-seater solar car that's fully dependent on solar energy. This car will be designed to race across Texas over the course of 4 days in July 2026. Throughout the season, we will
+        research, design, and manufacture a race-capable solar car for the event in Dallas.<br><br></p>
+        <h1>WHY WE NEED YOUR HELP</h1>
+        <p>We need YOUR help to support us financially as we compete in the High School Solar Car Challenge in Texas! Building
+        and racing a solar-powered car requires funding for materials, tools, travel, and competition fees. Your donation will enable
+        us to bring this project to life, allowing students to gain hands-on STEM experience while advancing sustainable technology
+        and awareness. Together, we can drive innovation and inspire future problem-solvers!</p>
+    </div>
+    <!-- Footer -->
+     <footer id = "footer" style = "background-color: rgb(224, 224, 224); display: flex; flex-direction: column;">
+    
+    </footer>
+</body>
+<script src = "navbar.js"></script>
+<script src = "footer.js"></script>
+
+
+</html>

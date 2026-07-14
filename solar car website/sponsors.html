@@ -7,8 +7,8 @@
     <meta property="og:image" content="https://garage803racing.org/images/preview-image.jpg">
     <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
     <meta property="og:site_name" content="Garage 803 Racing" />
-    <meta property="og:title" content="Garage 803 Racing - Sponsors ❤️" />
-    <meta property="twitter:title" content="Garage 803 Racing - Sponsors ❤️" />
+    <meta property="og:title" content="Garage 803 Racing - Sponsors & Donations ❤️" />
+    <meta property="twitter:title" content="Garage 803 Racing - Sponsors & Donations ❤️" />
     <meta property="og:url" content="https://garage803racing.org/" />
     <meta property="og:type" content="website">
     <meta property="og:description" content="Interested in Sponsoring Garage 803 Racing? Check out our Sponsorship Package and Project Pitch Deck to see our cost breakdowns and the benefits you can recieve for your company."/>
@@ -87,7 +87,8 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-        margin-top: 50px;
+        margin-top: 25px;
+        margin-bottom: 25px;
         border: 2px solid rgb(255, 200, 163);
         border-radius: 10px;
     }
@@ -97,7 +98,7 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-        margin-top: 50px;
+        margin-top: 25px;
         border: 2px solid rgb(242, 195, 87);
         border-radius: 10px;
     }
@@ -107,7 +108,7 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-        margin-top: 50px;
+        margin-top: 25px;
         border: 2px solid rgb(160, 164, 182);
         border-radius: 10px;
     }
@@ -120,12 +121,7 @@
     .logo:hover{
         transform: translateY(-0.5em);
     }
-    .buttonQRcode{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .buttonQRcode a{
+    .sponsorsContent a{
         text-decoration: none;
         color: rgb(48, 48, 48);
     }
@@ -218,16 +214,16 @@
         .mainContent h1{
             font-size: 6vw;
         }
-        .buttonQRcode button{
+        .sponsorsContent button{
             width: 80vw;
             background-color: rgb(37,170,225);
             border-radius: 8vw;
             color: rgb(48, 48, 48);
             border: none;
-            font-size: 6vw;
+            font-size: 4vw;
             font-weight: bolder;
-            padding: 4vw;
-            margin: 20px;
+            padding: 2vw;
+            margin: 10px;
         }
         .buttonQRcode img{
             width: 60vw;
@@ -244,6 +240,14 @@
         .sponsors-filter-button{
             margin: 5px;
             width: clamp(250px,75vw,700px);
+        }
+        .sponsorsContent{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2vw;
+          
         }
     }
     /* Computer */
@@ -282,22 +286,22 @@
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-            margin-bottom: 4vw;
-            margin-top: 4vw;
+            margin-bottom: 2vw;
+          
         }
-        .buttonQRcode button{
-            width: 40vw;
+        .sponsorsContent button{
+            width: 30vw;
             background-color: rgb(37,170,225);
             border-radius: 4vw;
             color: rgb(48, 48, 48);
             border: none;
-            font-size: 3vw;
+            font-size: 2vw;
             font-weight: bolder;
             padding: 2vw;
             margin: 20px;
             transition: transform 0.25s ease;
         }
-        .buttonQRcode button:hover{
+        .sponsorsContent button:hover{
             cursor: pointer;
             transform: translateY(-0.5vw);
         }
@@ -313,10 +317,20 @@
         <div class = "siteTopic">
             <h1>SPONSORS</h1>
             <p>Garage 803 Racing is only possible thanks to the
-            support of these sponsors.</p>            
+            support of these sponsors and donors.</p>            
         </div>
     </div>
     <div class = "mainContent">
+        <h1 style = "text-align: center">Interested in supporting our team?</h1>
+        <div class = "sponsorsContent">
+            
+                <button onclick = "window.open('https://garage803racing.org/project_pitch.pdf','_blank');">Project Pitch</button>
+
+                 <button onclick = "window.open('https://www.paypal.com/donate?campaign_id=E4A8GQ32ZB4LC','_blank');">DONATE</button>
+           
+                <button onclick = "window.open('https://garage803racing.org/sponsorship-package','_blank')">Sponsorship Proposal</button>
+
+        </div>
         <div class = "filter-buttons-container">
             <button class = "all-sponsors-button sponsors-filter-button" onclick = "showAll()">All Sponsors</button>
             <button class = "gold-sponsors-button sponsors-filter-button" onclick = "showGold()">Gold Sponsors</button>
@@ -342,18 +356,6 @@
             <img class = "logo" src = "sponsor-logos/lowes.png" onclick = "location.assign('https://www.lowes.com')">
             <img class = "logo" src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
             <img class = "logo" src = "sponsor-logos/spartans-sports-camp-logo.jpg" onclick = "location.assign('https://www.spartanssportscamp.com/')">
-        </div>
-        <h1 style = "text-align: center">Interested in supporting our team?</h1>
-        <div class = "sponsorsContent">
-            <div class = "buttonQRcode">
-                <button onclick = "window.open('https://garage803racing.org/project_pitch.pdf','_blank');">Project Pitch</button>
-                <!-- <img src = "images/qr2_Sponsors.png"> --->
-            </div>
-            <div class = "buttonQRcode">
-                <button onclick = "window.open('https://garage803racing.org/sponsorship-package','_blank')">Sponsorship Proposal</button>
-                
-                <!-- <img src = "images/qr_Cost.png"> -->
-            </div>
         </div>
     </div>
     <!-- Footer -->

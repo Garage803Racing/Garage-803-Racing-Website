@@ -13,12 +13,11 @@ function renderFooter(){
             <div class = "column2">
                 <h1 style = "margin-top: 0">Menu</h1>
                 <p><a href = "index.html">Home</a></p>
-                <p><a href = "team-25.html">Team</a></p>
-                <p><a href = "sponsors.html">Sponsors</a></p>
+                <p><a href = "team-26.html">Team</a></p>
+                <p><a href = "blogs.html">Blogs</a></p>
+                <p><a href = "sponsors.html">Support Us</a></p>
                 <p><a href = "media.html">Media</a></p>
-                <p><a href = "donate.html">Donate</a></p>
                 <p><a href = "faq.html">FAQ</a></p>
-                <p><a href = "join.html">Join</a></p>
                 <p><a href = "contact.html">Contact</a></p>
             </div>
             <div class = "column3">

@@ -17,7 +17,6 @@ function renderNavbar(){
                 <li><a href = "blogs.html">Blogs</a></li>
                 <li><a href = "sponsors.html">Sponsors</a></li>
                 <li><a href = "media.html">Media</a></li>
-                <li><a href = "donate.html">Donate</a></li>
                 <li><a href = "faq.html">FAQ</a></li>
                 <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact Us</button>
             </ul>
