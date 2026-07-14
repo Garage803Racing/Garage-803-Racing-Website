@@ -14,16 +14,17 @@ function renderNavbar(){
                         <li onclick = "location.assign('team-25.html')"><a href = "team-25.html">2024-2025</a></li>
                     </ul>
                 </li>
+                <li><a href = "blogs.html">Blogs</a></li>
                 <li><a href = "sponsors.html">Sponsors</a></li>
                 <li><a href = "media.html">Media</a></li>
                 <li><a href = "donate.html">Donate</a></li>
                 <li><a href = "faq.html">FAQ</a></li>
-                <button class = "join-navbar-button" onclick = "location.assign('join.html')">Join</button>
-                <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact</button>
+                <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact Us</button>
             </ul>
         </div>`
         ;
 }
+//<button class = "join-navbar-button" onclick = "location.assign('join.html')">Join</button>
 document.getElementById("navbar").innerHTML = renderNavbar();
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("links");
