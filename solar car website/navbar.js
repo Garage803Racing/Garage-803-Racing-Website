@@ -14,9 +14,9 @@ function renderNavbar(){
                         <li onclick = "location.assign('team-25.html')"><a href = "team-25.html">2024-2025</a></li>
                     </ul>
                 </li>
+                <li><a href = "media.html">Media</a></li>
                 <li><a href = "blogs.html">Blogs</a></li>
                 <li><a href = "sponsors.html">Support Us</a></li>
-                <li><a href = "media.html">Media</a></li>
                 <li><a href = "faq.html">FAQ</a></li>
                 <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact Us</button>
             </ul>
