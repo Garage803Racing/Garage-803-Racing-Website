@@ -1,6 +1,6 @@
 function renderNavbar(){
   return `<div class = "logoandname">
-            <img src = "images/logo-black-outline.png">
+            <img src = "images/logo-black-outline.png" onclick = "location.assign('index.html')" style = "cursor: pointer">
             <h1><a href = "index.html" style = "text-decoration: none; color: white">GARAGE 803 RACING</a></h1>
         </div>
         <button class = "hamburger" id = "hamburger">&#9776</button>
@@ -15,7 +15,7 @@ function renderNavbar(){
                     </ul>
                 </li>
                 <li><a href = "blogs.html">Blogs</a></li>
-                <li><a href = "sponsors.html">Sponsors</a></li>
+                <li><a href = "sponsors.html">Support Us</a></li>
                 <li><a href = "media.html">Media</a></li>
                 <li><a href = "faq.html">FAQ</a></li>
                 <button class = "contact-navbar-button" onclick = "location.assign('contact.html')">Contact Us</button>

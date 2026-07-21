@@ -54,52 +54,128 @@
         src: url("fonts/SF-Pro-Display-Thin.otf");
         font-weight: 300;
     }
+    @font-face{
+        font-family: milker;
+        src: url("fonts/Milker.otf");
+    }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Light.otf");
+        font-weight: 200;
+    }
+    @media(max-aspect-ratio: 9/16){
+        /*mobile phone portrait (thin tall)*/
+    }
+    @media(aspect-ratio: 16/10){
+        /*desktop (moderately tall and wide)*/
+    }
+    @media(min-aspect-ratio: 16/9){
+        /*mobile phone landscape (thin wide)*/
+        .overlay-logo{
+            margin-top: 0.5em;
+        }
+        .car-stat{
+            margin: 5px !important;
+        }
+         .car-stat h2{
+            margin: 0.5px !important;
+            font-size: clamp(15px,1.4vw,50px) !important;
+
+        }
+        .car-stat p{
+            margin: 0.5px !important;
+            font-size: clamp(10px,0.9vw,30px) !important;
+        }
+        
+    }
+    
     .overlay{
         position: fixed;
-        display: none;
-        /*display: flex*/
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-rows: 1fr 4fr 1fr;
+        place-items: center;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0,0,0,0.75);
+        background-image: url("images/temp-race-stats-background.jpg");
+        background-size: cover;
+        background-position: center center;
         z-index: 99999;
-        animation: popUp 1.5s ease-in-out;
     }
     .overlay.hidden{
         display: none;
     }
-    .popup{ 
+    .overlay-logo{
+        width: clamp(150px,20vw,450px);
+    }
+    .race-stats-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    .car-stats-container{
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        min-width: 300px;
-        width: 50vw;
-        max-width: 1500px;
-        min-height: 500px;
-        height: 35vw;
-        background-color: rgb(255,255,255);
+        align-items: center;
     }
-    .popup > img{
-        width: 75%;
-        max-width: 450px;
+    .car-stat{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1em;
+    }
+    .car-stat h2{
+        margin: 5px;
+        font-size: clamp(15px,1.75vw,50px);
+        font-family: milker;
+        text-align: center;
+        letter-spacing: 0.5px;
+    }
+    .car-stat p{
+        margin: 5px;
+        font-size: clamp(10px,1vw,30px);
+        font-family: aileron;
+        text-align: center;
+    }
+    .car-photo{
+       margin: 1em;
+        width: clamp(100px,50vw,1000px);
         cursor: pointer;
+        transition: scale 0.5s ease;
     }
-    .popup > span{
-        align-self: flex-end;
-        color: black;
-        font-size: clamp(30px,3vw,80px);
-        margin-right: clamp(10px,2vw,50px);
+    .car-photo:hover{
+        scale: 1.125;
+    }
+    .car-stats-container{
+        margin: 1em;
+    }
+    .continue-button{
+        color: white;
+        background: none;
+        border: 2px solid white;
+        border-radius: 0.5em;
+        font-size: clamp(15px,1.5vw,30px);
         cursor: pointer;
+        padding: 0.5em;
+        font-family: aileron;
+        font-weight: 200;
+        align-self: center;
+        animation: popUp 1.5s ease;
+        transition: background-color 0.25s ease;
     }
-    .popup > p{
-        font-weight: 600;
-        font-size: clamp(15px,1.25vw,60px);
-        width: 75%;
-        
+    .continue-button:hover{
+        background-color: white;
+        color: #222d56;
+        transition: background-color 0.25s ease;
     }
     body{
         margin: 0;
@@ -107,8 +183,12 @@
         display: flex;
         flex-direction: column;
         background-color: white;
-        overflow-x: hidden; 
+        overflow: hidden; 
         overscroll-behavior: none;
+    }
+    body.allowScroll{
+        overflow: scroll;
+        overflow-x: hidden
     }
     .heroBanner{
         width: 100%;
@@ -190,6 +270,20 @@
 
     /* Phone */
     @media(max-width: 770px){
+        .car-stat{
+            margin: 10px;
+        }
+        .race-stats-section{
+            display: flex;
+            flex-direction: column;
+        }
+         .car-photo{
+            margin: 1em;
+            width: clamp(100px,70vw,1000px);
+        }
+        .continue-button{
+            margin-bottom: 15em;
+        }
         .heroBanner{
             margin-top: 12vw;
         }
@@ -282,11 +376,9 @@
             padding: 5vw;
         }
         #section-background-1{
-            background-image: url("images/section-background-pc-2.jpg");
-            background-attachment: fixed;
-            background-size: cover;
+            background-color: rgb(46, 53, 79);
             color: white;
-            background-position: center;
+            
         }
         .teamPicture{
             width: clamp(350px,32vw,1000px);
@@ -360,11 +452,29 @@
     <div class = "navigation" id = "navbar">
     </div>
      <div class = "overlay" id = "overlay">
-        <div class = "popup">
-            <span class = "closeButton" onclick = "document.getElementById('overlay').classList.toggle('hidden')">&times</span>
-            <img src = "thumbnails/aeroshell-base-complete-thumbnail.jpg" alt = "Foam aeroshell base of our car.">
-            <p>Our team is building our second ever solar car to compete in the 2026 Texas Solar Car Challenge. Check out our latest blog posts by scrolling down or go to <a href = "https://garage803racing.org/blogs">our blogs page</a> to see what we are up to!</p>
+        <img class = "overlay-logo" src = "images/Logo2.png">
+        <div class = "race-stats-section">
+            <div class = "car-stat">
+                <p>2026 Solar Car</p>
+                <h2>Mako</h2>
+            </div>
+            <img class = "car-photo" src = "images/temp-mako-sticker-cutout.png" onclick = "location.assign('https://live.solarcarchallenge.org')">
+            <div class = "car-stats-container">
+                <div class = "car-stat">
+                    <p>Division</p>
+                    <h2>Advanced</h2>
+                </div>
+                <div class = "car-stat">
+                    <p>Final Distance Driven</p>
+                    <h2 id = "distance-traveled-counter">110.9 km</h2>
+                </div>
+                <div class = "car-stat">
+                    <p>Drivers</p>
+                    <h2>Ryan Liu<br>Liam Abelson<br>Yuriy Korniychuk<br>Lezhi Zeng</h2>
+                </div>
+            </div>
         </div>
+        <button class = "continue-button" onclick = "closeOverlay()">Continue →</button>
     </div>
     <div class = "heroBanner">
         <img class = "raceBackground" src = "images/landing-page-banner 4K.png">
@@ -377,24 +487,17 @@
                 <h1>About Us</h1>
                 <p>Garage 803 Racing is a team of high school students that compete
                 in the Solar Car Challenge. We are based in Mountain View / Los Altos region in California.
-                As a 501(c)(3) non profit organization, we are dedicated
-                to designing, constructing, and competing with solar-powered
-                vehicles while motivating hands-on STEM education and
-                sustainability. We are a group of passionate students that
-                collaborate to develop engineering solutions, gain real-world
-                problem-solving abilities, and improve our skills through
-                competition. Through commitment and perseverance, we
-                strive to push our boundaries and motivate the future
-                generation of innovators.</p>
+                As a 501(c)(3) non profit organization, we work on designing, constructing, and competing with solar-powered cars while motivating hands-on green energy awareness and
+                sustainability. We are a group of students who passionately explore different components of solar car construction and learn real-world problem solving skills along the way. Through commitment and perseverance, we strive to inspire students in our area to create large scale real-world hands on projects.</p>
             </div>
         </section>
         <section class = "imageAndText" id = "section-background-1">
             <div class = "bodyText2">
-                <h1>2025 Race Results</h1>
-                <p>The 2025 Texas Solar Car Challenge has come to an end. This season was our first time competing in the challenge. We spent two months building the car in our garage, learning how to work with various power tools and materials to get our car function by mid-July. During the competition, we made good friends with many other teams, and managed to pass scrutineering within just half an hour before the deadline. After countless hours of building and fixing, we are proud to have successfully scored 3rd place in the Classic Division, with a total distance of 382 laps or 573 miles on the Texas Motor Speedway. Thank you to all the solar car teams, parents, and friends for providing resources and supporting us along the way as it wouldn’t have been possible without you.</p>
-                <button class = "photosButton" onclick = "location.assign('media.html');">2025 Season Photos →</button>
+                <h1>2026 Race Results</h1>
+                <p>In the 2026 Solar Car Challenge, we created an Advanced Division car named "Mako" and drove the car around Texas. As a student run non-profit solar car team, we would like to thank all of our teammates, parents, donors, and corporate sponsors for all the support throughout this season. In the competition, our car a total of 110.9 km purely on solar power across Texas and an additional distance on our own. This year we explored working with new materials and building techniques mainly through building the solar array and aeroshell, and we hope to keep building again in the future.</p>
+                <button class = "photosButton" onclick = "location.assign('media.html');">View our gallery →</button>
             </div>
-            <img src = "images/2025-race-results-image.jpg" class = "workshopPhoto">
+            <img src = "images/2026-race-results.jpg" class = "workshopPhoto">
             
         </section>
         <hr>
@@ -438,6 +541,33 @@
     <!-- Footer -->
      <footer id = "footer" style = "background-color: rgb(224, 224, 224); display: flex; flex-direction: column;"></footer>
 </body>
+<script>
+    const overlay = document.getElementById("overlay");
+    const body = document.querySelector("body");
+    const distanceTraveled = document.getElementById("distance-traveled-counter");
+    function closeOverlay(){
+        overlay.classList.add("hidden");
+        body.classList.add("allowScroll");
+    }
+    function countUp(element, start, end, duration) {
+    const startTime = performance.now();
+
+    function animate(time) {
+        const progress = Math.min((time - startTime) / duration, 1);
+
+        const value = start + (end - start) * progress;
+
+        element.textContent = value.toFixed(1) + " km";
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+    }   
+    countUp(distanceTraveled, 0, 110.9, 3000);
+</script>
 <script src = "navbar.js"></script>
 <script src = "footer.js"></script>
 
