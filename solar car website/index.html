@@ -93,7 +93,9 @@
         }
         
     }
-    
+    html{
+        overscroll-behavior: none;
+    }
     .overlay{
         position: fixed;
         display: grid;
@@ -494,7 +496,7 @@
         <section class = "imageAndText" id = "section-background-1">
             <div class = "bodyText2">
                 <h1>2026 Race Results</h1>
-                <p>In the 2026 Solar Car Challenge, we created an Advanced Division car named "Mako" and drove the car around Texas. As a student run non-profit solar car team, we would like to thank all of our teammates, parents, donors, and corporate sponsors for all the support throughout this season. In the competition, our car a total of 110.9 km purely on solar power across Texas and an additional distance on our own. This year we explored working with new materials and building techniques mainly through building the solar array and aeroshell, and we hope to keep building again in the future.</p>
+                <p>In the 2026 Solar Car Challenge, we created an Advanced Division car named "Mako" and drove the car around Texas. As a student run non-profit solar car team, we would like to thank all of our teammates, parents, donors, and corporate sponsors for all the support throughout this season. Although our participation in the race was cut short due to COVID, we were still able to drive 110.9 km purely on solar power across Texas during the first day of the race. This year we explored working with new materials and building techniques mainly through building the solar array and aeroshell, and we hope to keep building again in the future.</p>
                 <button class = "photosButton" onclick = "location.assign('media.html');">View our gallery →</button>
             </div>
             <img src = "images/2026-race-results.jpg" class = "workshopPhoto">
@@ -517,20 +519,20 @@
         </section>
         <h1 style = "margin-top: 50px;">Our Stories</h1>
         <section class = "blogSection">
-            <div class = "thumbnailAndTitle" onclick = "location.assign('2026-car-in-texas.html')">
-                <img src = "thumbnails/car-in-texas-thumbnail.jpg" style = "width: 100%;">
-                <h2 class = "postTitle">Car Arrives at Texas</h2>
-                <p class = "postDate">July 13th, 2026</p>
+            <div class = "thumbnailAndTitle" onclick = "location.assign('2026-race-story.html')">
+                <img src = "thumbnails/2026-race-story-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">2026 Race Photo Story</h2>
+                <p class = "postDate">July 19th, 2026</p>
             </div>
-             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-car-assembly.html')">
-                <img src = "thumbnails/car-testing-thumbnail.jpeg" style = "width: 100%;">
-                <h2 class = "postTitle">Testing our Car</h2>
-                <p class = "postDate">July 11th, 2026</p>
+             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-scrutineering-highlights.html')">
+                <img src = "thumbnails/scrutineering-highlights-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Scrutineering Highlights</h2>
+                <p class = "postDate">July 18th, 2026</p>
             </div>
-             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-car-stickers.html')">
-                <img src = "thumbnails/car-stickers-thumbnail.jpg" style = "width: 100%;">
-                <h2 class = "postTitle">Solar Car Livery & Stickers</h2>
-                <p class = "postDate">July 8th, 2026</p>
+             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-team-check-in.html')">
+                <img src = "thumbnails/26-team-check-in-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">2026 Team Check-In</h2>
+                <p class = "postDate">July 15th, 2026</p>
             </div>
         </section>
         <button class = "seeAllPostsButton" onclick = "location.assign('blogs.html')">See All →</button>
@@ -566,7 +568,7 @@
 
     requestAnimationFrame(animate);
     }   
-    countUp(distanceTraveled, 0, 110.9, 3000);
+    countUp(distanceTraveled, 0, 110.9, 1500);
 </script>
 <script src = "navbar.js"></script>
 <script src = "footer.js"></script>
