@@ -51,9 +51,7 @@
         letter-spacing: 0.05vw;
         text-align: center;
     }
-    .links ul li:hover{
-        background-color: rgba(17,130,210,0.75);
-    }
+    
     .join-navbar-button{
         background-color: white;
         color: rgb(48,48,48);
@@ -73,21 +71,23 @@
     }
     .contact-navbar-button:hover{
         cursor: pointer;
-        opacity:0.75;
-        transition: opacity 0.25s linear;
+       background-color: white;
+       color: #15161b;
     }
     .contact-navbar-button{
         background: none;
         border: 0.25vw solid white;
         color: white;
         padding: 0.5vw;
-        width: 7.5vw;
+        width: 8vw;
         margin-left: 1vw;
         font-family: sf-pro;
-        font-weight: normal;
+        font-weight: 500;
         font-size: 1.25vw;
         border-radius: 0.5vw !important;
+        transition: background-color 0.25s ease;
     }
+    
     .navigation{
         position: fixed;
         width: 100%;
@@ -122,10 +122,11 @@
         }
         .close{
             display: flex;
-            font-size: 5vw;
+            font-size: 10vw !important;
             background: none;
             color: white;
-            justify-self: flex-end;
+            align-self: flex-end;
+            margin: 0.5em;
         }
        .join-navbar-button{
             background-color: white;
@@ -143,11 +144,6 @@
         .join-navbar-button:hover{
             cursor: pointer;
             opacity: 0.75;
-            transition: opacity 0.25s linear;
-        }
-        .contact-navbar-button:hover{
-            cursor: pointer;
-            opacity:0.75;
             transition: opacity 0.25s linear;
         }
         .contact-navbar-button{
@@ -182,6 +178,8 @@
         .links ul{
             display: flex;
             flex-direction: column;
+            align-self: center;
+            justify-self: center;
             gap: 5vw;
             padding-left: 0;
         }
@@ -191,16 +189,18 @@
             font-size: 4vw;
         }
         .links{
+            display: flex;
             flex-direction: column;
-            background-color: rgb(60,60,60);
+            background-image: url("images/mobile-nav-bg.jpg");
+            background-size: cover;
+            background-position: center center;
             position: fixed;
             top: 0;
             right: 0;
             height: 100vh;
-            width: 40%;
+            width: 100%;
             transform: translateX(100%);
             transition: transform 0.3s ease;
-            padding: 2rem 1rem;
             gap: 1.5rem;
             text-align: right;
             z-index: 998;
@@ -209,4 +209,9 @@
         .links.show{
             transform: translateX(0);
         }
+    }
+    @media(min-width: 770px){
+        .links ul li:hover{
+        background-color: rgba(17,130,210,0.75);
+    }
     }

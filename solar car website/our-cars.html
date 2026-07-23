@@ -54,14 +54,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgb(250, 217, 168);
+        background-color: rgb(246, 212, 198);
         border-radius: 0.5em;
         padding: 2em;
     }
     .car-card h1{
         font-family: milker;
         letter-spacing: 1px;
-        font-size: clamp(30px,2vw,60px);
+        font-size: clamp(20px,2vw,60px);
     }
     .car-card span{
         font-family: milker;
@@ -70,11 +70,19 @@
     .car-card p{
         font-weight: 500;
         margin: 0.25em;
-        font-size: clamp(15px,1vw,30px);
+        font-size: clamp(10px,1vw,30px);
     }
     .car-card img{
         width: 100%;
         border-radius: 0.25em;
+    }
+    .distance-info{
+        text-align: center;
+        color: white;
+        width: 85%;
+        margin: 2em;
+        font-weight: 500;
+        font-size: clamp(10px,1vw,50px);
     }
     @media(max-width: 768px){
         .car-card{
@@ -83,8 +91,13 @@
         .our-cars-wrapper{
              margin-top: 15vw;
         }
+         .car-card{
+            padding: 0.5em !important;
+            margin: 0.5em;
+        }
     }
     @media(min-width: 768px){
+       
         .car-left{
             animation: slide-from-left 1.1s ease;
         }
@@ -104,7 +117,7 @@
                 <h1>Mako</h1>
                 <p><span>Year: </span>2026</p>
                 <p><span>Division: </span>Advanced</p>
-                <p><span>Distance Driven: </span>110.9 km</p>
+                <p><span>Distance Driven*: </span>110.9 km</p>
                 <p><span>Top Speed: </span>95 km/h</p>
             </div>
             <div class = "car-card car-right">
@@ -112,10 +125,11 @@
                 <h1>DNF</h1>
                 <p><span>Year: </span>2025</p>
                 <p><span>Division: </span>Classic</p>
-                <p><span>Distance Driven: </span>922.0 km</p>
+                <p><span>Distance Driven*: </span>881.0 km</p>
                 <p><span>Top Speed: </span>65 km/h</p>
             </div>
         </section>
+        <p class = "distance-info">*Distance driven on solar car only during the competition, excluding penalties and forever laps/miles scored from the team scrapbooks, videos, and oral presentations.</p>
     </main>
     <!-- Inner HTML in footer.js -->
      <footer id = "footer" style = "background-color: rgb(224, 224, 224);">

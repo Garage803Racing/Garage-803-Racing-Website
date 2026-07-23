@@ -203,11 +203,11 @@
     }
     .raceBackground{
         width: 100%;
-        min-width: 1080px;
+        min-width: 600px;
     }
     .heroBannerLogo{
         width: 40vw;
-        min-width: 370px;
+        min-width: 275px;
         position: absolute;
         top: 20%;
         left: 50%;
@@ -236,7 +236,7 @@
         width: 30%;
     }
     .thumbnailAndTitle > img{
-        border-radius: 1vw;
+        border-radius: clamp(5px,0.5vw,10px);
     }
     .thumbnailAndTitle:hover{
         cursor: pointer;
@@ -299,9 +299,7 @@
             align-items: center;
         }
         #section-background-1{
-            background-image: url("images/section-background-mobile-2.jpg");
-            background-attachment: fixed;
-            background-size: cover;
+            background-image: url("images/2026-race-results-banner.jpg");
             color: white;
         }
         .teamPicture{
@@ -378,7 +376,9 @@
             padding: 5vw;
         }
         #section-background-1{
-            background-color: rgb(46, 53, 79);
+            background-image: url("images/2026-race-results-banner.jpg");
+            background-size: cover;
+            background-position: center center;
             color: white;
             
         }
@@ -398,7 +398,7 @@
             text-align: center;
         }
         .mainContent p{
-            font-weight: lighter;
+            font-weight: 300;
             font-size: clamp(20px,1.5vw,50px);
         }
         .mainContent .bodyText{ 
@@ -479,7 +479,7 @@
         <button class = "continue-button" onclick = "closeOverlay()">Continue →</button>
     </div>
     <div class = "heroBanner">
-        <img class = "raceBackground" src = "images/landing-page-banner 4K.png">
+        <img class = "raceBackground" src = "images/2026-landing-page-banner.png">
         <img class = "heroBannerLogo" src = "images/Logo2.png">
     </div>
     <main class = "mainContent">
