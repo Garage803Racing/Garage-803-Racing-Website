@@ -54,6 +54,10 @@
         src: url("fonts/SF-Pro-Display-Thin.otf");
         font-weight: 300;
     }
+     @font-face{
+        font-family: racing;
+        src: url("fonts/a4-speed.ttf");
+    }
     /* Basic body styling */
     body{
         margin: 0;
@@ -162,6 +166,7 @@
             text-decoration: underline;
             text-decoration-thickness: 1vw;
             text-underline-offset: 2vw;
+            font-family: racing;
         }
         .siteTopic p{
             font-size: 3vw;
@@ -188,7 +193,7 @@
     /* Computer Styles */
     @media(min-width: 771px){
         .siteTopic{ border-radius: 1vw; width: 40%; }
-        .siteTopic h1{ font-size: 8vw; margin: 0; padding: 1.5vw; text-decoration: underline; text-decoration-thickness: 0.5vw; text-underline-offset: 1vw; }
+        .siteTopic h1{ font-size: 8vw; margin-left: 1vw; margin-right: 0; margin-top: 0; margin-bottom: 0; padding: 1.5vw; text-decoration: underline; text-decoration-thickness: 0.5vw; text-underline-offset: 1vw; font-family: racing;}
         .siteTopic p{ font-size: 1.5vw; padding: 0 1.5vw 1.5vw 1.5vw; margin: 1vw; }
         .heroBanner{ aspect-ratio: 4/1; margin-top: 6vw; }
         

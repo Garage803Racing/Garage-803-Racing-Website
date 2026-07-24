@@ -13,6 +13,10 @@
         src: url("fonts/SF-Pro-Display-Thin.otf");
         font-weight: 300;
     }
+    @font-face{
+        font-family: racing;
+        src: url("fonts/a4-speed.ttf");
+    }
     .logoandname{
         display: flex;
         align-items: center;
@@ -25,8 +29,9 @@
     .logoandname h1{
         font-size: 2vw;
         margin: 0px 0px 0px 1vw;
-        letter-spacing: 0.35vw;
+        letter-spacing: 0.1vw;
         font-weight: 500;
+        font-family: racing;
     }
     .links{
             margin-right: 1.5vw;
@@ -111,7 +116,7 @@
     }
     @media(max-width: 770px){
         body.no-scroll{
-        overflow:hidden;
+        overflow:hidden !important;
         }
         .hamburger{
             background: none;
@@ -173,7 +178,7 @@
         .logoandname h1{
             font-size: 4vw;
             margin: 0px 0px 0px 2vw;
-            letter-spacing: 0.7vw;
+            letter-spacing: 0.2vw;
         }
         .links ul{
             display: flex;
