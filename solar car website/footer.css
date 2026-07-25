@@ -146,6 +146,7 @@
         .column4 img{
             width: 4vw;
             margin: 1vw;
+            transition: transform 0.25s ease;
         }
         .column4 img:hover{
             transform: translateY(-0.5vw);
