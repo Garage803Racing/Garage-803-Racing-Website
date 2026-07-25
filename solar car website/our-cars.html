@@ -73,6 +73,11 @@
         background-color: rgb(246, 212, 198);
         border-radius: 0.5em;
         padding: 2em;
+        cursor: pointer;
+        transition: scale 0.25s ease;
+    }
+    .car-card:hover{
+        scale: 1.05;
     }
     .car-card h1{
         font-family: racing;
@@ -128,7 +133,7 @@
     </div>
     <main>
         <section class = "our-cars-wrapper">
-            <div class = "car-card car-left">
+            <div class = "car-card car-left" onclick = "location.assign('https://www.solarcarchallenge.org/challenge/teams2026/garage_803.shtml')">
                 <img src = "images/2026-car.jpg">
                 <h1>MAKO</h1>
                 <p><span>Year: </span>2026</p>
@@ -137,7 +142,7 @@
                 <p><span>Distance Driven**: </span>114.3 km</p>
                 <p><span>Top Speed: </span>95 km/h</p>
             </div>
-            <div class = "car-card car-right">
+            <div class = "car-card car-right" onclick = "location.assign('https://www.solarcarchallenge.org/challenge/teams2025/garage_803.shtml')">
                 <img src = "images/2025-car.jpg">
                 <h1>DNF</h1>
                 <p><span>Year: </span>2025</p>
