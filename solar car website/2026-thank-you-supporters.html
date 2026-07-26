@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage 803 Racing</title>
+    <meta property="og:image" content="https://garage803racing.org/images/preview-image.jpg">
+    <meta property="og:site_name" content="Garage 803 Racing" />
+    <meta property="og:title" content="Garage 803 Racing" />
+    <meta property="twitter:title" content="Garage 803 Racing" />
+    <meta property="og:url" content="https://garage803racing.org/" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Welcome to Garage 803 Racing Solar Car Team!"/>
+    
+    <meta property="og:image:secure_url" content="https://garage803racing.org/images/preview-image.jpg"/>
+    <meta property="twitter:image" content="https://garage803racing.org/images/preview-image.jpg"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Welcome to Garage 803 Racing Solar Car Team!">
+    <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
+    <link rel = "stylesheet" href = "dropdown.css">
+    <link rel = "stylesheet" href = "navbar.css">
+    <link rel = "stylesheet" href = "footer.css">
+</head>
+<style>
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Semibold.otf");
+        font-weight: 500;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Thin.otf");
+        font-weight: 300;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Heavy.otf");
+        font-weight: 600;
+    }
+    @keyframes fade-in{
+        from{
+            opacity: 0;
+        }
+    }
+    html{
+        overscroll-behavior-y: none;
+    }
+    main{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .blogContent{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 10vw;
+        margin-bottom: 5em;
+        width: clamp(250px,90vw,1200px);
+        animation: fade-in 2.5s forwards;
+    }
+    .blogTitle{
+        font-family: sf-pro;
+        font-weight: 300;
+        margin-bottom: 0;
+        font-size: clamp(40px,5vw,65px);
+    }
+    .blogDate{
+        font-family: sf-pro;
+        font-weight: 300;
+        margin-top: 0;
+        font-size: clamp(15px,2vw,40px);
+    }
+    .blogMedia{
+        width: 100%
+    }
+    .blogDescription{
+        font-family: sf-pro;
+        font-weight: 300;
+        font-size: clamp(13px,1.5vw,20px);
+        width: 100%;
+        background-color: rgb(176, 231, 245);
+        padding: 1em;
+        box-sizing: border-box;
+        margin-bottom: 0.5em;
+    }
+    @media(max-width: 768px){
+        .blogContent{
+            margin-top: 15vw;
+        }
+    }
+</style>
+<body style = "margin: 0; font-family: sf-pro;">
+    <!-- Inner HTML in navbar.js-->
+    <div class = "navigation" id = "navbar">
+    </div>
+    <main>
+        <div class = "blogContent">
+            <h1 class = "blogTitle">Thank you supporters!</h1>
+            <h2 class = "blogDate">07/23/2026</h2>
+            <img class = "blogMedia" src = "images/2026-team-credits.jpg">
+            <p class = "blogDescription">Today marks the end of the 2026 Texas Solar Car Competition, and also marks two years of us building and racing solar cars. We would like to thank all the students who spent months working on all the different aspects of building the cars, including the early season supporters who helped create a draft of the car designs. Additionally, thank you to all of our sponsors who provided us with donations and lots of car parts to work with, such as the battery and solar panels that helped make our build possible. But most importantly, thank you to all the families who helped plan our participation in the competition in advance through arranging flights, lodging, meals, transportations, and purchasing last minute materials.</p>
+            <p class = "blogDescription">Regardless of when we plan to compete in the Solar Car Challenge again, I would like to point out how far we have come as a team, and to take the time to look back at all of our progress. We started off as two co-founders: Ryan Liu and Tyler Wang, who are interested in motorsports and formed this solar car club as part of our school. Over time, more students who are interested in cars & engineering joined, which expanded our team and deemed our 2025 solar car build possible. Our team eventually became an non-profit organization seperate from our school to overcome logistical issues. After scoring 3rd place in the Classic Division thanks to all the support from the families who came to help, we were able to spread the word through giving presentations in many STEM classes and recruit more students to our team.</p>
+            <p class = "blogDescription">As we eventually became a non-profit organization right before the build phase of our 2026 Solar Car, Mako, we were able to reach out to many shops through phone calls and in-person visits, and build connections with them throughout our project. We were also lucky to have MVHS Robotics who were willing to share part of their large workspace with us for a while. With all this full-time support from all of our teammates, families, and sponsors, our solar car was able to have a better balance and a higher testing speed. While it is not known when exactly will be our next time competing, we would like to take some time to reflect upon everything that has been created so far, and it was only because of you that made it possible.</p>
+        </div>
+    </main>
+    <!-- Inner HTML in footer.js -->
+     <footer id = "footer" style = "background-color: rgb(224, 224, 224);">
+        
+    </footer>
+</body>
+<script src = "navbar.js"></script>
+<script src = "footer.js"></script>
+</html>
