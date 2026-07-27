@@ -51,6 +51,21 @@
         font-family: racing;
         src: url("fonts/a4-speed.ttf");
     }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-SemiBold.otf");
+        font-weight: 500;
+    }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Heavy.otf");
+        font-weight: 600;
+    }
     html{
         overscroll-behavior: none;
     }
@@ -66,8 +81,8 @@
     }
     .heroBanner{
         display: flex;
-        background-image: url("site-banners/image9.jpg");
-        background-size: 100% 100%;
+        background-image: url("site-banners/image11.jpg");
+        background-size: cover;
         background-position: center center;
         align-items: center;
     }
@@ -89,14 +104,12 @@
     }
     .bronze-sponsors{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        border: 2px solid rgb(255, 200, 163);
-        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     .gold-sponsors{
         display: flex;
@@ -104,9 +117,17 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-        margin-top: 25px;
-        border: 2px solid rgb(242, 195, 87);
-        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .gold-sponsors .logo-card{
+        background-color: rgb(242, 195, 87);
+    }
+    .silver-sponsors .logo-card{
+        background-color: rgb(160, 164, 182);
+    }
+    .bronze-sponsors .logo-card{
+        background-color: rgb(255,200,163);
     }
     .silver-sponsors{
         display: flex;
@@ -114,18 +135,40 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 90%;
-        margin-top: 25px;
-        border: 2px solid rgb(160, 164, 182);
-        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-    .logo{
-        width: clamp(150px,20vw,300px);
+    .logo-card{
+        width: clamp(300px,25vw,600px);
+        height: 500px;
+        border-radius: 7.5px;
         margin: 25px;
         cursor: pointer;
         transition: transform 0.25s ease;
+        display: grid;
+        grid-template-rows: 5fr 1fr 2fr;
+        place-items: center;
+       
     }
-    .logo:hover{
+    .sponsor-name{
+        font-family: racing;
+        font-size: clamp(20px,1.75vw,40px);
+        text-align: center;
+        width: 90%;
+        margin: 0;
+    }
+    .sponsor-description{
+        font-family: aileron;
+        text-align: center;
+        font-size: clamp(15px,1.1vw,30px);
+        width: 85%;
+        margin: 0;
+    }
+    .logo-card:hover{
         transform: translateY(-0.5em);
+    }
+    .logo{
+        width: 50%;
     }
     .sponsorsContent a{
         text-decoration: none;
@@ -157,8 +200,8 @@
         background: none;
         width: clamp(200px,20vw,700px);
         margin: 20px;
-        font-family: racing;
-        font-weight: 500;
+        font-family: aileron;
+        font-weight: 600;
         border-radius: 5px;
         font-size: 1em;
         padding: 0.25em;
@@ -220,7 +263,7 @@
             margin-top: 12vw;
         }
         .mainContent h1{
-            font-size: 6vw;
+            font-size: clamp(15px,4.5vw,60px);
             font-family: racing;
         }
         .sponsorsContent button{
@@ -291,7 +334,7 @@
             margin-top: 6vw;
         }
         .mainContent h1{
-            font-size: 3vw;
+            font-size: clamp(20px,3vw,100px);
             font-family: racing;
         }
         .sponsorsContent{
@@ -303,13 +346,14 @@
         }
         .sponsorsContent button{
             width: 30vw;
+            max-width: 500px;
             background-color: rgb(37,170,225);
-            border-radius: 4vw;
+            border-radius: 15px;
             color: rgb(48, 48, 48);
             border: none;
-            font-size: 2vw;
+            font-size: clamp(20px,2vw,40px);
             font-weight: bolder;
-            padding: 2vw;
+            padding: clamp(20px,2vw,40px);
             margin: 20px;
             transition: transform 0.25s ease;
             font-family: racing;
@@ -351,24 +395,80 @@
             <button class = "bronze-sponsors-button sponsors-filter-button" onclick = "showBronze()">Bronze Sponsors</button>
         </div>
         <div class = "gold-sponsors">
-            <img class = "logo" src = "sponsor-logos/simscale.jpg" onclick = "location.assign('https://www.simscale.com')">
-            <img class = "logo" src = "sponsor-logos/fpr-logo.png" onclick = "location.assign('https://www.fpr-newenergy.com/')">
-            <img class = "logo" src = "sponsor-logos/d2-solar-logo.png" onclick = "location.assign('https://www.d2solar.com/')">
-             <img class = "logo" src = "sponsor-logos/ace-fire-inc-logo.png" onclick = "location.assign('https://www.acefireinc.com/')">
+            <div class = "logo-card"  onclick = "location.assign('https://www.simscale.com')">
+                <img class = "logo" src = "sponsor-logos/simscale-logo.png">
+                <h3 class = "sponsor-name">Simscale</h3>
+                <p class = "sponsor-description">Provided us with 5000+ core hours test and optimize our safety frame design.</p>
+            </div>
+             <div class = "logo-card" onclick = "location.assign('https://www.fpr-newenergy.com/')">
+                <img class = "logo" src = "sponsor-logos/fpr-logo.png">
+                <h3 class = "sponsor-name">FPR New Energy</h3>
+                <p class = "sponsor-description">Donated a 72V Lithium-Ion Battery to power our car.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://www.d2solar.com/')">
+                <img class = "logo" src = "sponsor-logos/d2-solar-logo.png">
+                <h3 class = "sponsor-name">D2 Solar</h3>
+                <p class = "sponsor-description">Generously provided with us lightweight solar cells at no cost.</p>
+            </div>
+             <div class = "logo-card" onclick = "location.assign('https://www.acefireinc.com/')">
+                <img class = "logo" src = "sponsor-logos/ace-fire-inc-logo.png">
+                <h3 class = "sponsor-name">Ace Fire Inc.</h3>
+                <p class = "sponsor-description">Supplied our team with a Class D fire extinguisher to use in case of any emergencies during the race.</p>
+            </div>
         </div>
         <div class = "silver-sponsors">
-            <img class = "logo" src = "sponsor-logos/evolution-motorcycles-logo.png" onclick = "location.assign('https://evolution-motorcycles.com/')">
-            <img class = "logo" src = "sponsor-logos/bicycle-outfitter-logo.png" onclick = "location.assign('https://www.bicycleoutfitter.com/')">
-            <img class = "logo" src = "sponsor-logos/byington-steel-treating-logo.png" onclick = "location.assign('https://byingtonsteel.com/')">
+            <div class = "logo-card" onclick = "location.assign('https://evolution-motorcycles.com/')">
+                <img class = "logo" src = "sponsor-logos/evolution-motorcycles-logo.png">
+                <h3 class = "sponsor-name">Evolution Motorcycles</h3>
+                <p class = "sponsor-description">Resized our car's hub motor to fit the design of our car.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://www.bicycleoutfitter.com/')">
+                <img class = "logo" src = "sponsor-logos/bicycle-outfitter-logo.png">
+                <h3 class = "sponsor-name">Bicycle Outfitter</h3>
+                <p class = "sponsor-description">Supplied our team with brakes for our car.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://byingtonsteel.com/')">
+                <img class = "logo" src = "sponsor-logos/byington-steel-treating-logo.png">
+                <h3 class = "sponsor-name">Byington Steel Treating</h3>
+                <p class = "sponsor-description">Treated our metal pipe to prepare it for professional bending for our car's roll bar.</p>
+            </div>
         </div>
-        <div class = "bronze-sponsors"> 
-            <img class = "logo" src = "sponsor-logos/speedpro-logo.png" onclick = "location.assign('https://www.speedpro.com/')">
-            <img class = "logo" src = "sponsor-logos/atbendinglogo.png" onclick = "location.assign('https://atbending.com/')">
-            <img class = "logo" src = "sponsor-logos/polycarbonate-depot-logo.jpg" onclick = "location.assign('https://polycarbonatedepot.com/')">
-            <img class = "logo" src = "sponsor-logos/home-depot.jpg" onclick = "location.assign('https://www.homedepot.com/')">
-            <img class = "logo" src = "sponsor-logos/lowes.png" onclick = "location.assign('https://www.lowes.com')">
-            <img class = "logo" src = "sponsor-logos/panda-express.png" onclick = "location.assign('https://www.pandaexpress.com/')">
-            <img class = "logo" src = "sponsor-logos/spartans-sports-camp-logo.jpg" onclick = "location.assign('https://www.spartanssportscamp.com/')">
+        <div class = "bronze-sponsors">
+            <div class = "logo-card" onclick = "location.assign('https://www.speedpro.com/')">
+                <img class = "logo" src = "sponsor-logos/speedpro-logo.png">
+                <h3 class = "sponsor-name">SpeedPro Graphics</h3>
+                <p class = "sponsor-description">Created car decals of all sponsor logos to place onto our car at a discounted price.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://atbending.com/')">
+                <img class = "logo" src = "sponsor-logos/atbendinglogo.png">
+                <h3 class = "sponsor-name">Accurate Tube Bending</h3>
+                <p class = "sponsor-description">Professionally bent our aluminum pipe to form the roll bar of our car.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://polycarbonatedepot.com/')">
+                <img class = "logo" src = "sponsor-logos/polycarbonate-depot-logo.jpg">
+                <h3 class = "sponsor-name">Polycarbonate Depot</h3>
+                <p class = "sponsor-description">Supplied our team with free polycarbonate sheets to use for our solar array.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://www.homedepot.com/')">
+                <img class = "logo" src = "sponsor-logos/home-depot.jpg">
+                <h3 class = "sponsor-name">Home Depot</h3>
+                <p class = "sponsor-description">Provided our team with a donation and some tools.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://www.lowes.com')">
+                <img class = "logo" src = "sponsor-logos/lowes.png">
+                <h3 class = "sponsor-name">Lowes</h3>
+                <p class = "sponsor-description">Provided our team with a donation and some XPS foam boards for our aeroshell.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://www.pandaexpress.com/')">
+                <img class = "logo" src = "sponsor-logos/panda-express.png">
+                <h3 class = "sponsor-name">Panda Express</h3>
+                <p class = "sponsor-description">Hosted a small fundraiser and collected some of the sales.</p>
+            </div>
+            <div class = "logo-card" onclick = "location.assign('https://www.spartanssportscamp.com/')">
+                <img class = "logo" src = "sponsor-logos/spartans-sports-camp-logo.jpg">
+                <h3 class = "sponsor-name">Spartans Sports Camp</h3>
+                <p class = "sponsor-description">Provided our team with safety equipment such as cones and vests.</p>
+            </div>
         </div>
     </div>
     <!-- Footer -->
