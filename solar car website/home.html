@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Garage 803 Racing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://garage803racing.org/images/preview-image.jpg">
+    <meta property="og:site_name" content="Garage 803 Racing" />
+    <meta property="og:title" content="Garage 803 Racing - Home" />
+    <meta property="twitter:title" content="Garage 803 Racing - Home" />
+    <meta property="og:url" content="https://garage803racing.org/" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Welcome to Garage 803 Racing Solar Car Team! We are a team of high school students that compete in the Solar Car Challenge. We are based in Mountain View / Los Altos region in California. As a 501(c)(3) non profit organization, we are dedicated to designing, constructing, and competing with solar-powered vehicles while motivating hands-on STEM education and sustainability."/>
+    
+    <meta property="og:image:secure_url" content="https://garage803racing.org/images/preview-image.jpg"/>
+    <meta property="twitter:image" content="https://garage803racing.org/images/preview-image.jpg"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Welcome to Garage 803 Racing Solar Car Team! We are a team of high school students that compete in the Solar Car Challenge. We are based in Mountain View / Los Altos region in California. As a 501(c)(3) non profit organization, we are dedicated to designing, constructing, and competing with solar-powered vehicles while motivating hands-on STEM education and sustainability.">
+
+    <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
+    <link rel = "stylesheet" href = "dropdown.css">
+     <link rel = "stylesheet" href = "navbar.css">
+     <link rel = "stylesheet" href = "footer.css">
+</head>
+<style>
+    @keyframes fadeInUp{
+        from{
+            transform: translateY(1vw);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0vw);
+            opacity:1;
+        }
+    }
+    @keyframes popUp{
+        0%, 50%{
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    @font-face{
+        font-family: racing;
+        src: url("fonts/a4-speed.ttf");
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Semibold.otf");
+        font-weight: 500;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: sf-pro;
+        src: url("fonts/SF-Pro-Display-Thin.otf");
+        font-weight: 300;
+    }
+    @font-face{
+        font-family: milker;
+        src: url("fonts/Milker.otf");
+    }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Regular.otf");
+        font-weight: 400;
+    }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Light.otf");
+        font-weight: 200;
+    }
+    @media(max-aspect-ratio: 9/16){
+        /*mobile phone portrait (thin tall)*/
+    }
+    @media(aspect-ratio: 16/10){
+        /*desktop (moderately tall and wide)*/
+    }
+    @media(min-aspect-ratio: 16/9){
+        /*mobile phone landscape (thin wide)*/
+        .overlay-logo{
+            margin-top: 0.5em;
+        }
+        .car-stat{
+            margin: 5px !important;
+        }
+         .car-stat h2{
+            margin: 0.5px !important;
+            font-size: clamp(15px,1.4vw,50px) !important;
+
+        }
+        .car-stat p{
+            margin: 0.5px !important;
+            font-size: clamp(10px,0.9vw,30px) !important;
+        }
+        
+    }
+    html{
+        overscroll-behavior: none;
+    }
+    .overlay{
+        position: fixed;
+        display: grid;
+        grid-template-rows: 1fr 4fr 1fr;
+        place-items: center;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("images/race-stats-background.jpg");
+        background-size: cover;
+        background-position: center center;
+        z-index: 99999;
+    }
+    .overlay.hidden{
+        display: none;
+    }
+    .overlay-logo{
+        width: clamp(150px,20vw,450px);
+    }
+    .race-stats-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    .car-stats-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .car-stat{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1em;
+    }
+    .car-stat h2{
+        margin: 5px;
+        font-size: clamp(15px,1.75vw,50px);
+        font-family: racing, sans-serif;
+        text-align: center;
+        letter-spacing: 0.5px;
+    }
+    .car-stat p{
+        margin: 5px;
+        font-size: clamp(10px,1vw,30px);
+        font-family: aileron, sans-serif;
+        text-align: center;
+    }
+    .car-photo{
+       margin: 1em;
+        width: clamp(100px,50vw,1000px);
+        cursor: pointer;
+        transition: scale 0.5s ease;
+    }
+    .car-photo:hover{
+        scale: 1.125;
+    }
+    .car-stats-container{
+        margin: 1em;
+    }
+    .continue-button{
+        color: white;
+        background: none;
+        border: 2px solid white;
+        border-radius: 0.5em;
+        font-size: clamp(15px,1.5vw,30px);
+        cursor: pointer;
+        padding: 0.5em;
+        font-family: aileron;
+        font-weight: 200;
+        align-self: center;
+        animation: popUp 1.5s ease;
+        transition: background-color 0.25s ease;
+    }
+    .continue-button:hover{
+        background-color: white;
+        color: #222d56;
+        transition: background-color 0.25s ease;
+    }
+    body{
+        margin: 0;
+        font-family: sf-pro, sans-serif; 
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        overflow-y: hidden; 
+        overflow-x: hidden;
+        overscroll-behavior: none;
+    }
+    .heroBanner{
+        width: 100%;
+        position: relative;
+        margin-top: 6vw;
+        overflow: clip;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .raceBackground{
+        width: 100%;
+        min-width: 500px;
+    }
+    .heroBannerLogo{
+        width: 40vw;
+        min-width: 275px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,-50%) !important;
+    }
+    .mainContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    li{
+        list-style-type: none;
+    }
+    .blogSection{
+        display: flex !important;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        width: 95%;
+        margin-top: 50px;
+    }
+    .thumbnailAndTitle{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 30%;
+    }
+    .thumbnailAndTitle > img{
+        border-radius: clamp(5px,0.5vw,10px);
+    }
+    .thumbnailAndTitle:hover{
+        cursor: pointer;
+    }
+    .postTitle{
+        font-size: clamp(20px,1.5vw,60px) !important;
+        margin-bottom: 0;
+        margin-left: 0 !important;
+    }
+    .postDate{
+        font-size: clamp(15px,0.75vw,30px) !important;
+        margin-top: 0;
+    }
+    .seeAllPostsButton{
+        margin: 0 !important;
+        color: black !important;
+        border: 1px solid black !important;
+        align-self: center;
+        background-color: white;
+        margin-bottom: 5vw !important;
+        font-size: clamp(25px,2vw,80px) !important;
+        font-family: sf-pro;
+        font-weight: lighter;
+        padding: 1vw;
+        border-radius: 1vw;
+        transition: background-color 0.25s ease;
+    }
+    .seeAllPostsButton:hover{
+        cursor: pointer;
+        background-color: black;
+        color: white !important;
+    }
+
+    /* Phone */
+    @media(max-width: 770px){
+        .car-stat{
+            margin: 10px;
+        }
+        .race-stats-section{
+            display: flex;
+            flex-direction: column;
+        }
+         .car-photo{
+            margin: 1em;
+            width: clamp(100px,70vw,1000px);
+        }
+        .continue-button{
+            margin-bottom: 15em;
+        }
+        .heroBanner{
+            margin-top: 12vw;
+        }
+        .mainContent{
+            display: flex;
+            flex-direction: column;
+        }
+        .mainContent .imageAndText{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #section-background-1{
+            background-image: url("images/2026-race-results-banner.jpg");
+            color: white;
+        }
+        .teamPicture{
+            width: clamp(300px,28vw,1000px);
+            border-radius: 1vw;
+            align-self: center;
+        }
+        .workshopPhoto{
+            width: clamp(250px,28vw,1000px);
+            border-radius: 1vw;
+            align-self: center;
+            margin: 50px;
+        }
+        .mainContent h1{
+            font-weight: bold;
+            font-size: clamp(40px,3vw,100px);
+            text-align: center;
+            margin: 50px;
+            font-family: racing;
+        }
+        .mainContent p{
+            font-weight: lighter;
+            font-size: clamp(20px,1.5vw,50px);
+            text-align: center;
+            margin: 50px;
+        }
+        .bodyText2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .photosButton{
+            font-family: sf-pro;
+            background: none;
+            border-radius: 2vw;
+            border: 1px solid white;
+            color: white;
+            font-size: clamp(20px,1.5vw,60px) !important;
+            padding: 2vw;
+            font-weight: lighter;
+            cursor: pointer;
+            margin: 5vw;
+        }
+        .ourGoal{
+            margin: 10vw;
+        }
+        .ourAim{
+            margin: 10vw;
+        }
+        .mainContent hr{
+            display: none;
+        }
+        .aimGoalSection{
+            margin-left: 10vw;
+            margin-right: 10vw;
+            display: none;
+        }
+        .blogSection{
+            flex-direction: column;
+            align-items: center;
+        }
+        .thumbnailAndTitle{
+            width: 90%;
+        }
+        .postDate{
+            margin-left: 0 !important;
+            margin-top: 0 !important;
+            margin-bottom: 50px;
+        }
+    }
+    /* Computer */
+    @media(min-width: 771px){
+        .mainContent .imageAndText{
+            display: flex;
+            padding: 5vw;
+        }
+        #section-background-1{
+            background-image: url("images/2026-race-results-banner.jpg");
+            background-size: cover;
+            background-position: center center;
+            color: white;
+            
+        }
+        .teamPicture{
+            width: clamp(350px,32vw,1000px);
+            border-radius: 1vw;
+            align-self: center;
+        }
+        .workshopPhoto{
+            width: clamp(350px,35vw,1000px);
+            border-radius: 1vw;
+            align-self: center;
+        }
+        .mainContent h1{
+            font-weight: bold;
+            font-size: clamp(40px,3vw,100px);
+            text-align: center;
+            font-family: racing;
+        }
+        .mainContent p{
+            font-weight: 300;
+            font-size: clamp(20px,1.5vw,50px);
+        }
+        .mainContent .bodyText{ 
+            margin-left: 4vw;
+        }
+        .mainContent .bodyText2{
+            margin-right: 4vw;
+        }
+        .photosButton{
+            font-family: sf-pro;
+            background: none;
+            border-radius: 1vw;
+            border: 1px solid white;
+            color: white;
+            font-size: clamp(20px,1.5vw,60px) !important;
+            padding: 1vw;
+            margin-top: 5vw;
+            font-weight: lighter !important;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+        .photosButton:hover{
+            background-color: white;
+            color: black;
+            border: 1px solid white;
+        }
+        .mainContent hr{
+            /*
+            margin-top: 4vw;
+            margin-left: 20vw;
+            margin-right: 20vw;
+            background-color: black;
+            height: 0.5vw;
+            border-radius: 1vw;
+            */
+            display: none;
+        }
+        .aimGoalSection{
+            display: none; 
+            /*display: flex;*/
+        }
+        .ourGoal{
+            margin: 5vw;
+        }
+        .ourAim{
+            margin: 5vw;
+        }
+        
+    }
+</style>
+<body>
+    <!-- Inner HTML in navbar.js-->
+    <div class = "navigation" id = "navbar">
+    </div>
+     <div class = "overlay" id = "overlay">
+        <img class = "overlay-logo" src = "images/Logo2.png">
+        <div class = "race-stats-section">
+            <div class = "car-stat">
+                <p>2026 Solar Car</p>
+                <h2>MAKO</h2>
+            </div>
+            <img class = "car-photo" src = "images/final-mako-sticker-cutout.png" onclick = "location.assign('our-cars.html')">
+            <div class = "car-stats-container">
+                <div class = "car-stat">
+                    <p>Division</p>
+                    <h2>ADVANCED</h2>
+                </div>
+                <div class = "car-stat">
+                    <p>Final Distance Driven</p>
+                    <h2 id = "distance-traveled-counter">114.3 KM</h2>
+                </div>
+                <div class = "car-stat">
+                    <p>Drivers</p>
+                    <h2>RYAN LIU<br>LIAM ABELSON<br>YURIY KORNIYCHUK<br>LEZHI ZENG</h2>
+                </div>
+            </div>
+        </div>
+        <button class = "continue-button" onclick = "closeOverlay(); startSlideshow();">Continue →</button>
+    </div>
+    <div class = "heroBanner">
+        <img class = "raceBackground" id = "slideshow" src = "images/2026-landing-page-banner.png">
+        <img class = "heroBannerLogo" src = "images/Logo2.png">
+    </div>
+    <main class = "mainContent">
+        <section class = "imageAndText">
+            <img src = "images/2026-team-picture.jpg" class = "teamPicture">
+            <div class = "bodyText">
+                <h1>About Us</h1>
+                <p>Garage 803 Racing is a team of high school students that compete
+                in the Solar Car Challenge. We are based in Mountain View / Los Altos region in California.
+                As a 501(c)(3) non profit organization, we work on designing, constructing, and competing with solar-powered cars while motivating hands-on green energy awareness and
+                sustainability. We are a group of students who passionately explore different components of solar car construction and learn real-world problem solving skills along the way. Through commitment and perseverance, we strive to inspire students in our area to create large scale real-world hands on projects.</p>
+            </div>
+        </section>
+        <section class = "imageAndText" id = "section-background-1">
+            <div class = "bodyText2">
+                <h1>2026 Race Results</h1>
+                <p>In the 2026 Solar Car Challenge, we created an Advanced Division car named "Mako" and drove the car around Texas. As a student run non-profit solar car team, we would like to thank all of our teammates, parents, donors, and corporate sponsors for all the support throughout this season. Although our participation in the race was cut short due to COVID, we were still able to drive 114.3 km purely on solar power across Texas during the first day of the race. This year we explored working with new materials and building techniques mainly through building the solar array and aeroshell, and we hope to keep building again in the future.</p>
+                <button class = "photosButton" onclick = "location.assign('media.html');">View our gallery →</button>
+            </div>
+            <img src = "images/2026-race-results.jpg" class = "workshopPhoto">
+            
+        </section>
+        <hr>
+        <section class = "aimGoalSection">
+            <div class = "ourAim">
+                <h1>Our Aim</h1>
+                <p>We aim to provide an environment which allows for students
+                to explore one of the aspects of an engineering
+                pathway, work with peers, and serve the community.</p>
+            </div>
+            <div class = "ourGoal">
+                <h1>Our Goal</h1>
+                <p>Our goal is to foster the development of soft skills such
+                as teamwork, communication, and problem solving, as
+                well as hard skills in CAD, design, manufacturing, etc.</p>
+            </div>
+        </section>
+        <h1 style = "margin-top: 50px;">Our Stories</h1>
+        <section class = "blogSection">
+             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-thank-you-supporters.html')">
+                <img src = "thumbnails/2026-team-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Thank you supporters!</h2>
+                <p class = "postDate">July 23rd, 2026</p>
+            </div>
+            <div class = "thumbnailAndTitle" onclick = "location.assign('2026-race-story.html')">
+                <img src = "thumbnails/2026-race-story-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">2026 Race Photo Story</h2>
+                <p class = "postDate">July 19th, 2026</p>
+            </div>
+             <div class = "thumbnailAndTitle" onclick = "location.assign('2026-scrutineering-highlights.html')">
+                <img src = "thumbnails/scrutineering-highlights-thumbnail.jpg" style = "width: 100%;">
+                <h2 class = "postTitle">Scrutineering Highlights</h2>
+                <p class = "postDate">July 18th, 2026</p>
+            </div>
+        </section>
+        <button class = "seeAllPostsButton" onclick = "location.assign('blogs.html')">See All →</button>
+    </main>
+
+
+
+    <!-- Footer -->
+     <footer id = "footer" style = "background-color: rgb(224, 224, 224); display: flex; flex-direction: column;"></footer>
+</body>
+<script>
+    const overlay = document.getElementById("overlay");
+    const body = document.querySelector("body");
+    const distanceTraveled = document.getElementById("distance-traveled-counter");
+    const slideshow = document.getElementById("slideshow");
+
+    const images = [
+        "images/2026-landing-page-banner.png",
+        "images/2026-landing-page-banner2.png",
+        "images/2026-landing-page-banner3.png",
+        "images/2025-landing-page-banner.png"
+    ];
+
+    let current = 0;
+   
+    function startSlideshow(){
+        setInterval(() => {
+            current = (current + 1) % images.length; 
+            slideshow.src = images[current];
+        }, 3000);
+    }
+
+    function closeOverlay(){
+        overlay.classList.add("hidden");
+        body.style.overflowY = "scroll";
+    }
+    function countUp(element, start, end, duration) {
+    const startTime = performance.now();
+
+    function animate(time) {
+        const progress = Math.min((time - startTime) / duration, 1);
+
+        const value = start + (end - start) * progress;
+
+        element.textContent = value.toFixed(1) + " KM";
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+    }   
+    countUp(distanceTraveled, 0, 114.3, 1500);
+</script>
+<script src = "navbar.js"></script>
+<script src = "footer.js"></script>
+
+
+</html>
