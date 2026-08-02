@@ -479,7 +479,7 @@
                 </div>
             </div>
         </div>
-        <button class = "continue-button" onclick = "closeOverlay(); startSlideshow();">Continue →</button>
+        <button class = "continue-button" onclick = "closeOverlay();">Continue →</button>
     </div>
     <div class = "heroBanner">
         <img class = "raceBackground" id = "slideshow" src = "images/2026-landing-page-banner.png">
@@ -547,6 +547,7 @@
      <footer id = "footer" style = "background-color: rgb(224, 224, 224); display: flex; flex-direction: column;"></footer>
 </body>
 <script>
+    
     const overlay = document.getElementById("overlay");
     const body = document.querySelector("body");
     const distanceTraveled = document.getElementById("distance-traveled-counter");
@@ -567,6 +568,7 @@
             slideshow.src = images[current];
         }, 3000);
     }
+        startSlideshow();
 
     function closeOverlay(){
         overlay.classList.add("hidden");
