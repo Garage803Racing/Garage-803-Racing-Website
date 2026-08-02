@@ -7,7 +7,7 @@ function renderNavbar(){
         <div class = "links" id = "links">
             <button style = "background: none; border: none; color: white; font-size: 5vw" class = "close" id = "close" onclick = "navLinks.classList.toggle('show'); document.body.classList.toggle('no-scroll')">&times</button>
             <ul>
-                <li><a href = "index.html">Home</a></li>
+                <li><a href = "home.html">Home</a></li>
                 <li><a class = "team-link" id = "team-link">Team</a>
                     <ul class = "team-dropdown" id = "team-dropdown">
                       <li onclick = "location.assign('team-26.html')"><a href = "team-26.html">2025-2026</a></li>

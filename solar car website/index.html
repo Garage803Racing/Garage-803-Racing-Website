@@ -17,11 +17,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Welcome to Garage 803 Racing Solar Car Team! We are a team of high school students that compete in the Solar Car Challenge. We are based in Mountain View / Los Altos region in California. As a 501(c)(3) non profit organization, we are dedicated to designing, constructing, and competing with solar-powered vehicles while motivating hands-on STEM education and sustainability.">
 
-    <link rel="icon" type="image/x-icon" href="images/browser-site-icon.png">
-    <link rel = "stylesheet" href = "dropdown.css">
-     <link rel = "stylesheet" href = "navbar.css">
-     <link rel = "stylesheet" href = "footer.css">
-  <script type="module" crossorigin src="assets/index-TGD3Vywm.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://garage803racing.org/images/browser-site-icon.png">
+    <title>Mako Landing Page</title>
+  <script type="module" crossorigin src="assets/index-DvK-OXTE.js"></script>
 </head>
 <style>
     @font-face{
@@ -104,7 +102,7 @@
     .continue-button{
         color: white;
         position: absolute;
-        top: 75%;
+        top: 72.5%;
         left: 50%;
         transform: translateX(-50%);
         background: none;
@@ -170,7 +168,6 @@
         .continue-button{
             margin-bottom: 15em;
             margin: 0;
-            top: 70%;
         }
         .car-stats-container{
             top: 45%;
@@ -212,7 +209,7 @@
             </div>
         </div>
     </div>
-     <button class = "continue-button" onclick = "location.assign('home.html')">Continue →</button>
+     <button class = "continue-button" onclick = "location.assign('https://garage803racing.org/home')">Continue →</button>
 </body>
     <script>
         const distanceTraveled = document.getElementById("distance-traveled-counter");
@@ -235,5 +232,12 @@
         requestAnimationFrame(animate);
         }   
         countUp(distanceTraveled, 0, 114.3, 1500);
+
+
+
+        if (!localStorage.getItem("hasVisited")) {
+            localStorage.setItem("hasVisited", "true");
+            alert("Welcome to the Garage 803 Racing Website! Drag the model of the car to interact!");
+        }
     </script>
 </html>
