@@ -48,9 +48,11 @@
         left: 0;
         width: 100vw !important;
         height: 100vh !important;
-        cursor: pointer;
+        cursor: grab !important;
     }
-    
+    .exhibit:active{
+        cursor: grabbing !important;
+    }
     .overlay{
         position: relative;
         grid-template-rows: 1fr 4fr 1fr;

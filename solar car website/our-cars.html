@@ -73,12 +73,8 @@
         background-color: rgb(246, 212, 198);
         border-radius: 0.5em;
         padding: 2em;
-        cursor: pointer;
-        transition: scale 0.25s ease;
     }
-    .car-card:hover{
-        scale: 1.05;
-    }
+    
     .car-card h1{
         font-family: racing;
         letter-spacing: 1px;
@@ -93,9 +89,13 @@
         margin: 0.25em;
         font-size: clamp(10px,1vw,30px);
     }
-    .car-card img{
+    .car-model{
         width: 100%;
         border-radius: 0.25em;
+        aspect-ratio: 4/3;
+        border: none;
+        cursor: grab !important;
+    
     }
     .distance-info{
         text-align: center;
@@ -133,8 +133,8 @@
     </div>
     <main>
         <section class = "our-cars-wrapper">
-            <div class = "car-card car-left" onclick = "location.assign('https://www.solarcarchallenge.org/challenge/teams2026/garage_803.shtml')">
-                <img src = "images/2026-car.jpg" alt = "2026 Garage 803 Racing Team group photo with the solar car at Texas Motor Speedway.">
+            <div class = "car-card car-left">
+                <iframe class = "car-model" title = "3D Interactive Model of 2026 Solar Car" loading = "lazy" src = "https://small-j1337.github.io/mako" style = "display: block"></iframe>
                 <h1>MAKO</h1>
                 <p><span>Year: </span>2026</p>
                 <p><span>Division: </span>Advanced</p>
@@ -142,8 +142,8 @@
                 <p><span>Distance Driven**: </span>114.3 km</p>
                 <p><span>Top Speed: </span>95 km/h</p>
             </div>
-            <div class = "car-card car-right" onclick = "location.assign('https://www.solarcarchallenge.org/challenge/teams2025/garage_803.shtml')">
-                <img src = "images/2025-car.jpg" alt = "Our 2025 Solar Car parked outside the garage during the sunset after scrutineering.">
+            <div class = "car-card car-right">
+                <iframe class = "car-model" title = "3D Interactive Model of 2025 Solar Car"  loading = "lazy" src = "https://small-j1337.github.io/dnf" style = "display: block"></iframe>
                 <h1>DNF</h1>
                 <p><span>Year: </span>2025</p>
                 <p><span>Division: </span>Classic</p>
@@ -161,4 +161,5 @@
 </body>
 <script src = "navbar.js"></script>
 <script src = "footer.js"></script>
+
 </html>
