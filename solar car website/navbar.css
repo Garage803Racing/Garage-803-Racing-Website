@@ -17,6 +17,21 @@
         font-family: racing;
         src: url("fonts/a4-speed.ttf");
     }
+    @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Regular.otf");
+        font-weight: 400;
+    }
+     @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-SemiBold.otf");
+        font-weight: 500;
+    }
+     @font-face{
+        font-family: aileron;
+        src: url("fonts/Aileron-Heavy.otf");
+        font-weight: 600;
+    }
     .logoandname{
         display: flex;
         align-items: center;
@@ -44,7 +59,8 @@
         display: inline-block;
         position: relative;
         color: white;
-        font-weight: 500;
+        font-family: aileron;
+        font-weight: 600;
         cursor: pointer;
         border-radius: 0.5vw;
         padding: 0.5vw;
