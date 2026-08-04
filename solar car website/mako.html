@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Garage 803 Racing" />
+    <meta property="og:title" content="Mako Interactive Model" />
+    <meta property="twitter:title" content="Mako Interactive Model"/>
+    <meta property="og:url" content="https://garage803racing.org" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="3D Interactive model of 2026 Garage 803 Racing Solar Car. Model is for display purposes only and does not fully reflect the mechanical structures and systems of the car."/>
+    
+    <meta name="twitter:description" content="3D Interactive model of 2026 Garage 803 Racing Solar Car. Model is for display purposes only and does not fully reflect the mechanical structures and systems of the car.">
+    <link rel="icon" type="image/x-icon" href="https://garage803racing.org/images/browser-site-icon.jpg">
+    <title>2026 - Mako</title>
+  <script type="module" crossorigin src="assets/mako-C6VD-Cen.js"></script>
+  <link rel="modulepreload" crossorigin href="assets/DRACOLoader-BL-o94SC.js">
+</head>
+<style>
+    html{
+        overscroll-behavior: none;
+        overflow: hidden;
+    }
+    body{
+        margin: 0;
+       /*background-color: rgb(246, 212, 198);*/
+        background-image: url("milky-way.jpg");
+        background-size: cover;
+        background-position: center center;
+        color: white;
+        position: relative;
+    }
+    .exhibit{
+        width: 100% !important;
+        height: 100% !important;
+        cursor: grab !important;
+    }
+    .exhibit:active{
+        cursor: grabbing !important;
+    }
+</style>
+<body>
+     <canvas id = "exhibit" class = "exhibit"></canvas>
+</body>
+    
+</html>
