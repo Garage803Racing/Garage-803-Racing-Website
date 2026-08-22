@@ -10,8 +10,9 @@ function renderNavbar(){
                 <li><a href = "home.html">Home</a></li>
                 <li><a class = "team-link" id = "team-link">Team</a>
                     <ul class = "team-dropdown" id = "team-dropdown">
+                    <li onclick = "location.assign('team-27.html')"><a href = "team-27.html">2026-2027</a></li>
                       <li onclick = "location.assign('team-26.html')"><a href = "team-26.html">2025-2026</a></li>
-                        <li onclick = "location.assign('team-25.html')"><a href = "team-25.html">2024-2025</a></li>
+                      <li onclick = "location.assign('team-25.html')"><a href = "team-25.html">2024-2025</a></li>
                     </ul>
                 </li>
                 <li><a href = "our-cars.html">Our Cars</a></li>
